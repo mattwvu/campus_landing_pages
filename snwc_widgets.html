@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	
+	<!--==================================
+	Content Box widget - snwc_content_boxes
+	================================= -->
+	
+<section class="multicolor-boxes" aria-labelledby="campus-boxes-title">
+  <div class="container-fluid">
+    <h2 id="campus-boxes-title" class="visually-hidden">Campus Content Boxes</h2>
+
+    <div class="boxes-grid">
+
+      <!-- About the Library -->
+      <article class="box box--r1 box--blue"
+               aria-labelledby="box1-title"
+               data-link="https://researchguides.waketech.edu/NorthCampus/about">
+        <div class="box-icon"><i class="fas fa-circle-info"></i></div>
+        <h3 id="box1-title">About the Library</h3>
+        <p>Learn about library hours, services, and how we support students and faculty.</p>
+      </article>
+
+      <!-- Research Tools -->
+      <article class="box box--r1 box--gold"
+               aria-labelledby="box2-title"
+               data-link="https://researchguides.waketech.edu/NorthCampus/research">
+        <div class="box-icon"><i class="fas fa-book-open"></i></div>
+        <h3 id="box2-title">Research Tools</h3>
+        <p>Find databases, research guides, and tools for searching, evaluating, and citing sources.</p>
+      </article>
+
+      <!-- Faculty Support -->
+      <article class="box box--r1 box--navy"
+               aria-labelledby="box3-title"
+               data-link="https://researchguides.waketech.edu/NorthCampus/faculty">
+        <div class="box-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3 id="box3-title">Faculty Support</h3>
+        <p>Work with librarians on course-integrated instruction, assignment design, and resource support.</p>
+      </article>
+
+      <!-- Ask the Library -->
+      <article class="box box--r2 box--blue"
+               aria-labelledby="box4-title"
+               data-link="https://researchguides.waketech.edu/NorthCampus/help">
+        <div class="box-icon"><i class="fas fa-question-circle"></i></div>
+        <h3 id="box4-title">Ask the Library</h3>
+        <p>Need help? Contact the library for research assistance, resource help, and general questions.</p>
+      </article>
+
+      <!-- Spaces & Equipment -->
+      <article class="box box--r2 box--gold"
+               aria-labelledby="box5-title"
+               data-link="https://researchguides.waketech.edu/NorthCampus/spaces">
+        <div class="box-icon"><i class="fas fa-laptop"></i></div>
+        <h3 id="box5-title">Spaces &amp; Equipment</h3>
+        <p>Learn about study rooms, computers, technology lending, and available equipment.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".multicolor-boxes .box").forEach(box => {
+    box.style.cursor = "pointer";
+    box.addEventListener("click", () => {
+      const url = box.getAttribute("data-link");
+      if (url) window.location.href = url;
+    });
+  });
+});
+</script>
+	
+	
+<!-- ========================================
+Research Boxes - snwc_research_boxes
+=========================================== -->
+	
+	<section class="research-boxes" id="research-resources">
+  <div class="container-fluid">
+    <div class="boxes-grid" role="list">
+
+      <!-- Databases -->
+      <article class="box box--r1"
+               role="listitem"
+               data-link="https://researchguides.waketech.edu/az/databases">
+        <div class="box-icon" aria-hidden="true"><i class="fas fa-database"></i></div>
+        <h3>Databases</h3>
+        <p>Search subject-specific databases for journal articles, reports, and multimedia resources.</p>
+      </article>
+
+      <!-- Catalog / Books -->
+      <article class="box box--r1"
+               role="listitem"
+               data-link="https://noca.ent.sirsi.net/client/en_US/waketech/search/results?te=&lm=WAKE_NORTH">
+        <div class="box-icon" aria-hidden="true"><i class="fas fa-book"></i></div>
+        <h3>Catalog / Books</h3>
+        <p>Find physical and digital books, eBooks, and other materials available through the library’s catalog.</p>
+      </article>
+
+      <!-- Research Guides -->
+      <article class="box box--r1"
+               role="listitem"
+               data-link="https://researchguides.waketech.edu/">
+        <div class="box-icon" aria-hidden="true"><i class="fas fa-compass"></i></div>
+        <h3>Research Guides</h3>
+        <p>Explore librarian-curated guides that highlight databases, strategies, and resources for specific subjects or courses.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".research-boxes .box").forEach(box => {
+    box.style.cursor = "pointer";
+    box.addEventListener("click", () => {
+      const url = box.getAttribute("data-link");
+      if (url) window.location.href = url;
+    });
+  });
+});
+</script>
+
+	
+<!-- ==============================================
+Research Help - snwc_help_boxes
+================================================= -->
+	
+<section class="research-boxes" aria-labelledby="research-boxes-title">
+  <div class="container-fluid">
+    <h2 id="research-boxes-title" class="visually-hidden">Research Help Options</h2>
+
+    <div class="boxes-grid">
+
+      <!-- Email -->
+      <article class="box box--r2"
+               aria-labelledby="research-box1-title"
+               data-link="https://forms.office.com/Pages/ResponsePage.aspx?id=2YrMFv6EHUi5sEjndYxBqm7KIY1c5rZCghnuRkYF58dUQ0E3VFZVQkIzQVE5TTI3UjUwRTNQUlZXNi4u&rc15b093af48b4c3bb9c52f7b3a2b84ae=%22Scott%20Northern%20Wake%20Campus%20Library%22"
+               >
+        <div class="box-icon"><i class="fas fa-envelope"></i></div>
+        <h3 id="research-box1-title">Email the Campus Library</h3>
+        <p>Get help with your research questions, database searches, or citations by emailing the library.</p>
+      </article>
+		
+		<article class="box box--r2"
+               aria-labelledby="research-box3-title"
+               data-link="https://libraryh3lp.com/chat/nca-waketech@chat.libraryh3lp.com?identity=Librarian&sounds=true&profile=nca-waketech&skin=28634">
+        <div class="box-icon"><i class="fas fa-comments"></i></div>
+        <h3 id="research-box3-title">Chat with a Librarian</h3>
+        <p>Ask quick research questions and get live help from our library staff during chat hours.</p>
+      </article>
+
+
+      <!-- Appointment -->
+      <article class="box box--r3"
+               aria-labelledby="research-box2-title"
+               data-link="https://outlook.office365.com/owa/calendar/ScottNorthernWakeCampusLibrary@WakeTechEDU.onmicrosoft.com/bookings/">
+        <div class="box-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3 id="research-box2-title">Book a Research Appointment</h3>
+        <p>Meet one-on-one with a librarian for in-depth help with your topic, sources, or search strategies.</p>
+      </article>
+
+     
+      <!-- Workshops -->
+      <!-- <article class="box box--r2"
+               aria-labelledby="research-box4-title"
+               data-link="#">
+        <div class="box-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3 id="research-box4-title">Workshops</h3>
+        <p>Join an upcoming library workshop to strengthen your research, writing, or data skills.</p>
+      </article> -->
+
+      <!-- Interlibrary Loan -->
+      <!-- <article class="box box--r1"
+               aria-labelledby="research-box5-title"
+               data-link="#">
+        <div class="box-icon"><i class="fas fa-exchange-alt"></i></div>
+        <h3 id="research-box5-title">Interlibrary Loan</h3>
+        <p>Borrow materials from other libraries if they’re not available at Wake Tech.</p>
+      </article> -->
+		
+		 <!-- Chat -->
+      
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".research-boxes .box").forEach(box => {
+    box.style.cursor = "pointer";
+    box.addEventListener("click", () => {
+      const url = box.getAttribute("data-link");
+      if (url) window.location.href = url;
+    });
+  });
+});
+</script>
+	
+	
+<!-- =====================================
+                Events
+====================================== -->
+	
+<!-- SNWC -->
+<article class="wt-event-item">
+  <div class="wt-libcal-events">
+    <div id="api_upc_cid12665_iid735"></div>
+    <script src="https://waketech.libcal.com/api_events.php?m=upc&cid=12665&c=1310&l=15&simple=ul_date&format=js"></script>
+  </div>
+
+  <a href="https://waketech.libcal.com" class="wt-service-link" target="_blank">
+    View All Events →
+  </a>
+</article>
+		
+		
+	
+</body>
+</html>
