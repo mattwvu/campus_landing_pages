@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+<style>
 /* Main Header */
 
    .wt-header {
@@ -2065,3 +2065,5 @@ html { scroll-behavior: smooth; }
     height: 315px; /* or switch to responsive below */
     display: block;
   }	
+
+</style>
