@@ -1,0 +1,902 @@
+@charset "utf-8";
+/* CSS Document */
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="https://www.waketech.edu/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.waketech.edu/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="https://www.waketech.edu/apple-touch-icon.png">
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.location.href.startsWith("https://waketech.libcal.com/equipment?lid=")) {
+    const target = document.querySelector(".grid-view-toggle");
+    if (target) {
+      target.style.display = "none";
+    }
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const url = window.location.href;
+  if (url.startsWith("https://waketech.libcal.com/equipment?lid=")) {
+    const target = document.querySelector('[aria-controls="collapse-about-rooms"]');
+    if (target) {
+      target.style.display = "none";  // or target.remove();
+    }
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const url = window.location.href;
+  if (url.includes("https://waketech.libcal.com/equipment?lid=")) {
+    const target = document.querySelector('[aria-controls="collapse-room-instructions"]');
+    if (target) {
+      target.style.display = "none";  // or target.remove();
+    }
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const url = window.location.href;
+
+  // Only run on the whiteboards reservation page
+  if (url.includes("https://waketech.libcal.com/reserve/equipment_whiteboards")) {
+
+    // Hide both collapsible section toggles
+    const ariaTargets = [
+      '[aria-controls="collapse-room-instructions"]',
+      '[aria-controls="collapse-about-rooms"]'
+    ];
+
+    ariaTargets.forEach(selector => {
+      const el = document.querySelector(selector);
+      if (el) el.style.display = "none";
+    });
+
+    // Hide the “View Full Room Availability” box
+    const gridToggle = document.querySelector('.grid-view-toggle');
+    if (gridToggle) {
+      gridToggle.style.display = "none";  // or gridToggle.remove();
+    }
+
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const url = window.location.href;
+
+  // Only run on the whiteboards reservation page
+  if (url.includes("https://waketech.libcal.com/equipment")) {
+
+    // Hide both collapsible section toggles
+    const ariaTargets = [
+      '[aria-controls="collapse-room-instructions"]',
+      '[aria-controls="collapse-about-rooms"]'
+    ];
+
+    ariaTargets.forEach(selector => {
+      const el = document.querySelector(selector);
+      if (el) el.style.display = "none";
+    });
+
+    // Hide the “View Full Room Availability” box
+    const gridToggle = document.querySelector('.grid-view-toggle');
+    if (gridToggle) {
+      gridToggle.style.display = "none";  // or gridToggle.remove();
+    }
+
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const url = window.location.href;
+
+  // Only run on the whiteboards reservation page
+  if (url.includes("https://waketech.libcal.com/reserve/equipment/north")) {
+
+    // Hide both collapsible section toggles
+    const ariaTargets = [
+      '[aria-controls="collapse-room-instructions"]',
+      '[aria-controls="collapse-about-rooms"]'
+    ];
+
+    ariaTargets.forEach(selector => {
+      const el = document.querySelector(selector);
+      if (el) el.style.display = "none";
+    });
+
+    // Hide the “View Full Room Availability” box
+    const gridToggle = document.querySelector('.grid-view-toggle');
+    if (gridToggle) {
+      gridToggle.style.display = "none";  // or gridToggle.remove();
+    }
+
+  }
+});
+</script>
+
+<style>
+
+:root {
+  /* Wake Tech brand colors */
+  --dark-blue: #003b5c;
+  --light-blue: #00b5e2;
+  --mid-blue: #006ba6;
+  --gold: #a89968;
+  --charcoal: #3d3935;
+
+  /* Utility */
+  --white: #ffffff;
+}
+
+#s-lc-public-bc {
+    display: none !important; 
+}
+
+.wt-header {
+  background-color: #003b5c;
+  padding: 1rem 0;
+}
+
+.wt-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.wt-header-logo {
+  max-height: 12.5rem;
+}
+
+.wt-header-bar {
+  height: 1.5rem;
+  background-color: #00b5e2;
+}
+
+/* Footer */
+
+.custom-footer {
+  background-color: #003b5c; /* Dark Blue (primary brand color) */
+  height: 100px; /* Adjust as needed */
+  position: relative;
+  width: 100%;
+}
+
+.footer-bar {
+  background-color: #00b5e2; /* Bright Blue (accent) */
+  height: 20px; /* Adjust thickness of the bar */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Accordion */
+.accordion-wrapper {
+  font-family: "Arizona", sans-serif;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #003b5c;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.accordion-toggle:hover {
+  text-decoration: none;
+}
+
+.accordion-toggle .arrow {
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.accordion-toggle[aria-expanded="true"] .arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-content a {
+  text-decoration: none;
+  color: #003b5c;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Cards */
+.contact-container {
+  max-width: 100%;
+  padding: 20px;
+}
+
+h2 {
+  color: #00467f;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact-info li:last-child {
+  border-bottom: none;
+}
+
+.contact-info i {
+  color: #00467f;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.contact-info a {
+  color: #00467f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Study Room Title */
+.study-room-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #003b5c;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 3rem auto 0;
+  position: relative;
+  padding: 1rem 0;
+}
+
+
+.study-room-title::after {
+  content: "";
+  display: block;
+  width: clamp(200px, 80%, 85rem); /* ✅ Responsive width */
+  height: 1px;
+  background-color: #a89968;
+  margin: 1rem auto 0;
+  border-radius: 3px;
+}
+
+/* Study Room Description */
+.room-card {
+  border: 1px solid #dee2e6;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-image {
+  flex: 1 1 200px;
+  max-width: 300px;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-details {
+  flex: 2 1 300px;
+  padding: 1rem;
+}
+
+.room-details h5 {
+  color: #3a5a7a;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.details-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.5rem;
+}
+
+.details-table td:first-child {
+  font-weight: bold;
+  width: 40%;
+}
+
+/* Patterns */
+
+.pattern-dark {
+  position: relative;
+  color: #ffffff;
+  padding: 4rem;
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.pattern-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(61, 57, 53, 0.8);
+  z-index: 1;
+}
+
+}
+
+.pattern-light {
+  background: repeating-linear-gradient(-45deg, #c4dbe8, #c4dbe8 3px, #cce1ed 3px, #cce1ed 13px);
+  border-top: 8px solid #003b5c;
+  padding: 40px 15px;
+  color: #003b5c;
+}
+
+/* Campus Container & Cards */
+.campus-container {
+  border-top: 1.5rem solid #00b5e2;
+  border-bottom: 3rem solid #003b5c;
+  padding: 40px;
+  background-color: #f2f2f2;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.campus-card {
+  border: 3px solid #57524c;
+  background-color: #ffffff;
+  text-align: center;
+  max-width: 350px;
+  border-radius: 10px;
+  margin-top: 2%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.campus-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #00b5e2;
+}
+
+.campus-card h2 {
+  background-color: #003b5c;
+  color: #ffffff;
+  margin: 0;
+  padding: 15px 10px;
+  font-size: 1.75rem;
+  border-bottom: 3px solid #00b5e2;
+}
+
+/* Buttons */
+.reserve-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0 10px;
+  flex-wrap: wrap;
+}
+
+.reserve-button,
+.reserve-equipment-button,
+.waiver-button,
+.guidelines-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.reserve-button { background-color: #00b5e2; }
+.reserve-button:hover { background-color: #006ba6; }
+
+.reserve-equipment-button { background-color: #a89968; }
+.reserve-equipment-button:hover { background-color: #8b7e55; }
+
+.waiver-button { background-color: #58534d; }
+.waiver-button:hover { background-color: #3e3a35; }
+
+.guidelines-button { background-color: #135678; }
+.guidelines-button:hover { background-color: #0e3f5a; }
+
+/* Media Sections */
+.media-wrapper {
+  margin: auto;
+  padding: 0 15px;
+}
+
+.media-header-box {
+  background-color: #ffffff;
+  border: 3px solid #003b5c;
+  padding: 15px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #003b5c;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.media-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+}
+
+.media-description-box {
+  background-color: #ffffff;
+  border: 6px solid #00b5e2;
+  padding: 20px 25px;
+  color: #333;
+  line-height: 1.6;
+  margin: 30px 0 20px;
+}
+
+.media-description-box ul li {
+  margin-bottom: 1rem;
+}
+
+.media-description-box p {
+  margin-bottom: 1rem;
+}
+
+.note {
+  font-weight: bold;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  color: #003b5c;
+  padding: 10px 15px;
+  border-left: 6px solid #00b5e2;
+  border-radius: 4px;
+}
+
+/* Media Card Image */
+
+.pattern-dark-alt {
+    position: relative;
+    background-color: #3d3935;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-top: 8px solid #00b5e2;
+    color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    padding: 6rem;
+    min-height: 40rem;
+}
+
+@media (max-width: 768px) {
+    .pattern-dark-alt {
+        padding: 2rem;
+    }
+}
+
+.pattern-dark-alt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 57, 53, 0.8);
+    z-index: 1;
+}
+
+.makerspace-card {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.button_media-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+.button_maker-group {
+    margin-bottom: 4rem;
+}
+
+/* Base button style */
+.button-base {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 5px;
+  border: 0.25rem solid #ffffff;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Button color variants used in the HTML */
+.reserve-button_media {
+  background-color: var(--light-blue);
+  color: #ffffff;
+}
+.reserve-button_media:hover {
+  background-color: var(--mid-blue);
+}
+
+.reserve-equipment-button_media {
+  background-color: var(--gold);
+  color: #ffffff;
+}
+.reserve-equipment-button_media:hover {
+  background-color: #8b7e55; 
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .pattern-north,
+  .pattern-south,
+  .pattern-rtp,
+  .pattern-east,
+  .pattern-west,
+  .pattern-psec,
+  .pattern-phsl {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .button-base {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+.liability-button_media  {
+    background-color: #57524c;
+    color: #ffffff;
+}
+
+.guidelines-button_media {
+    background-color: #5a8296;
+    color: #ffffff;
+	
+}
+
+.liability-button_media:hover, .guidelines-button_media:hover {
+    background-color: #025f92;
+}
+
+
+
+@media (max-width: 600px) {
+  .button_media-group {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  .button-base {
+    width: 90%;  /* take up most of the available width */
+    max-width: 300px;
+  }
+}
+
+
+.makerspace-card p,
+.makerspace-card h2,
+.makerspace-card h4 {
+  text-align: left;
+}
+
+.full-width-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.media-title h1,
+.media-title h2,
+.media-title h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+}
+/* Unique styles for h1 */
+.media-title h1 {
+  font-size: 4.5rem;
+}
+
+.media-title h2 {
+  font-size: 3.5rem;
+}
+
+/* Unique styles for h6 */
+.media-title h6 {
+  font-size: 1.75rem;
+  margin-top: -.55rem;
+  margin-bottom: 2rem;
+}
+
+/* Grid container for campus cards */
+.campus-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  
+}
+
+/* Campus-specific background variants */
+.pattern-north,
+.pattern-south,
+.pattern-rtp,
+.pattern-east,
+.pattern-west,
+.pattern-psec,
+.pattern-phsl {
+  composes: pattern-dark-alt;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top: 8px solid #00b5e2;
+  color: #fff;
+  padding: 4rem;
+  min-height: 30rem;
+}
+
+.pattern-north    { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/customers/255/images/north_test.jpg'); }
+.pattern-south    { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/customers/255/images/south_test.jpg'); }
+.pattern-rtp      { background-image: url('https://d68g328n4ug0e.cloudfront.net/misc/735/eq/item/2025_06_23_08_09_45.jpg'); }
+.pattern-east     { background-image: url('https://d68g328n4ug0e.cloudfront.net/misc/735/eq/item/2025_06_13_17_27_22.jpg'); }
+.pattern-west     { background-image: url('https://d68g328n4ug0e.cloudfront.net/misc/735/eq/item/2025_06_23_08_18_33.jpg'); }
+.pattern-psec     { background-image: url('https://d68g328n4ug0e.cloudfront.net/misc/735/eq/item/2025_06_23_08_18_33.jpg'); }
+.pattern-phsl     { background-image: url('https://d68g328n4ug0e.cloudfront.net/misc/735/eq/item/2025_06_23_08_18_33.jpg'); }
+
+/* Overlay for each pattern- campus background */
+.pattern-north::before,
+.pattern-south::before,
+.pattern-rtp::before,
+.pattern-east::before,
+.pattern-west::before
+.pattern-psec::before,
+.pattern-phsl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(61, 57, 53, 0.8);
+  z-index: 1;
+}
+
+.top-nav {
+  background-color: #003b5c;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.top-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+  color: #00b5e2;
+}
+
+.makerspace-highlight {
+  font-weight: bold;
+  color: #ffffff;
+  padding-left: 12px;
+  border-left: 6px solid rgba(255, 255, 255, 0.9);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Updated Styled Navigation Bar */
+.styled-nav {
+   background-color: #fff;  
+border-bottom: .25px solid #003b5c;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+ 
+  margin-bottom: -2rem;
+}
+
+.styled-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.styled-nav a {
+  color: #003b5c;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  border-left: 6px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.styled-nav a:hover {
+  border-left: 6px solid #00b5e2;
+  color: #00b5e2;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.top-nav {
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+.wtcc-header {
+  border-bottom: 8px solid #00b5e2;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 175px; /* makes the block taller */
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wtcc-header h1  {
+	color:  #003b5c;	
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.wtcc-header h6 {
+	color: #006ba6;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+
+/* Grid View */
+
+.grid-view-toggle {
+  margin-top: 30px;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.1rem 2.2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #003b5c;
+  color: #ffffff;
+}
+
+.view-btn:hover {
+  background-color: #025f92;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.grid-icon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+</style>

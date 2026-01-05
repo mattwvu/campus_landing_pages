@@ -1,4 +1,11 @@
 @charset "utf-8";
+/* CSS Document */
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
 /* Main Header */
 
@@ -314,6 +321,35 @@
   background-image: none !important;
 }
 
+/* =================================
+  Campus Hero
+================================= */
+
+.wt-campus-hero {
+  width: 100%;
+  height: 320px;           /* desktop default */
+  overflow: hidden;
+}
+
+.wt-campus-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* this is the crop */
+  object-position: center; /* change if needed */
+}
+
+@media (max-width: 992px) {
+  .wt-campus-hero {
+    height: 260px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wt-campus-hero {
+    height: 200px;
+  }
+}
+
 
 /* ===========================
    Campus Boxes (3x2 responsive)
@@ -382,7 +418,7 @@
 .box p{
   margin:0 0 1rem 0;
   line-height:1.7;
-  color:#333;
+  color:var(--icon-light);
 }
 
 .box a{
@@ -430,6 +466,17 @@
     padding-right:0; 
   } 
 
+.box-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.box-link:focus-visible {
+  outline: 3px solid #00b5e2; /* Wake Tech blue */
+  outline-offset: 4px;
+}
 
 
 /* ===========================
@@ -664,9 +711,9 @@
 /* Campus Card Heading */
 .campus-card-heading {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: clamp(1.6rem, 3vw, 2rem); /* Between h4 and h3 size */
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 800;
-  color: #003b5c; /* Wake Tech dark blue */
+  color: #003b5c;
   text-align: center;
   text-transform: uppercase;
   margin: 2rem auto 1rem auto;
@@ -682,15 +729,15 @@
   --gold: var(--wt-gold, #a89968);
   --muted: var(--wt-muted, #30607b);
   --bluegrey: #5a8296;
-  --bluegrey-soft: rgba(90,130,150,.25); /* faint blue-grey */
+  --bluegrey-soft: rgba(90,130,150,.25);
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   position: relative;
   max-width: 1200px;
   margin: 2rem auto;
   overflow: hidden;
   background: transparent;
-  border: 1px solid var(--bluegrey-soft); /* faint blue-grey border */
-  border-radius: 0; /* straight corners */
+  border: 1px solid var(--bluegrey-soft);
+  border-radius: 0;
   box-shadow: none;
 }
 
@@ -719,9 +766,13 @@
   }
 }
 
+/* ============================
+   COPY COLUMN
+============================ */
+
 .cs-copy {
   background: transparent;
-  border-right: 1px solid var(--bluegrey-soft); /* subtle divider */
+  border-right: 1px solid var(--bluegrey-soft);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -774,25 +825,48 @@
   border-color: var(--gold);
 }
 
+/* ============================
+   MEDIA COLUMN (AUTO-CROP FIX)
+============================ */
+
+/* NEW: define a fixed crop box */
+.cs-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;   /* Desktop crop */
+  overflow: hidden;       /* Enables cropping */
+}
+
+/* UPDATED: image now auto-crops */
 .cs-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;      /* Auto-crop instead of stretch */
+  object-position: center;
+  display: block;
   border: none;
   border-left: 1px solid var(--bluegrey-soft);
   border-radius: 0;
 }
 
 @media (max-width: 900px) {
+  .cs-media {
+    aspect-ratio: 4 / 3;  /* Taller crop on mobile */
+  }
+
   .cs-media img {
     border-left: none;
     border-top: 1px solid var(--bluegrey-soft);
   }
 }
 
+/* ============================
+   CONTROLS
+============================ */
+
 .cs-arrow {
   position: absolute;
-  top: 85%; /* bottom third */
+  top: 85%;
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
@@ -806,12 +880,8 @@
   z-index: 5;
 }
 
-.cs-prev {
-  left: 12px;
-}
-.cs-next {
-  right: 12px;
-}
+.cs-prev { left: 12px; }
+.cs-next { right: 12px; }
 
 .cs-arrow:hover {
   background: var(--bright);
@@ -837,7 +907,6 @@
 .cs-dot[aria-selected="true"] {
   background: var(--bright);
 }
-
 
 
 /* Accordian */
@@ -1580,6 +1649,7 @@
   box-shadow: 0 6px 16px rgba(0,0,0,.06);
   padding: 2rem 1.75rem;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+	margin-bottom: 1rem;
 }
 .wt-box:hover {
   transform: translateY(-4px);
@@ -1665,6 +1735,17 @@
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 800;
   font-size: 1.4rem;
+  color: #003b5c;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header */
+.wt-service-item h1 {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 3.4rem;
   color: #003b5c;
   margin: 0 0 0.5rem;
   text-transform: uppercase;
@@ -2065,5 +2146,163 @@ html { scroll-behavior: smooth; }
     height: 315px; /* or switch to responsive below */
     display: block;
   }	
+
+
+
+/* =========================================================
+   Campus Libraries Card Grid (Appointments)
+   ========================================================= */
+
+/* Grid container for campus cards */
+.campus-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Base “pattern” style (shared behavior) */
+.pattern-north,
+.pattern-south,
+.pattern-rtp,
+.pattern-east,
+.pattern-west,
+.pattern-psec,
+.pattern-phsl {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top: 8px solid #00b5e2;
+  color: #ffffff;
+  padding: 4rem;
+  min-height: 30rem;
+}
+
+/* Background images per campus */
+.pattern-north {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/first_floor.jpg');
+}
+.pattern-south {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/south_campus_2.jpg');
+}
+.pattern-rtp {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/rtp_campus.png');
+}
+.pattern-east {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/east_campus.png');
+}
+.pattern-west {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/west_campus_2.png');
+}
+
+.pattern-psec {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/psec.jpg');
+}
+
+.pattern-phsl {
+  background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/phsl_campus.jpg');
+}
+
+/* Dark overlay on top of the background image */
+.pattern-north::before,
+.pattern-south::before,
+.pattern-rtp::before,
+.pattern-east::before,
+.pattern-west::before,
+.pattern-phsl::before, 
+.pattern-psec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(61, 57, 53, 0.8);
+  z-index: 1;
+}
+
+/* Content wrapper sits above overlay */
+.makerspace-card {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Header typography inside each card */
+.media-title h1,
+.media-title h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.media-title h1 {
+  font-size: 4.5rem;
+}
+
+.media-title h6 {
+  font-size: 1.75rem;
+  margin-top: -0.55rem;
+  margin-bottom: 2rem;
+}
+
+/* Button group wrapper */
+.button_media-group {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+/* Base button style */
+.button-base {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 5px;
+  border: 0.25rem solid #ffffff;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Button color variants used in the HTML */
+.reserve-button_media {
+  background-color: #00b5e2;
+  color: #ffffff;
+}
+.reserve-button_media:hover {
+  background-color: #006ba6;
+}
+
+.reserve-equipment-button_media {
+  background-color: #a89968;
+  color: #ffffff;
+}
+.reserve-equipment-button_media:hover {
+  background-color: #8b7e55;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .pattern-north,
+  .pattern-south,
+  .pattern-rtp,
+  .pattern-east,
+  .pattern-west {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .button-base {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
 
 </style>
