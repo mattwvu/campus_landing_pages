@@ -4,8 +4,8 @@
 :root{
   --bluegrey:#5a8296;              /* your base */
   --bluegrey-soft: rgba(90,130,150,.25); /* faint */
-  --brand-dark:#003b5c;
-  --brand-bright:#00b5e2;
+  --brand-dark: #003b5c;
+  --brand-bright: #00b5e2;
   --light-grey:#f4f4f4;
   --white-transparent:rgba(255,255,255,0.9);
   --radius:14px;
@@ -38,29 +38,26 @@
 
 
 /* Main Header */
+header.wt-header{
+  background-color: var(--brand-dark, #003b5c) !important;
+  padding: 1rem 0 !important;
+  width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
 
- header.wt-header {
-    background-color:var(--brand-dark) !important;
-    padding: 1rem 0 !important;
-    display: block;
-    width: 100%;
-  }
+.wt-header-logo{
+  height: 5rem;
+  width: auto;
+  display: block;
+}
 
-  .wt-header-bar {
-    height: 1.5rem;
-    background-color: #00b5e2 !important;
-    width: 100%;
-  }
-
-  .wt-header-logo {
-    height: 5rem;
-    width: auto;
-    display: block;
-  }
-
-.wt-header-bar {
+.wt-header-bar{
   height: 1.5rem;
-  background-color: #00b5e2;
+  background-color: #00b5e2 !important;
+  width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 
@@ -2289,6 +2286,7 @@ html { scroll-behavior: smooth; }
     max-width: 300px;
   }
 }
+
 
 
 
