@@ -1,11 +1,46 @@
 @charset "utf-8";
 /* CSS Document */
 
+:root{
+  --bluegrey:#5a8296;              /* your base */
+  --bluegrey-soft: rgba(90,130,150,.25); /* faint */
+  --brand-dark:#003b5c;
+  --brand-bright:#00b5e2;
+  --light-grey:#f4f4f4;
+  --white-transparent:rgba(255,255,255,0.9);
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.05);
+  --shadow-hover:0 10px 30px rgba(0,0,0,.10);
+  --icon-light:#8eaab9;
+  --border-light:#dcdcdc; /* NEW light grey border tone */
+  --brand-gold:#a89968;                 /* Wake Tech gold */
+  /* Light tint helpers */
+  --tint-blue-bg: rgba(0,181,226,.12);  /* light of bright blue */
+  --tint-blue-br: rgba(0,181,226,.28);
+  --tint-gold-bg: rgba(168,153,104,.12);/* light of gold */
+  --tint-gold-br: rgba(168,153,104,.30);
+  --tint-navy-bg: rgba(0,59,92,.10);    /* light of dark blue */
+  --tint-navy-br: rgba(0,59,92,.28);
+  --text-dark:#0f2530;                  /* readable on light tints */
+  --icon-dim:#5e7481;                   /* slightly darker than --icon-light */	 
+  --wt-vibrant:#006ba6;
+  --wt-dark:#003b5c;
+  --wt-muted:#30607b;
+  --wt-bright:#00b5e2;   /* added */
+  --wt-gold:#a89968;     /* added */
+  --wt-white:#ffffff;    /* added */
+  --card-max:1100px;     /* added */
+  --yes:#1e9e4a;
+  --no:#d64545;
+  --atq-sub-radius: 14px;
+  --atq-sub-shadow: 0 3px 14px rgba(0,0,0,.08);
+}
+
 
 /* Main Header */
 
  header.wt-header {
-    background-color: #003b5c !important;
+    background-color:var(--brand-dark) !important;
     padding: 1rem 0 !important;
     display: block;
     width: 100%;
@@ -196,12 +231,6 @@
 
 /* Horizontal Line */
 
-/* Faint blue-grey horizontal lines */
-:root{
-  --bluegrey:#5a8296;              /* your base */
-  --bluegrey-soft: rgba(90,130,150,.25); /* faint */
-}
-
 /* Solid, faint 1px line */
 .hr-soft {
   border: 0;
@@ -354,28 +383,6 @@
 /* ===========================
    Campus Boxes (3x2 responsive)
    =========================== */
-
-  :root{
-  --brand-dark:#003b5c;
-  --brand-bright:#00b5e2;
-  --light-grey:#f4f4f4;
-  --white-transparent:rgba(255,255,255,0.9);
-  --radius:14px;
-  --shadow:0 8px 24px rgba(0,0,0,.05);
-  --shadow-hover:0 10px 30px rgba(0,0,0,.10);
-  --icon-light:#8eaab9;
-  --border-light:#dcdcdc; /* NEW light grey border tone */
-  --brand-gold:#a89968;                 /* Wake Tech gold */
-  /* Light tint helpers */
-  --tint-blue-bg: rgba(0,181,226,.12);  /* light of bright blue */
-  --tint-blue-br: rgba(0,181,226,.28);
-  --tint-gold-bg: rgba(168,153,104,.12);/* light of gold */
-  --tint-gold-br: rgba(168,153,104,.30);
-  --tint-navy-bg: rgba(0,59,92,.10);    /* light of dark blue */
-  --tint-navy-br: rgba(0,59,92,.28);
-  --text-dark:#0f2530;                  /* readable on light tints */
-  --icon-dim:#5e7481;                   /* slightly darker than --icon-light */	  
-}
 
  /* Shared box grid structure */
 .boxes-grid{
@@ -955,18 +962,6 @@
 
 /* Ask the Question – Consolidated */
 
-:root{
-  --wt-vibrant:#006ba6;
-  --wt-dark:#003b5c;
-  --wt-muted:#30607b;
-  --wt-bright:#00b5e2;   /* added */
-  --wt-gold:#a89968;     /* added */
-  --wt-white:#ffffff;    /* added */
-  --card-max:1100px;     /* added */
-  --yes:#1e9e4a;
-  --no:#d64545;
-}
-
 /* Container */
 .atq-simple{
   border-top:10px solid var(--wt-vibrant);
@@ -1313,16 +1308,7 @@
 
 /* ===============================
    Compact Subheader (Previous Answers)
-   - Shorter height
-   - Transparent by default
-   - Subtle underline + small shadow
-   - Typography scaled down from main hero
    =============================== */
-
-:root{
-  --atq-sub-radius: 14px;
-  --atq-sub-shadow: 0 3px 14px rgba(0,0,0,.08);
-}
 
 /* Container */
 .atq-subheader{
@@ -2303,6 +2289,7 @@ html { scroll-behavior: smooth; }
     max-width: 300px;
   }
 }
+
 
 
 
