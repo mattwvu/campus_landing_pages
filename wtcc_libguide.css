@@ -46,10 +46,10 @@ header.wt-header{
   margin-right: calc(50% - 50vw);
 }
 
-.wt-header-logo{
-  height: 5rem;
+.wt-header-logo {
+  height: 10rem;   /* try 6–8rem */
   width: auto;
-  display: block;
+  max-width: none;
 }
 
 .wt-header-bar{
@@ -2286,10 +2286,3 @@ html { scroll-behavior: smooth; }
     max-width: 300px;
   }
 }
-
-
-
-
-
-
-
