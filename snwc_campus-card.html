@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>snwc_campus-card</title>
+</head>
+
+<body>
+	
+
+<!-- ============================================================
+   CAMPUS CARD (Slider)
+   How to edit:
+   - For each slide (an <article class="cs-slide"> block):
+     1) Change the SMALL LABEL (h3.cs-eyebrow)  -> e.g., "Featured Service"
+     2) Change the BIG TITLE (h2.cs-title)      -> e.g., "Study Rooms"
+     3) Change the DESCRIPTION (p.cs-text)      -> Short sentence or two
+     4) Change the BUTTON LINK (a.cs-btn href)  -> paste your URL
+     5) Change the BUTTON TEXT (a.cs-btn text)  -> e.g., "Book a Room"
+     6) Change the IMAGE URL (img src)          -> paste an image link
+     7) Change the IMAGE ALT TEXT (img alt)     -> brief, meaningful description
+   - To add a NEW SLIDE: copy any entire <article class="cs-slide">...</article> block,
+     paste it right under the last slide, then edit its bits as above.
+   - To REMOVE a slide: delete its entire <article> block.	
+	
+	 ============================================================ -->
+
+	<section class="campus-slider">
+  <div class="cs-viewport" aria-roledescription="carousel">
+    <div class="cs-track">
+
+      <!-- ======================================================
+           SLIDE 1 (EDITABLE)
+           Everything labeled "EDIT HERE" can be changed.
+           ====================================================== -->
+      
+		<article class="cs-slide is-active" aria-roledescription="slide">
+        <div class="cs-copy">
+          <!-- SMALL LABEL (category) — EDIT HERE -->
+          <h3 class="cs-eyebrow">Featured Service</h3>
+
+          <!-- BIG TITLE — EDIT HERE -->
+          <h2 class="cs-title">Study Rooms</h2>
+
+          <!-- DESCRIPTION — EDIT HERE (keep it short and clear) -->
+          <p class="cs-text">
+            Reserve a quiet, dedicated space for individual or group study.
+          </p>
+
+          <!-- BUTTON:
+               - LINK (href): paste your URL here — EDIT HERE
+               - BUTTON TEXT (between <a> and </a>): EDIT HERE
+          -->
+          <a class="cs-btn" href="https://waketech.libcal.com/booking/north">
+            Book a Room
+          </a>
+        </div>
+
+        <figure class="cs-media">
+          <!-- IMAGE:
+               - IMAGE URL (src): paste your image link — EDIT HERE
+               - ALT TEXT (alt): describe the image briefly for accessibility — EDIT HERE
+          -->
+          <img
+            src="https://d68g328n4ug0e.cloudfront.net/misc/735/eq/item/2025_06_19_14_32_40.jpg"
+            alt="SNWC study room"
+          />
+        </figure>
+      </article>
+
+      <!-- ======================================================
+           SLIDE 2 (EDITABLE)
+           ====================================================== -->
+      <article class="cs-slide" aria-roledescription="slide">
+        <div class="cs-copy">
+          <!-- SMALL LABEL — EDIT HERE -->
+          <h3 class="cs-eyebrow">Fun Activities</h3>
+
+          <!-- BIG TITLE — EDIT HERE -->
+          <h2 class="cs-title">Answer the Question</h2>
+
+          <!-- DESCRIPTION — EDIT HERE -->
+          <p class="cs-text">
+           Stop by the front desk on the second floor and cast your vote with a token. Check back all semester to see how everyone else answered!
+          </p>
+
+          <!-- BUTTON LINK + TEXT — EDIT HERE -->
+          <a class="cs-btn" href="https://researchguides.waketech.edu/atq">
+            Learn More
+          </a>
+        </div>
+
+        <figure class="cs-media">
+          <!-- IMAGE URL + ALT TEXT — EDIT HERE -->
+          <img
+            src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/atq.png"
+            alt="Laptop and hotspot on a desk"
+          />
+        </figure>
+      </article>
+
+      <!-- ======================================================
+           SLIDE 3 (EDITABLE)
+           ====================================================== -->
+      <article class="cs-slide" aria-roledescription="slide">
+        <div class="cs-copy">
+          <!-- SMALL LABEL — EDIT HERE -->
+          <h3 class="cs-eyebrow">Upcoming Event</h3>
+
+          <!-- BIG TITLE — EDIT HERE -->
+          <h2 class="cs-title">Crafternoons</h2>
+
+          <!-- DESCRIPTION — EDIT HERE (include date/place if helpful) -->
+          <p class="cs-text">
+            Relax with therapy dogs and local coffee on Oct 30 in the Learning Commons.
+          </p>
+
+          <!-- BUTTON LINK + TEXT — EDIT HERE -->
+          <a class="cs-btn" href="https://waketech.libcal.com/calendar/libraryevents?cid=12665&t=g&d=0000-00-00&cal=12665&ct=84643&cm=1310&inc=0">
+            Event Details
+          </a>
+        </div>
+
+        <figure class="cs-media">
+          <!-- IMAGE URL + ALT TEXT — EDIT HERE -->
+          <img
+            src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/crafternoon_west.png"
+            alt="Students enjoying coffee with therapy dogs"
+          />
+        </figure>
+      </article>
+
+	     <!-- Slide 4  -->	
+      <article class="cs-slide" aria-roledescription="slide">
+        <div class="cs-copy">
+          <h3 class="cs-eyebrow">Technology</h3>
+          <h2 class="cs-title">Laptop Kiosk</h2>
+          <p class="cs-text">Check out a laptop from the self-service kiosk using your Wake Tech ID for up to three hours. </p>
+          <!-- <a class="cs-btn" href="[PASTE LINK HERE]">[Button Text]</a> -->
+        </div>
+        <figure class="cs-media">
+          <img src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/kiosk.png" alt="laptop kiosk" />
+        </figure>
+      </article>
+    
+		
+      <!-- (OPTIONAL) COPY THIS WHOLE ARTICLE BLOCK TO ADD A NEW SLIDE
+      <article class="cs-slide" aria-roledescription="slide">
+        <div class="cs-copy">
+          <h3 class="cs-eyebrow">[Small Label]</h3>
+          <h2 class="cs-title">[Big Title]</h2>
+          <p class="cs-text">[Short description goes here.]</p>
+          <a class="cs-btn" href="[PASTE LINK HERE]">[Button Text]</a>
+        </div>
+        <figure class="cs-media">
+          <img src="[PASTE IMAGE URL HERE]" alt="[Describe the image briefly]" />
+        </figure>
+      </article>
+      -->
+
+    </div>
+  </div>
+
+  <!-- ARROWS: no need to edit -->
+  <button class="cs-arrow cs-prev" aria-label="Previous slide">
+    <i class="fas fa-angle-left"></i>
+  </button>
+  <button class="cs-arrow cs-next" aria-label="Next slide">
+    <i class="fas fa-angle-right"></i>
+  </button>
+
+  <!-- DOTS: auto-generated by JS -->
+  <div class="cs-dots" role="tablist" aria-label="Slide navigation"></div>
+</section>
+	
+	
+</body>
+</html>

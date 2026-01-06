@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>west_widgets</title>
+</head>
+
+<body>
+	
+<!-- West Hours -->
+	
+	<!-- Library Hours Widget -->
+<div id="lib-hero-hours" class="lib-hours-container">
+  <span class="fa fa-clock-o libraryClockIcon" aria-hidden="true"></span>
+  Today's Hours: <span id="lib-today-hours">Loading...</span>
+  <span class="lib-hero-all-hours">
+      <a href="https://waketech.libcal.com/hours/">
+          See All Hours <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+      </a>
+  </span>
+</div>
+
+<script>
+  fetch("https://waketech.libcal.com/api_hours_today.php?lid=4959&format=html&systemTime=0")
+    .then(response => response.text())
+    .then(html => {
+      console.log("LibCal API Response:", html);
+
+      // Basic validation: ensure we have real content
+      if (!html || html.trim() === "" || html.toLowerCase().includes("closed")) {
+        document.getElementById("lib-today-hours").innerHTML = "Hours not available";
+      } else {
+        document.getElementById("lib-today-hours").innerHTML = html;
+      }
+
+      document.getElementById("lib-hero-hours").style.display = "block";
+    })
+    .catch(error => {
+      console.error("Error fetching library hours:", error);
+      document.getElementById("lib-today-hours").innerHTML = "Unavailable";
+    });
+</script>
+
+	
+<!--==================================
+  Content Box widget - west_content_boxes
+================================== -->
+
+<section class="multicolor-boxes" aria-labelledby="campus-boxes-title">
+  <div class="container-fluid">
+    <h2 id="campus-boxes-title" class="visually-hidden">Campus Content Boxes</h2>
+
+    <div class="boxes-grid">
+
+      <!-- About the Library -->
+      <article class="box box--r1 box--blue">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/WesternWakeLibrary/about"
+           aria-labelledby="box1-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-circle-info"></i>
+          </div>
+          <h3 id="box1-title">About the Library</h3>
+          <p>Learn about library hours, services, and how we support students and faculty.</p>
+        </a>
+      </article>
+
+      <!-- Research Tools -->
+      <article class="box box--r1 box--gold">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/WesternWakeLibrary/research"
+           aria-labelledby="box2-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3 id="box2-title">Research Tools</h3>
+          <p>Find databases, research guides, and tools for searching, evaluating, and citing sources.</p>
+        </a>
+      </article>
+
+      <!-- Faculty Support -->
+      <article class="box box--r1 box--navy">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/WesternWakeLibrary/faculty"
+           aria-labelledby="box3-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 id="box3-title">Faculty Support</h3>
+          <p>Work with librarians on course-integrated instruction, assignment design, and resource support.</p>
+        </a>
+      </article>
+
+      <!-- Ask the Library -->
+      <article class="box box--r2 box--blue">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/WesternWakeLibrary/help"
+           aria-labelledby="box4-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3 id="box4-title">Ask the Library</h3>
+          <p>Need help? Contact the library for research assistance, resource help, and general questions.</p>
+        </a>
+      </article>
+
+      <!-- Spaces & Equipment -->
+      <article class="box box--r2 box--gold">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/WesternWakeLibrary/spaces"
+           aria-labelledby="box5-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3 id="box5-title">Spaces &amp; Equipment</h3>
+          <p>Learn about study rooms, computers, technology lending, and available equipment.</p>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================
+                Events
+====================================== -->
+	
+
+<!-- West  -->
+	
+<article class="wt-event-item">
+  <div class="wt-libcal-events">
+ 	<div id="api_upc_cid12665_iid735"></div>
+	  <script src="https://waketech.libcal.com/api_events.php?m=upc&cid=12665&audience=&c=1312&d=&tags=&l=7&tar=0&bs=1&simple=ul_date&context=object&format=js"> </script>
+  </div>
+
+  <a href="https://waketech.libcal.com" class="wt-service-link" target="_blank">
+    View All Events →
+  </a>
+</article>
+	
+<!-- ========================================
+Research Boxes - west_research-boxes
+=========================================== -->
+
+<section class="research-boxes" id="research-resources">
+  <div class="container-fluid">
+    <div class="boxes-grid" role="list">
+
+      <!-- Databases -->
+      <article class="box box--r1" role="listitem">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/az/databases">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Databases</h3>
+          <p>Search subject-specific databases for journal articles, reports, and multimedia resources.</p>
+        </a>
+      </article>
+
+      <!-- Catalog / Books -->
+      <article class="box box--r1" role="listitem">
+        <a class="box-link"
+           href="https://noca.ent.sirsi.net/client/en_US/waketech/search/results?te=&lm=WAKE_WEST">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Catalog / Books</h3>
+          <p>Find physical and digital books, eBooks, and other materials available through the library’s catalog.</p>
+        </a>
+      </article>
+
+      <!-- Research Guides -->
+      <article class="box box--r1" role="listitem">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-compass"></i>
+          </div>
+          <h3>Research Guides</h3>
+          <p>Explore librarian-curated guides that highlight databases, strategies, and resources for specific subjects or courses.</p>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+	
+<!-- ==============================================
+Research Help - west_help-boxes
+================================================= -->
+
+<section class="research-boxes" aria-labelledby="research-boxes-title">
+  <div class="container-fluid">
+    <h2 id="research-boxes-title" class="visually-hidden">Research Help Options</h2>
+
+    <div class="boxes-grid">
+
+      <!-- Email -->
+      <article class="box box--r2">
+        <a class="box-link"
+           href="https://forms.office.com/Pages/ResponsePage.aspx?id=2YrMFv6EHUi5sEjndYxBqm7KIY1c5rZCghnuRkYF58dUQ0E3VFZVQkIzQVE5TTI3UjUwRTNQUlZXNi4u&rc15b093af48b4c3bb9c52f7b3a2b84ae=%22Western%20Wake%20Campus%20Library%22"
+           aria-labelledby="research-box1-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 id="research-box1-title">Email the Campus Library</h3>
+          <p>Get help with your research questions, database searches, or citations by emailing the library.</p>
+        </a>
+      </article>
+
+      <!-- Chat -->
+      <article class="box box--r2">
+        <a class="box-link"
+           href="https://libraryh3lp.com/chat/nca-waketech@chat.libraryh3lp.com?identity=Librarian&sounds=true&profile=nca-waketech&skin=28634"
+           aria-labelledby="research-box3-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3 id="research-box3-title">Chat with a Librarian</h3>
+          <p>Ask quick research questions and get live help from our library staff during chat hours.</p>
+        </a>
+      </article>
+
+      <!-- Appointment -->
+      <article class="box box--r3">
+        <a class="box-link"
+           href="https://outlook.office365.com/owa/calendar/WakeTechnicalCommunityCollegeWesternCampusLibrary@WakeTechEDU.onmicrosoft.com/bookings/"
+           aria-labelledby="research-box2-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3 id="research-box2-title">Book a Research Appointment</h3>
+          <p>Meet one-on-one with a librarian for in-depth help with your topic, sources, or search strategies.</p>
+        </a>
+      </article>
+
+      <!-- Workshops (intentionally hidden)
+      <article class="box box--r2">
+        <a class="box-link" href="#" aria-labelledby="research-box4-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 id="research-box4-title">Workshops</h3>
+          <p>Join an upcoming library workshop to strengthen your research, writing, or data skills.</p>
+        </a>
+      </article>
+      -->
+
+      <!-- Interlibrary Loan (intentionally hidden)
+      <article class="box box--r1">
+        <a class="box-link" href="#" aria-labelledby="research-box5-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3 id="research-box5-title">Interlibrary Loan</h3>
+          <p>Borrow materials from other libraries if they’re not available at Wake Tech.</p>
+        </a>
+      </article>
+      -->
+
+    </div>
+  </div>
+</section>
+
+	
+<!-- ==============================================
+Quick Links - west_quick-links
+================================================= -->	
+	
+<section class="wt-quick-links">
+  <div class="container-flex wt-quick-links-row">
+
+    <a href="https://waketech.libcal.com/reserve/western" class="wt-quick-link ql--blue" target="_blank">
+      <i class="fas fa-door-open"></i>
+      <span>Study Rooms</span>
+    </a>
+
+    <a href="https://researchguides.waketech.edu/az/databases" class="wt-quick-link ql--gold" target="_blank">
+      <i class="fas fa-database"></i>
+      <span>Databases A–Z</span>
+    </a>
+
+    <a href="https://libraryh3lp.com/chat/nca-waketech@chat.libraryh3lp.com?identity=Librarian&sounds=true&profile=nca-waketech&skin=28634" 
+       class="wt-quick-link ql--navy" target="_blank">
+      <i class="fas fa-comments"></i>
+      <span>Chat</span>
+    </a>
+
+    <a href="https://waketech.libcal.com/calendar/libraryevents?cid=12665&t=d&d=0000-00-00&cal=12665&cm=1312&inc=0" 
+       class="wt-quick-link ql--teal" target="_blank">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Events</span>
+    </a>
+
+    <a href="https://noca.ent.sirsi.net/client/en_US/waketech" class="wt-quick-link ql--neutral" target="_blank">
+      <i class="fas fa-book"></i>
+      <span>Catalog</span>
+    </a>
+
+  </div>
+</section>	
+	
+</body>
+</html>

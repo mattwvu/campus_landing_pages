@@ -1,0 +1,2071 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* Main Header */
+
+   .wt-header {
+      background-color: #003b5c; 
+      padding: 1rem 0;
+    }
+
+.wt-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* left align */
+    }
+
+    .wt-header-logo {
+      max-height: 12.5rem;
+    }
+
+    .wt-header-bar {
+      height: 1.5rem;
+      background-color: #00b5e2; /* light blue bar under header */
+    }
+
+/* Main Footer */
+
+.custom-footer {
+  background-color: #003b5c; /* Dark Blue (primary brand color) */
+  height: 100px; /* Adjust as needed */
+  position: relative;
+  width: 100%;
+}
+
+.footer-bar {
+  background-color: #00b5e2; /* Bright Blue (accent) */
+  height: 20px; /* Adjust thickness of the bar */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+/* Campus Landing Page */
+/* ===============================
+   Campus Landing Page – Header
+   =============================== */
+
+.s-lib-box {
+    color: black;
+}
+
+/* Main Title Styling */
+#marquee .section-title {
+    color: #003b5c;
+    padding: 1% 2% 0 2%;   /* top | right | bottom | left */
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    line-break: auto;
+    margin-bottom: 5px;
+    line-height: 1;         
+    
+    /* NEW — stacks title + subtitle so spacing is controllable */
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;            /* <— controls space between title + subtitle */
+}
+
+/* Subtitle Styling */
+#marquee .section-title .section-subtitle {
+    display: block;
+    margin: 0;             /* remove extra spacing */
+    font-size: 0.45em;
+    font-weight: 600;
+    color: #5a8296;
+    text-transform: none;
+    position: relative;
+}
+
+
+
+
+/* Heading size controls inside #marquee */
+#marquee h1 { font-size: 5em; }
+#marquee h2 { font-size: 4em; }
+#marquee h3 { font-size: 3em; }
+#marquee h4 { font-size: 2.5em; }
+#marquee h5 { font-size: 2em; }
+#marquee h6 { font-size: 1.5em; }
+
+/* General heading font and color */
+#marquee h1,
+#marquee h2,
+#marquee h3,
+#marquee h4,
+#marquee h5,
+#marquee h6 {
+    font-family: "Nunito Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #003b5c;
+}
+
+/* ============================
+   Library Hours Widget
+   ============================ */
+
+#lib-hero-hours {
+    /* Typography from Version 1 */
+    font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #006ba6; /* Vibrant Blue */
+
+    /* Layout */
+    display: none; /* will be shown by JS */
+    text-align: left;
+    padding: 5px 18px;
+    margin-left: 10px;
+    margin-top: 3.55rem !important;
+    display: inline-block;
+
+    /* Pill background from Version 2 */
+    border: 2px solid rgba(0,181,226,0.4);
+ 
+
+
+    /* Left accent border (NAVY) */
+    border-left: 5px solid #003b5c;
+
+    /* Smooth transitions */
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+#lib-hero-hours:hover,
+#lib-hero-hours:focus {
+    background: rgba(0,181,226,0.18);
+    border-color: #a89968; /* Wake Tech Gold */
+    transform: translateY(-2px);
+}
+
+/* Gold-colored Hours Text */
+#lib-today-hours {
+    color: #a89968; /* Wake Tech Gold */
+    font-weight: 700;
+}
+
+/* Clock Icon */
+.libraryClockIcon {
+    font-size: 22px;
+    color: #006ba6; /* Vibrant Blue */
+    margin-right: 6px;
+}
+
+/* See All Hours Link */
+.lib-hero-all-hours a {
+    text-decoration: none;
+    color: #00b5e2; /* Bright Blue Accent */
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.lib-hero-all-hours a:hover {
+    text-decoration: underline;
+    color: #025f92; /* Medium Blue */
+}
+
+/* ============================
+   Responsive Styling (Mobile)
+   ============================ */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #lib-hero-hours {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 8px 18px; /* slightly larger for better touch targets */
+        display: block;
+    }
+}
+
+
+/* Horizontal Line */
+
+/* Faint blue-grey horizontal lines */
+:root{
+  --bluegrey:#5a8296;              /* your base */
+  --bluegrey-soft: rgba(90,130,150,.25); /* faint */
+}
+
+/* Solid, faint 1px line */
+.hr-soft {
+  border: 0;
+  height: 1px;
+  background-color: var(--bluegrey-soft);
+  margin: 1.25rem 0;               /* adjust spacing as needed */
+}
+
+/* Faded edges (nice for full-width sections) */
+.hr-fade {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(90,130,150,0),
+    rgba(90,130,150,.25),
+    rgba(90,130,150,0)
+  );
+  margin: 1.5rem 0;
+}
+
+
+/* Librarian Card */
+    .card {
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+
+/*================================
+     Events
+============================= */
+
+/* Hide LibCal's auto-generated "Upcoming Events" header */
+.s-lc-ea-h3 {
+  display: none !important;
+}
+
+/* Base list (any LibCal UPC widget inside an item card) */
+.wt-event-item [id^="api_upc_cid"] ul {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Montserrat", system-ui, sans-serif !important;
+  font-size: 1.15rem !important;
+  line-height: 1.8 !important;
+  color: #5a8296 !important;
+}
+
+/* Each item row */
+.wt-event-item [id^="api_upc_cid"] li {
+  padding: 1rem 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(90,130,150,0.25) !important;
+  list-style-type: none !important;
+  background-image: none !important;
+}
+
+.wt-event-item [id^="api_upc_cid"] li:last-child {
+  border-bottom: none !important;
+}
+
+/* Item title (clickable link) */
+.wt-event-item [id^="api_upc_cid"] li a {
+  font-family: "Montserrat", system-ui, sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
+  color: #003b5c !important;      /* navy */
+  line-height: 1.6 !important;
+  display: inline-block !important;
+  margin-top: 0.25rem !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+.wt-event-item [id^="api_upc_cid"] li a:hover {
+  color: #00b5e2 !important;      /* bright blue hover */
+  text-decoration: underline !important;
+}
+
+/* Date line (LibCal span above title) */
+.wt-event-item [id^="api_upc_cid"] li span {
+  display: block !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #5a8296 !important;
+  margin-bottom: 0.35rem !important;
+}
+
+/* =============================================
+   Item-specific spacing
+   ============================================= */
+#api_upc_cid19397_iid735 li {
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid rgba(90,130,150,0.25) !important;
+}
+
+#api_upc_cid19397_iid735 ul {
+  font-size: 1.15rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Remove bullets from LibCal item list */
+#api_upc_cid19397_iid735 ul {
+  list-style-type: none !important;
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+#api_upc_cid19397_iid735 li {
+  list-style-type: none !important;
+  background-image: none !important;
+}
+
+
+/* ===========================
+   Campus Boxes (3x2 responsive)
+   =========================== */
+
+  :root{
+  --brand-dark:#003b5c;
+  --brand-bright:#00b5e2;
+  --light-grey:#f4f4f4;
+  --white-transparent:rgba(255,255,255,0.9);
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.05);
+  --shadow-hover:0 10px 30px rgba(0,0,0,.10);
+  --icon-light:#8eaab9;
+  --border-light:#dcdcdc; /* NEW light grey border tone */
+  --brand-gold:#a89968;                 /* Wake Tech gold */
+  /* Light tint helpers */
+  --tint-blue-bg: rgba(0,181,226,.12);  /* light of bright blue */
+  --tint-blue-br: rgba(0,181,226,.28);
+  --tint-gold-bg: rgba(168,153,104,.12);/* light of gold */
+  --tint-gold-br: rgba(168,153,104,.30);
+  --tint-navy-bg: rgba(0,59,92,.10);    /* light of dark blue */
+  --tint-navy-br: rgba(0,59,92,.28);
+  --text-dark:#0f2530;                  /* readable on light tints */
+  --icon-dim:#5e7481;                   /* slightly darker than --icon-light */	  
+}
+
+ /* Shared box grid structure */
+.boxes-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:2rem;
+  width:100%;
+  max-width:none;
+  margin:0;
+}
+
+.box{
+  border-radius:var(--radius);
+  padding:4.5rem 2.5rem 4rem;
+  box-shadow:var(--shadow);
+  border:2px solid transparent;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  text-align:center;
+}
+
+.box:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-hover);
+  border-color:var(--brand-bright);
+}
+
+.box-icon{
+  font-size:2.8rem;
+  color:var(--icon-light);
+  margin-bottom:0.75rem;
+}
+
+.box h3{
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--brand-dark);
+  margin:0 0 1.25rem 0;
+}
+
+.box p{
+  margin:0 0 1rem 0;
+  line-height:1.7;
+  color:#333;
+}
+
+.box a{
+  display:inline-block;
+  font-weight:600;
+  text-decoration:none;
+  margin-top:0.25rem;
+  color:var(--brand-dark);
+}
+
+.box a:hover{
+  color:var(--brand-bright);
+  border-color:var(--brand-bright);
+}
+
+
+  /* Row sizing */
+  .box--r1{ grid-column:span 2; }
+  .box--r2{ grid-column:span 3; }
+  .box--r3{ grid-column:span 6; }
+
+  /* Responsive */
+  @media (max-width:1024px){
+    .boxes-grid{ grid-template-columns:repeat(2,1fr); }
+    .box--r1, .box--r2, .box--r3{ grid-column:span 1; }
+  }
+
+  @media (max-width:600px){
+    .boxes-grid{ grid-template-columns:1fr; }
+  }
+
+  .visually-hidden{
+    position:absolute !important;
+    width:1px; height:1px;
+    padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0);
+    white-space:nowrap; border:0;
+  }
+
+  /* Safety override: ensure full width even if nested in .container */
+  .campus-boxes.container, 
+  .campus-boxes .container { 
+    max-width:none; 
+    padding-left:0; 
+    padding-right:0; 
+  } 
+
+
+
+/* ===========================
+   Variant 1: Campus Boxes (Grey)
+   =========================== */
+.campus-boxes{
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--white-transparent);
+  padding:2rem 0;
+}
+
+.campus-boxes .box{
+  background:var(--light-grey);
+  border-color:transparent;
+}
+
+/* ===========================
+   Variant 2: Research Boxes (White Transparent)
+   =========================== */
+.research-boxes{
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--white-transparent);
+  padding:2rem 0;
+}
+
+.research-boxes .box{
+  background:var(--white-transparent);
+  border-color:var(--border-light); /* subtle grey border for definition */
+}
+
+/* Make entire research boxes clickable */
+.research-boxes .box {
+  cursor: pointer;
+}
+
+/* ===========================
+   Variant 3: Multicolor Boxes (Light Tints)
+   =========================== */
+
+/* Container */
+.multicolor-boxes{
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--white-transparent);
+  padding:2rem 0;
+}
+
+/* Base box look for this variant */
+.multicolor-boxes .box{
+  /* no background here so the tint classes can win */
+  border: 2px solid #5a8296 !important;
+	box-shadow:var(--shadow); 
+}
+
+/* Shared headings/links tuned for contrast on light tints */
+.multicolor-boxes .box h3{
+  color:var(--text-dark);
+}
+.multicolor-boxes .box p{
+  color:#2c3e47;
+}
+.multicolor-boxes .box .box-icon{
+  color:var(--icon-dim);
+}
+
+/* Hover behavior */
+.multicolor-boxes .box:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-hover);
+}
+
+.multicolor-boxes .box {
+  cursor: pointer;
+}
+
+
+
+
+/* ---- Per-color modifiers ---- */
+
+/* Light Blue */
+.box--blue{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.75)),
+    var(--tint-blue-bg);
+  border-color:var(--tint-blue-br);
+}
+.box--blue:hover{
+  border-color:var(--brand-bright);          /* #00b5e2 */
+}
+.box--blue .wt-link,
+.box--blue a{ color:var(--brand-bright); }
+.box--blue a:hover{ color:var(--brand-dark); }
+
+/* Light Gold */
+.box--gold{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.78)),
+    var(--tint-gold-bg);
+  border-color:var(--tint-gold-br);
+}
+.box--gold:hover{
+  border-color:var(--brand-gold);
+}
+.box--gold .wt-link,
+.box--gold a{ color:var(--brand-gold); }
+.box--gold a:hover{ color:var(--brand-dark); }
+
+/* Light Navy */
+.box--navy{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.80), rgba(255,255,255,.80)),
+    var(--tint-navy-bg);
+  border-color:var(--tint-navy-br);
+}
+.box--navy:hover{
+  border-color:var(--brand-dark);            /* #003b5c */
+}
+.box--navy .wt-link,
+.box--navy a{ color:var(--brand-dark); }
+.box--navy a:hover{ color:var(--brand-bright); }
+
+
+/* Positioning fix for ::after */
+.multicolor-boxes .box{ position:relative; }
+
+
+
+/* =======================================
+   Full-Width Quick Links Bar
+   ======================================= */
+
+.wt-quick-links {
+  margin: 1.75rem auto 2.25rem;
+  width: 100%;
+}
+
+.wt-quick-links-row {
+  display: flex;
+  flex-wrap: nowrap;         /* keep all 5 in a single row */
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Bigger, full-width, evenly spaced */
+.wt-quick-link {
+  flex: 1 1 auto;            /* grow equally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.9rem 0.75rem;    /* ↑ bigger height */
+  border-radius: 12px;
+  background: rgba(255,255,255,0.95);
+
+  text-decoration: none;
+  text-align: center;
+
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 1.5rem;          /* ↑ bigger text */
+  font-weight: 700;
+  color: #5a8296;
+
+  border: 1px solid transparent;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+  transition: all 0.18s ease-in-out;
+}
+
+/* Icon inline */
+.wt-quick-link i {
+  font-size: 1.1rem;
+  color: #5a8296 !important;
+}
+
+/* Hover */
+.wt-quick-link:hover {
+  transform: translateY(-3px);
+  border-color: #a89968;
+  color: #003b5c;
+}
+
+.wt-quick-link:hover i {
+  color: #003b5c !important;
+}
+
+/* Color tints */
+.ql--blue {
+  background: rgba(0,59,92,0.06);
+  border-color: rgba(0,59,92,0.10);
+}
+
+.ql--gold {
+  background: rgba(168,153,104,0.10);
+  border-color: rgba(168,153,104,0.25);
+}
+
+.ql--navy {
+  background: rgba(0,59,92,0.10);
+  border-color: rgba(0,59,92,0.25);
+}
+
+.ql--teal {
+  background: rgba(0,181,226,0.12);
+  border-color: rgba(0,181,226,0.28);
+}
+
+.ql--neutral {
+  background: rgba(90,130,150,0.10);
+  border-color: rgba(90,130,150,0.28);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .wt-quick-links-row {
+    flex-wrap: wrap;
+  }
+  .wt-quick-link {
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .wt-quick-link {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+/* Campus Card Heading */
+.campus-card-heading {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2rem); /* Between h4 and h3 size */
+  font-weight: 800;
+  color: #003b5c; /* Wake Tech dark blue */
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2rem auto 1rem auto;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Campus Card */
+
+.campus-slider {
+  --dark: var(--wt-dark, #003b5c);
+  --bright: var(--wt-bright, #00b5e2);
+  --gold: var(--wt-gold, #a89968);
+  --muted: var(--wt-muted, #30607b);
+  --bluegrey: #5a8296;
+  --bluegrey-soft: rgba(90,130,150,.25); /* faint blue-grey */
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid var(--bluegrey-soft); /* faint blue-grey border */
+  border-radius: 0; /* straight corners */
+  box-shadow: none;
+}
+
+.campus-slider .cs-viewport {
+  overflow: hidden;
+}
+
+.campus-slider .cs-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.campus-slider .cs-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 2rem;
+  padding: 2.25rem 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .campus-slider .cs-slide {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+}
+
+.cs-copy {
+  background: transparent;
+  border-right: 1px solid var(--bluegrey-soft); /* subtle divider */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .cs-copy {
+    border-right: none;
+    border-bottom: 1px solid var(--bluegrey-soft);
+  }
+}
+
+.cs-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bright);
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.cs-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--dark);
+  font-weight: 800;
+  margin: 0.2rem 0 0.75rem;
+}
+
+.cs-text {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.cs-btn {
+  align-self: flex-start;
+  background: var(--dark);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.1rem;
+  border-radius: 0;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.cs-btn:hover {
+  background: var(--bright);
+  border-color: var(--gold);
+}
+
+.cs-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-left: 1px solid var(--bluegrey-soft);
+  border-radius: 0;
+}
+
+@media (max-width: 900px) {
+  .cs-media img {
+    border-left: none;
+    border-top: 1px solid var(--bluegrey-soft);
+  }
+}
+
+.cs-arrow {
+  position: absolute;
+  top: 85%; /* bottom third */
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  border: 1px solid var(--bluegrey-soft);
+  background: #fff;
+  color: var(--dark);
+  display: grid;
+  place-items: center;
+  box-shadow: none;
+  z-index: 5;
+}
+
+.cs-prev {
+  left: 12px;
+}
+.cs-next {
+  right: 12px;
+}
+
+.cs-arrow:hover {
+  background: var(--bright);
+  color: #fff;
+  border-color: var(--gold);
+}
+
+.cs-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.cs-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bluegrey-soft);
+  border: none;
+}
+
+.cs-dot[aria-selected="true"] {
+  background: var(--bright);
+}
+
+
+
+/* Accordian */
+.accordion-wrapper {
+  font-family: "Arizona", sans-serif;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+  text-align: left; /* Justify left */
+}
+
+.accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  text-decoration: none;
+  color: #003b5c;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.accordion-toggle:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.accordion-content a {
+  text-decoration: none; /* Remove underline from links */
+  color: #003b5c;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline; /* Optional: underline on hover */
+}
+
+.accordion-toggle .arrow {
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+/* Rotate arrow when expanded */
+.accordion-toggle[aria-expanded="true"] .arrow {
+  transform: rotate(90deg);
+}
+
+
+/* Ask the Question – Consolidated */
+
+:root{
+  --wt-vibrant:#006ba6;
+  --wt-dark:#003b5c;
+  --wt-muted:#30607b;
+  --wt-bright:#00b5e2;   /* added */
+  --wt-gold:#a89968;     /* added */
+  --wt-white:#ffffff;    /* added */
+  --card-max:1100px;     /* added */
+  --yes:#1e9e4a;
+  --no:#d64545;
+}
+
+/* Container */
+.atq-simple{
+  border-top:10px solid var(--wt-vibrant);
+  border-bottom:10px solid var(--wt-vibrant);
+  padding:4rem 2rem;
+  max-width:1100px;
+  margin:3rem auto;
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--wt-dark);
+  font-size:1.5rem;
+  line-height:1.8;
+}
+
+.atq-callout{
+  font-size:1.7rem;
+  line-height:1.9;
+  margin-bottom:4rem;
+  color:var(--wt-muted);
+}
+
+/* Steps (mobile 1col → 3col ≥700px) */
+.atq-steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  margin-bottom:4rem;
+  align-items:stretch;
+}
+@media (min-width:700px){
+  .atq-steps{ grid-template-columns:repeat(3,1fr); }
+}
+
+.atq-step{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  border:2px solid #d9e4eb;
+  border-radius:16px;
+  background:#fff;
+  padding:2rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+  text-align:left;
+}
+.atq-step h4{
+  font-size:2rem;
+  font-weight:800;
+  margin:0 0 1.5rem;
+  color:var(--wt-dark);
+  min-height:3.5rem;
+  display:flex;
+  align-items:center;
+}
+.atq-step p{
+  font-size:1.5rem;
+  line-height:1.9;
+  color:var(--wt-muted);
+  margin:0;
+  flex-grow:1;
+}
+
+/* Legend */
+.atq-legend{ display:flex; gap:3rem; flex-wrap:wrap; font-size:1.6rem; font-weight:700; }
+.chip{ display:inline-flex; align-items:center; gap:12px; }
+.dot{ width:22px; height:22px; border-radius:50%; display:inline-block; }
+.dot.yes{ background:var(--yes); }
+.dot.no{ background:var(--no); }
+
+/* Current Question */
+.atq-current{
+  border-bottom:10px solid var(--wt-vibrant);
+  padding:clamp(2rem,4vw,3.5rem) clamp(1rem,3vw,2rem);
+  margin:3rem auto;
+  max-width:var(--card-max);
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--wt-dark);
+  background:var(--wt-white);
+}
+
+/* Header */
+.atq-q-head{ display:grid; gap:.9rem; margin-bottom:clamp(1.5rem,3vw,2rem); }
+.atq-q-badge{
+  display:inline-block;
+  font-size:.95rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--wt-bright);
+  border:1px solid color-mix(in oklab, var(--wt-bright) 30%, #fff);
+  background:color-mix(in oklab, var(--wt-bright) 8%, #fff);
+  border-radius:999px;
+  padding:.4rem .7rem;
+}
+.atq-q-title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(1.9rem,3.6vw,2.6rem);
+  line-height:1.15;
+  letter-spacing:.01em;
+  color:var(--wt-dark);
+}
+.atq-q-dates{ display:flex; flex-wrap:wrap; gap:.6rem .8rem; }
+.atq-chip{
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-weight:700;
+  font-size:clamp(1rem,1.8vw,1.1rem);
+  padding:.45rem .75rem;
+  border-radius:999px;
+  border:1px solid #d9e4eb;
+  background:#fff;
+  color:var(--wt-dark);
+}
+.atq-chip-date{
+  border-color:color-mix(in oklab, var(--wt-gold) 40%, #e7e2d8);
+  background:color-mix(in oklab, var(--wt-gold) 10%, #fff);
+}
+.atq-chip-loc{
+  border-color:color-mix(in oklab, var(--wt-bright) 30%, #e0f3f9);
+  background:color-mix(in oklab, var(--wt-bright) 8%, #fff);
+  color:var(--wt-dark);
+}
+
+/* Image + caption */
+.atq-q-figure{ margin:0; text-align:center; }
+.atq-q-figure img{
+  border:2px solid #d9e4eb;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.atq-caption{
+  margin-top:.8rem;
+  font-size:clamp(1rem,1.6vw,1.1rem);
+  color:var(--wt-muted);
+}
+.atq-caption::before{
+  content:"";
+  display:inline-block;
+  width:.75rem; height:.75rem; border-radius:999px;
+  background:var(--wt-bright);
+  margin-right:.5rem;
+  vertical-align:middle;
+}
+
+.atq-q-poll{ margin-top:1.5rem; }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
+}
+
+/* Past Questions / Archive */
+.atq-previous{
+  width:100%;
+  margin-left:-1rem;
+  margin-right:-1rem;
+}
+@media (min-width:992px){
+  .atq-previous{
+    width:calc(100% + 3rem);
+    margin-left:-1.5rem;
+    margin-right:-1.5rem;
+  }
+}
+.atq-previous h3{
+  margin:0 0 1rem;
+  font-size:clamp(1.4rem,2.4vw,1.8rem);
+  font-weight:800;
+  letter-spacing:.01em;
+}
+
+.atq-prev-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.25rem;
+}
+@media(min-width:760px){
+  .atq-prev-grid{ grid-template-columns:repeat(2,1fr); }
+}
+
+.atq-prev-card{
+  border:1px solid #d9e4eb;
+  border-radius:14px;
+  background:#fff;
+  padding:1rem 1rem 1.1rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.04);
+}
+.atq-prev-title{
+  margin:.25rem 0 .5rem;
+  font-size:1.15rem;
+  font-weight:800;
+  line-height:1.25;
+}
+.atq-prev-meta{
+  display:flex; flex-wrap:wrap; gap:.4rem .6rem;
+  margin-bottom:.8rem;
+}
+.atq-prev-meta .atq-chip{
+  font-size:.95rem;
+  padding:.35rem .65rem;
+}
+
+/* Result bar */
+.atq-result{ display:flex; flex-direction:column; gap:.45rem; }
+.atq-bar{
+  position:relative;
+  height:12px;
+  width:100%;
+  border-radius:999px;
+  background:#eef4f8;
+  overflow:hidden;
+}
+.atq-bar .yes-seg,
+.atq-bar .no-seg{
+  position:absolute; top:0; bottom:0;
+}
+.atq-bar .yes-seg{ left:0; background:var(--yes); }
+.atq-bar .no-seg{ right:0; background:var(--no); }
+.atq-tally{
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:.98rem; font-weight:700;
+}
+.atq-tally .chip{ gap:.5rem; }
+.atq-tally .count{ opacity:.85; font-weight:600; }
+
+.atq-prev-thumb{ display:flex; align-items:flex-start; gap:1rem; }
+.atq-prev-thumb img{
+  width:100px; height:auto;
+  border-radius:10px;
+  border:1px solid #d9e4eb;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+.atq-prev-thumb-content{ flex:1; }
+
+/* Headers */
+.atq-header-banner{
+  background:var(--wt-dark);
+  color:#fff;
+  text-align:center;
+  padding:clamp(2.5rem,6vw,4rem) 1.5rem;
+  border-bottom:10px solid var(--wt-vibrant);
+  border-radius:16px;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  margin-bottom:3rem;
+  font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+.atq-header-banner .atq-header-badge{
+  display:inline-block;
+  font-size:.95rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#fff;
+  background:var(--wt-vibrant);
+  border-radius:999px;
+  padding:.4rem .8rem;
+  margin-bottom:1rem;
+}
+.atq-header-banner h1{
+  font-size:clamp(2rem,4.5vw,2.8rem);
+  font-weight:800;
+  letter-spacing:.02em;
+  margin:0 0 .5rem;
+  color:#fff;
+}
+.atq-header-banner p{
+  font-size:clamp(1.1rem,2vw,1.3rem);
+  font-weight:500;
+  color:#e2ebf1;
+  margin:0;
+}
+
+/* Transparent variant */
+.atq-header-transparent{
+  background:transparent;
+  color:var(--wt-dark);
+  box-shadow:none;
+  border-bottom:none;
+  text-align:center;
+  padding:2rem 1rem 1rem;
+}
+.atq-header-transparent h1{
+  font-size:clamp(2.8rem,6vw,4rem);
+  font-weight:900;
+  color:var(--wt-dark);
+  margin-bottom:.5rem;
+}
+.atq-header-transparent p{
+  font-size:clamp(1.2rem,2vw,1.4rem);
+  color:var(--wt-muted);
+  max-width:700px;
+  margin:0 auto;
+}
+
+/* Header with background icon */
+.atq-header-bg{
+  background-blend-mode:multiply;
+  padding:clamp(2.5rem,6vw,4rem);
+  color:var(--wt-dark);
+  position:relative;
+  overflow:hidden;
+}
+.atq-header-shadow{
+  background-color:rgba(255,255,255,.9);
+  box-shadow:0 6px 24px rgba(0,0,0,.15);
+  border-radius:16px;
+  padding:clamp(2rem,4vw,3rem);
+  max-width:1100px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+.atq-header-content{
+  max-width:800px; /* merged */
+  margin:0 auto;   /* merged */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  text-align:left;
+}
+.atq-header-text h1{
+  font-size:clamp(3.8rem,8vw,5.6rem);
+  font-weight:900;
+  text-transform:uppercase;
+  margin:.2em 0;
+  line-height:1.05;
+  color:var(--wt-dark);
+}
+.atq-header-text p{
+  font-size:clamp(1.25rem,1.8vw,1.45rem);
+  color:var(--wt-muted);
+  max-width:650px;
+  margin-top:.5rem;
+}
+.atq-header-badge--light{
+  display:inline-block;
+  font-size:1rem;
+  text-transform:uppercase;
+  background:#e9f0f3;
+  color:var(--wt-dark);
+  border-radius:999px;
+  padding:.3rem .8rem;
+  font-weight:600;
+}
+
+
+/* ===============================
+   Compact Subheader (Previous Answers)
+   - Shorter height
+   - Transparent by default
+   - Subtle underline + small shadow
+   - Typography scaled down from main hero
+   =============================== */
+
+:root{
+  --atq-sub-radius: 14px;
+  --atq-sub-shadow: 0 3px 14px rgba(0,0,0,.08);
+}
+
+/* Container */
+.atq-subheader{
+  background: transparent;                     /* stays light/transparent */
+  padding: clamp(1.25rem, 3.5vw, 1.75rem) 1rem;
+  margin: 2rem 0 1.5rem;
+  position: relative;
+}
+
+/* Inner frame with soft lift (optional) */
+.atq-subheader-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(255,255,255,.9);            /* improves legibility on busy pages */
+  border-radius: var(--atq-sub-radius);
+  box-shadow: var(--atq-sub-shadow);
+  border: 1px solid #e9eef2;                   /* hairline edge */
+  padding: clamp(1rem, 3vw, 1.25rem) clamp(1rem, 3.5vw, 1.5rem);
+}
+
+/* Text block */
+.atq-subheader-text{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Title + optional underline accent */
+.atq-subheader-text h2{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);     /* smaller than h1 */
+  line-height: 1.15;
+  color: var(--wt-dark);
+  margin: 0;
+  position: relative;
+  padding-bottom: .3rem;
+}
+
+.atq-subheader-text h2::after{
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--wt-vibrant);               /* Wake Tech bright accent */
+  margin-top: .4rem;
+}
+
+/* Supporting line */
+.atq-subheader-text p{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  color: var(--wt-muted);
+  margin: 0 0 0 .25rem;
+  flex: 1 1 auto;
+  min-width: 240px;
+}
+
+/* Optional compact variant if you need it even tighter */
+.atq-subheader--condensed .atq-subheader-inner{
+  padding: .8rem 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+.atq-subheader--condensed .atq-subheader-text h2{
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+.atq-subheader--condensed .atq-subheader-text h2::after{
+  width: 56px; height: 3px;
+}
+
+/* Dark (blue) variant for the subheader, scaled smaller than the main hero */
+.atq-subheader--dark .atq-subheader-inner{
+  background: var(--wt-dark);
+  color: #fff;
+  border: none;                         /* remove the light hairline */
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+
+.atq-subheader--dark .atq-subheader-text h2{
+  color: #fff;
+}
+
+.atq-subheader--dark .atq-subheader-text h2::after{
+  background: var(--wt-vibrant);        /* keep the Wake Tech accent */
+}
+
+.atq-subheader--dark .atq-subheader-text p{
+  color: #e2ebf1;                       /* lighter supporting text on blue */
+}
+
+/* Fade-in */
+@keyframes fadeInUp{
+  from{ opacity:0; transform:translateY(15px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.atq-header-text > *{ animation:fadeInUp .6s ease both; }
+
+/* Subtle watermark */
+.atq-header-bg::after{
+  content:"";
+  position:absolute;
+  bottom:0; right:0;
+  width:240px; height:240px;
+  background:url("https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/answer_question_icon.png") no-repeat bottom right / contain;
+  opacity:.12;
+  pointer-events:none;
+}
+
+/* Grid layout + action card */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  margin:2.5rem auto;
+  max-width:900px;
+  text-align:center;
+}
+@media (min-width:700px){
+  .grid-2{ grid-template-columns:repeat(2,1fr); }
+}
+.card-action{
+  display:block;
+  background:var(--wt-dark);
+  color:#fff;
+  text-decoration:none;
+  border-radius:16px;
+  padding:2.5rem 1.5rem;
+  transition:all .3s ease;
+  font-family:"Montserrat",sans-serif;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  border:4px solid transparent;
+}
+.card-action:hover{
+  background:var(--wt-bright);
+  transform:translateY(-5px);
+  color:#fff;
+  border-color:var(--wt-gold);
+}
+.card-action h3{ font-size:1.8rem; margin-bottom:.5rem; font-weight:700; }
+.card-action p{ font-size:1.2rem; line-height:1.6; color:#e8f4fa; margin:0; }
+
+
+/* ==========================================
+   Ask the Question – Enhanced Card Layout (2 per row)
+   ========================================== */
+
+.atq-prev-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  padding: 1.5rem 0;
+}
+
+@media (max-width: 760px) {
+  .atq-prev-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atq-prev-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #e0e6eb;
+  transition: all 0.3s ease;
+  max-width: 480px;
+  width: 100%;
+}
+
+.atq-prev-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.atq-prev-thumb {
+  position: relative;
+  width: 100%;
+}
+
+.atq-prev-thumb img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.atq-prev-thumb-content {
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.atq-prev-meta {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.atq-prev-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--wt-dark);
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.atq-result {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.atq-bar {
+  height: 12px;
+  border-radius: 999px;
+  background: #eef4f8;
+  overflow: hidden;
+  position: relative;
+}
+
+.atq-bar .yes-seg,
+.atq-bar .no-seg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.atq-bar .yes-seg { left: 0; background: var(--yes); }
+.atq-bar .no-seg  { right: 0; background: var(--no); }
+
+.atq-tally {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--wt-dark);
+}
+
+.chip { display: inline-flex; align-items: center; gap: 0.5rem; }
+.dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.dot.yes { background: var(--yes); }
+.dot.no { background: var(--no); }
+.count { opacity: 0.85; font-weight: 600; }
+
+/* ============================
+   Wake Tech Flat Subheader
+   ============================ */
+
+.wt-subheader {
+  background: transparent;
+  margin: 2.5rem 0 2rem;
+  padding: 0;
+}
+
+.wt-subheader-text h2 {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+  color: #003b5c; /* Wake Tech dark blue */
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wt-subheader-text p {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
+  color: #5a8296; /* blue-grey accent text */
+  margin: 0.25rem 0 0;
+}
+
+/* Flex container that stays inside the page bounds */
+.container-flex {
+  max-width: 1140px;      /* adjust if your theme is narrower/wider */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Two-column flex row with equal-height cards */
+.wt-two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;           /* space between boxes */
+  align-items: stretch;   /* make heights match */
+}
+
+/* Each box takes half the row on desktop, full width on mobile */
+.wt-two-col .wt-box {
+  flex: 1 1 calc(50% - 0.625rem);  /* half width minus half the gap */
+  min-width: 300px;                 /* prevents crunching on mid widths */
+  display: flex;                    /* equal-height internals */
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Stack to 1-per-row on smaller screens */
+@media (max-width: 768px) {
+  .wt-two-col .wt-box {
+    flex-basis: 100%;
+  }
+}
+
+/* --- Box + icon styling (from earlier) --- */
+.wt-box {
+  background: #fff;
+  border: 2px solid rgba(0,59,92,.15);
+  border-left: 6px solid #00b5e2;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  padding: 2rem 1.75rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.wt-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  border-left-color: #a89968;
+}
+.wt-box h4 {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.65rem; font-weight: 800; color: #003b5c;
+  margin: 0 0 .75rem 0; text-transform: uppercase; letter-spacing: .5px;
+  display: flex; align-items: center; gap: .6rem;
+}
+.wt-box p {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.25rem; line-height: 1.7; color: #5a8296; margin: 0;
+}
+.wt-box a { color: #00b5e2; text-decoration: none; }
+.wt-box a:hover { color: #003b5c; text-decoration: underline; }
+.wt-icon { color: #00b5e2; font-size: 1.4rem; }
+.wt-icon-sm { color: #00b5e2; font-size: 1.1rem; margin-right: .4rem; }
+.wt-box:hover .wt-icon, .wt-box:hover .wt-icon-sm { color: #a89968; }
+
+/* 3-column flex row for staff directory */
+.wt-three-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: stretch;  /* equal heights */
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Each box takes 1/3 width on desktop, adjusts on tablet/mobile */
+.wt-three-col .wt-box {
+  flex: 1 1 calc(33.333% - 0.833rem);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Two per row on medium screens */
+@media (max-width: 992px) {
+  .wt-three-col .wt-box {
+    flex: 1 1 calc(50% - 0.625rem);
+  }
+}
+
+/* One per row on small screens */
+@media (max-width: 640px) {
+  .wt-three-col .wt-box {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+/* ============================
+   Wake Tech Services / Initiatives – Simple List
+   ============================ */
+
+.wt-services-list {
+  margin: 2.5rem auto;
+  max-width: 1140px;
+  padding: 0 1rem;
+}
+
+.wt-service-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wt-service-item:last-child {
+  border-bottom: none;
+}
+
+/* Header */
+.wt-service-item h3 {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #003b5c;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Description */
+.wt-service-item p {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #5a8296;
+  margin: 0 0 0.75rem;
+}
+
+/* Link */
+.wt-service-link {
+  font-weight: 700;
+  color: #00b5e2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.wt-service-link:hover {
+  color: #003b5c;
+  text-decoration: underline;
+}
+
+.wt-service--topline {
+  border-top: 1px solid rgba(90,130,150,0.25);
+  padding-top: 1rem; /* optional for breathing room */
+}
+
+/* Turn this row into a CSS grid instead of Bootstrap floats */
+.wt-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));  /* two per row */
+  gap: 2rem 3rem;                                    /* row / column spacing */
+}
+
+/* Neutralize Bootstrap float behavior inside this grid */
+.wt-services-grid > [class*="col-"] {
+  float: none;
+  width: auto;
+}
+
+/* Make cards fill their grid cell nicely */
+.wt-service-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive: single column on smaller screens */
+@media (max-width: 768px) {
+  .wt-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Grid for Course Support section */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));  /* 6 tracks like boxes-grid */
+  column-gap: 3rem;
+  row-gap: 2rem;
+}
+
+/* Half-width items (2 per row on desktop) */
+.cs--half {
+  grid-column: span 3;
+}
+
+/* Optional: full-width variant if you ever need it */
+.cs--full {
+  grid-column: span 6;
+}
+
+/* Make cards fill the grid cell nicely */
+.course-grid .wt-service-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive: 2 columns on medium screens */
+@media (max-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cs--half,
+  .cs--full {
+    grid-column: span 1;
+  }
+}
+
+/* Responsive: 1 column on small screens */
+@media (max-width: 600px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================
+   Wake Tech Anchor Nav (Left-aligned Pills)
+   ============================ */
+
+.wt-anchor-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.75rem 1rem;          /* keep pill spacing */
+  margin: 1.5rem 0 2rem;      /* tighten only outside spacing */
+  padding: 0 1rem;
+  max-width: 1140px;
+}
+
+
+.wt-pill {
+  display: inline-block;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00b5e2;
+  border: 2px solid rgba(0,181,226,0.4);
+  background: rgba(0,181,226,0.1);
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.wt-pill:hover,
+.wt-pill:focus {
+  color: #003b5c;
+  background: rgba(0,181,226,0.18);
+  border-color: #a89968;  /* gold accent */
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Optional sticky behavior */
+@media (min-width: 768px) {
+  .wt-anchor-nav.wt-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(90,130,150,0.15);
+  }
+}
+
+/* Smaller "Back to Menu" pill */
+.wt-pill--small {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-width: 1px;
+}
+
+/* Right-aligned back-to-menu container */
+.wt-backtotop {
+  text-align: right;
+  margin: 1.5rem auto 2rem;
+  max-width: 1140px;
+  padding: 0 1rem;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ==========================================================
+   Compact Previous / Next Pager
+   Square Corners + WT Blue / Gold Tints
+   ========================================================== */
+
+#s-lg-page-prevnext.pager {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0.5rem;
+
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+
+}
+
+
+/* Remove default floats */
+#s-lg-page-prevnext .previous,
+#s-lg-page-prevnext .next {
+    float: none !important;
+    flex: 1 1 auto;
+}
+
+/* Base link style — compact + square */
+#s-lg-page-prevnext .page-link {
+    display: block;
+    width: 100%;
+
+    padding: 0.55rem 0.75rem;      /* ↓ smaller height */
+    border-radius: 0;              /* ← square corners */
+    text-align: center;
+    text-decoration: none;
+
+    font-family: "Montserrat", system-ui, sans-serif !important;
+    font-weight: 600;
+    font-size: 4.5rem;            /* ↓ smaller text */
+
+    color: #003b5c;                /* WT navy */
+    border: 1px solid transparent;
+
+    transition: all 0.18s ease-in-out;
+}
+
+/* ---------- Color Assignments ---------- */
+
+/* Previous = BLUE TINT */
+#s-lg-page-prevnext .previous .page-link {
+    background: rgba(0,181,226,0.12);
+    border-color: rgba(0,181,226,0.28);
+    color: #003b5c;
+}
+
+/* Next = GOLD TINT */
+#s-lg-page-prevnext .next .page-link {
+
+    background: rgba(168,153,104,0.12);
+    border-color: rgba(168,153,104,0.28);
+    color: #5a4f33; /* readable dark gold/navy blend */
+}
+
+/* ---------- Hover Styles (WT Gold border) ---------- */
+#s-lg-page-prevnext .page-link:hover {
+    border-color: #a89968;
+    background: #ffffff;
+    color: #003b5c !important;
+}
+
+/* Make “Previous:” / “Next:” labels gold */
+#s-lg-page-prevnext strong {
+    color: #a89968 !important;
+    font-weight: 700;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+    #s-lg-page-prevnext.pager {
+        flex-direction: column;
+    }
+}
+
+
+/* ==========================================================
+   Tall + Narrow Previous / Next Pager
+   Square Corners + WT Blue / Gold Tints
+   ========================================================== */
+
+/* Hide the "Previous:" and "Next:" labels in pager */
+#s-lg-page-prevnext strong {
+    display: none !important;
+}
+
+#s-lg-page-prevnext.pager {
+    display: flex;
+    justify-content: center;          /* center in row */
+    align-items: stretch;
+    gap: 4.25rem;                      /* WHITE SPACE between boxes */
+
+    margin: 2rem 0 2.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+/* Remove default floats */
+#s-lg-page-prevnext .previous,
+#s-lg-page-prevnext .next {
+    float: none !important;
+
+    /* ↓↓↓ Make boxes narrower */
+    flex: 0 0 auto;
+    width: 43rem;                      /* <<< Adjust this number */
+    max-width: 43rem;
+}
+
+/* Tall + narrow box styling */
+#s-lg-page-prevnext .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 1.5rem 0.75rem;             /* <<< Bigger height */
+    border-radius: 0;                  /* square corners */
+    text-align: center;
+    text-decoration: none;
+
+    font-family: "Montserrat", system-ui, sans-serif !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+
+    color: #003b5c;
+    border: 1px solid transparent;
+    transition: all 0.18s ease-in-out;
+}
+
+/* Previous = BLUE TINT */
+#s-lg-page-prevnext .previous .page-link {
+    background: rgba(0,181,226,0.12);
+    border-color: rgba(0,181,226,0.28);
+}
+
+/* Next = GOLD TINT */
+#s-lg-page-prevnext .next .page-link {
+    background: rgba(168,153,104,0.12);
+    border-color: rgba(168,153,104,0.28);
+    color: #5a4f33;
+}
+
+/* Hover */
+#s-lg-page-prevnext .page-link:hover {
+    border-color: #a89968;
+    background: #ffffff;
+    color: #003b5c !important;
+}
+
+
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+    #s-lg-page-prevnext.pager {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #s-lg-page-prevnext .previous,
+    #s-lg-page-prevnext .next {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+/* Links inside the wt-boxes */
+.wt-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-weight: 700;
+  color: #00b5e2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.wt-link:hover {
+  color: #003b5c;
+  text-decoration: underline;
+}
+
+/* Larger icons in this section */
+.wt-box .wt-icon {
+  color: #00b5e2;
+  margin-right: 0.6rem;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+.wt-box:hover .wt-icon {
+  color: #a89968; /* gold hover accent */
+}
+
+
+/* Remove LibGuides default Back-to-Top button */
+#s-lib-scroll-top {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ==========================================================
+   Embeded Video
+   ========================================================== */
+	
+	
+.wt-video-wrapper {
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #5a8296 !important;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .wt-video-wrapper iframe {
+    width: 100% !important;
+    height: 315px; /* or switch to responsive below */
+    display: block;
+  }	
+
+</style>

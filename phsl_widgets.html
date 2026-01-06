@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phsl_widgets</title>
+</head>
+
+<body>
+	<!-- Library Hours Widget -->
+<div id="lib-hero-hours" class="lib-hours-container">
+  <span class="fa fa-clock-o libraryClockIcon" aria-hidden="true"></span>
+  Today's Hours: <span id="lib-today-hours">Loading...</span>
+  <span class="lib-hero-all-hours">
+      <a href="https://waketech.libcal.com/hours/">
+          See All Hours <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+      </a>
+  </span>
+</div>
+
+<script>
+  fetch("https://waketech.libcal.com/api_hours_today.php?lid=4956&format=json&systemTime=0")
+    .then(response => response.json())
+    .then(data => {
+        console.log("LibCal API Response:", data);
+
+        let hoursData = data.hours || data.locations;
+
+        if (hoursData && hoursData.length > 0) {
+            let todayHours = hoursData[0].rendered;
+
+            if (!todayHours || todayHours.trim() === "" || todayHours.toLowerCase().includes("closed")) {
+                todayHours = "Hours not available";
+            }
+
+            document.getElementById("lib-today-hours").innerHTML = todayHours;
+            document.getElementById("lib-hero-hours").style.display = "block";
+        } else {
+            document.getElementById("lib-today-hours").innerHTML = "Unavailable";
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching library hours:", error);
+        document.getElementById("lib-today-hours").innerHTML = "Unavailable";
+    });
+</script>
+
+	<!-- ======================================================
+       phsl_quick-links 
+======================================================== -->
+	
+	<section class="wt-quick-links">
+  <div class="container-flex wt-quick-links-row">
+
+    <!-- <a href="https://waketech.libcal.com/reserve/spaces/swc" class="wt-quick-link ql--blue" target="_blank">
+      <i class="fas fa-door-open"></i>
+      <span>Study Rooms</span>
+    </a> -->
+
+    <a href="https://researchguides.waketech.edu/az/databases" class="wt-quick-link ql--gold" target="_blank">
+      <i class="fas fa-database"></i>
+      <span>Databases A–Z</span>
+    </a>
+
+    <a href="https://libraryh3lp.com/chat/nca-waketech@chat.libraryh3lp.com?identity=Librarian&sounds=true&profile=nca-waketech&skin=28634" 
+       class="wt-quick-link ql--navy" target="_blank">
+      <i class="fas fa-comments"></i>
+      <span>Chat</span>
+    </a>
+
+    <a href="https://waketech.libcal.com/calendar/libraryevents?cid=12665&t=g&d=0000-00-00&cal=12665&cm=1313&inc=0" 
+       class="wt-quick-link ql--teal" target="_blank">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Events</span>
+    </a>
+
+    <a href="https://noca.ent.sirsi.net/client/en_US/waketech" class="wt-quick-link ql--neutral" target="_blank">
+      <i class="fas fa-book"></i>
+      <span>Catalog</span>
+    </a>
+
+  </div>
+</section>
+
+<!--==================================
+  Content Box widget - phsl_content_boxes
+================================== -->
+
+<section class="multicolor-boxes" aria-labelledby="campus-boxes-title">
+  <div class="container-fluid">
+    <h2 id="campus-boxes-title" class="visually-hidden">Campus Content Boxes</h2>
+
+    <div class="boxes-grid">
+
+      <!-- About the Library -->
+      <article class="box box--r1 box--blue">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/PHSL/about"
+           aria-labelledby="box1-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-circle-info"></i>
+          </div>
+          <h3 id="box1-title">About the Library</h3>
+          <p>Learn about library hours, services, and how we support students and faculty.</p>
+        </a>
+      </article>
+
+      <!-- Research Tools -->
+      <article class="box box--r1 box--gold">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/PHSL/research"
+           aria-labelledby="box2-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3 id="box2-title">Research Tools</h3>
+          <p>Find databases, research guides, and tools for searching, evaluating, and citing sources.</p>
+        </a>
+      </article>
+
+      <!-- Faculty Support -->
+      <article class="box box--r1 box--navy">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/PHSL/faculty"
+           aria-labelledby="box3-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 id="box3-title">Faculty Support</h3>
+          <p>Work with librarians on course-integrated instruction, assignment design, and resource support.</p>
+        </a>
+      </article>
+
+      <!-- Ask the Library -->
+      <article class="box box--r2 box--blue">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/PHSL/help"
+           aria-labelledby="box4-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3 id="box4-title">Ask the Library</h3>
+          <p>Need help? Contact the library for research assistance, resource help, and general questions.</p>
+        </a>
+      </article>
+
+      <!-- Spaces & Equipment -->
+      <article class="box box--r2 box--gold">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/PHSL/spaces"
+           aria-labelledby="box5-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3 id="box5-title">Spaces &amp; Equipment</h3>
+          <p>Learn about study rooms, computers, technology lending, and available equipment.</p>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================
+                Events
+====================================== -->
+	
+<!-- PHSL -->
+<article class="wt-event-item">
+  <div class="wt-libcal-events">
+    <div id="api_upc_cid12665_iid735"></div>
+    <script src="https://waketech.libcal.com/api_events.php?m=upc&cid=12665&audience=&c=1313&d=&tags=&l=7&tar=0&bs=1&simple=ul_date&context=object&format=js"> </script>	
+  </div>
+
+  <a href="https://waketech.libcal.com" class="wt-service-link" target="_blank">
+    View All Events →
+  </a>
+</article>
+	
+</body>
+</html>
+
+
+<!-- ========================================
+Research Boxes - phsl_research-boxes
+=========================================== -->
+
+<section class="research-boxes" id="research-resources">
+  <div class="container-fluid">
+    <div class="boxes-grid" role="list">
+
+      <!-- Databases -->
+      <article class="box box--r1" role="listitem">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/az/databases?s=13294">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Databases</h3>
+          <p>Search subject-specific databases for journal articles, reports, and multimedia resources.</p>
+        </a>
+      </article>
+
+      <!-- Catalog / Books -->
+      <article class="box box--r1" role="listitem">
+        <a class="box-link"
+           href="https://noca.ent.sirsi.net/client/en_US/waketech/search/results?te=&lm=WAKE_HEALTH">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Catalog / Books</h3>
+          <p>Find physical and digital books, eBooks, and other materials available through the library’s catalog.</p>
+        </a>
+      </article>
+
+      <!-- Research Guides -->
+      <article class="box box--r1" role="listitem">
+        <a class="box-link"
+           href="https://researchguides.waketech.edu/">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-compass"></i>
+          </div>
+          <h3>Research Guides</h3>
+          <p>Explore librarian-curated guides that highlight databases, strategies, and resources for specific subjects or courses.</p>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ==============================================
+Research Help - phsl_help-boxes
+================================================= -->
+
+<section class="research-boxes" aria-labelledby="research-boxes-title">
+  <div class="container-fluid">
+    <h2 id="research-boxes-title" class="visually-hidden">Research Help Options</h2>
+
+    <div class="boxes-grid">
+
+      <!-- Email -->
+      <article class="box box--r2">
+        <a class="box-link"
+           href="https://forms.office.com/Pages/ResponsePage.aspx?id=2YrMFv6EHUi5sEjndYxBqm7KIY1c5rZCghnuRkYF58dUQ0E3VFZVQkIzQVE5TTI3UjUwRTNQUlZXNi4u&rc15b093af48b4c3bb9c52f7b3a2b84ae=%22Perry%20Health%20Sciences%20Campus%20Library%22"
+           aria-labelledby="research-box1-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 id="research-box1-title">Email the Campus Library</h3>
+          <p>Get help with your research questions, database searches, or citations by emailing the library.</p>
+        </a>
+      </article>
+
+      <!-- Chat -->
+      <article class="box box--r2">
+        <a class="box-link"
+           href="https://libraryh3lp.com/chat/nca-waketech@chat.libraryh3lp.com?identity=Librarian&sounds=true&profile=nca-waketech&skin=28634"
+           aria-labelledby="research-box3-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3 id="research-box3-title">Chat with a Librarian</h3>
+          <p>Ask quick research questions and get live help from our library staff during chat hours.</p>
+        </a>
+      </article>
+
+      <!-- Appointment -->
+      <article class="box box--r3">
+        <a class="box-link"
+           href="https://outlook.office365.com/owa/calendar/PerryHealthSciencesCampusLibrary@WakeTechEDU.onmicrosoft.com/bookings/"
+           aria-labelledby="research-box2-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3 id="research-box2-title">Book a Research Appointment</h3>
+          <p>Meet one-on-one with a librarian for in-depth help with your topic, sources, or search strategies.</p>
+        </a>
+      </article>
+
+      <!-- Workshops (intentionally hidden)
+      <article class="box box--r2">
+        <a class="box-link" href="#" aria-labelledby="research-box4-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 id="research-box4-title">Workshops</h3>
+          <p>Join an upcoming library workshop to strengthen your research, writing, or data skills.</p>
+        </a>
+      </article>
+      -->
+
+      <!-- Interlibrary Loan (intentionally hidden)
+      <article class="box box--r1">
+        <a class="box-link" href="#" aria-labelledby="research-box5-title">
+          <div class="box-icon" aria-hidden="true">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3 id="research-box5-title">Interlibrary Loan</h3>
+          <p>Borrow materials from other libraries if they’re not available at Wake Tech.</p>
+        </a>
+      </article>
+      -->
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- =======================================
+        Course Support
+==================================== -->
+
+<section class="wt-services-list" aria-label="Course Support">
+  <div class="container-fluid">
+
+    <div class="course-grid">
+
+      <!-- Reserves -->
+      <article class="wt-service-item cs--half">
+        <h3>Reserves</h3>
+        <p>Place textbooks, readings, and other required course materials on reserve so students can access them for short-term use in the library.</p>
+        <a href="https://forms.office.com/r/HAQWWL0Srt"
+           class="wt-service-link" target="_blank" rel="noopener">
+          Submit a Reserves Request →
+        </a>
+      </article>
+
+      <!-- Suggest a Purchase -->
+      <article class="wt-service-item cs--half">
+        <h3>Suggest a Purchase</h3>
+        <p>Recommend books, media, or digital resources for the library to purchase in support of your teaching, curriculum, or research.</p>
+        <a href="https://forms.office.com/r/ywbN8JmEmG"
+           class="wt-service-link" target="_blank" rel="noopener">
+          Submit a Purchase Suggestion →
+        </a>
+      </article>
+
+      <!-- Research Guide Creation -->
+      <article class="wt-service-item cs--half">
+        <h3>Research Guide Creation</h3>
+        <p>Partner with a librarian to create a customized online guide featuring curated databases, search tips, and resources designed specifically for your course assignments.</p>
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=2YrMFv6EHUi5sEjndYxBqm7KIY1c5rZCghnuRkYF58dUQ0E3VFZVQkIzQVE5TTI3UjUwRTNQUlZXNi4u&rc15b093af48b4c3bb9c52f7b3a2b84ae=%22Perry%20Health%20Sciences%20Campus%20Library%22&rd0ac7bc9c9ea42a8b0f7110489b8024c=Research%20Guide%20Creation&rf2f56f382eee4cbc8758f6bb356a63e4=To%20help%20us%20create%20the%20most%20effective%20research%20guide%20for%20your%20course%2C%20it%E2%80%99s%20helpful%20to%20know%20the%20course%20name%20and%20number%2C%20a%20brief%20description%20of%20the%20assignment%20the%20guide%20will%20support%2C%20the%20types%20of%20sources%20you%20expect%20students%20to%20use%2C%20any%20preferred%20databases%20or%20resources%2C%20and%20the%20citation%20style%20required.%20If%20you%20have%20specific%20learning%20goals%20or%20common%20challenges%20students%20face%20when%20researching%20this%20topic%2C%20feel%20free%20to%20include%20those%20as%20well.%20The%20librarian%20reviewing%20your%20request%20will%20follow%20up%20if%20additional%20details%20are%20needed."
+           class="wt-service-link" target="_blank" rel="noopener">
+          Request a Research Guide →
+        </a>
+      </article>
+
+      <!-- OER Identification & Adoption Support -->
+      <article class="wt-service-item cs--half">
+        <h3>OER Identification & Adoption Support</h3>
+        <p>Collaborate with a librarian to locate high-quality open educational resources (OER) that align with your course goals and help reduce costs for students.</p>
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=2YrMFv6EHUi5sEjndYxBqm7KIY1c5rZCghnuRkYF58dUQ0E3VFZVQkIzQVE5TTI3UjUwRTNQUlZXNi4u&rc15b093af48b4c3bb9c52f7b3a2b84ae=%22Perry%20Health%20Sciences%20Campus%20Library%22&rd0ac7bc9c9ea42a8b0f7110489b8024c=OER%20Identification%20%26%20Adoption%20Support&rf2f56f382eee4cbc8758f6bb356a63e4=To%20help%20us%20identify%20and%20recommend%20appropriate%20open%20educational%20resources%20(OER)%20for%20your%20course%2C%20it%E2%80%99s%20helpful%20to%20know%20the%20course%20name%20and%20number%2C%20the%20topics%20or%20learning%20objectives%20you%20want%20covered%2C%20the%20types%20of%20materials%20you%20prefer%20(textbook%2C%20videos%2C%20modules%2C%20activities%2C%20etc.)%2C%20and%20any%20requirements%20such%20as%20Creative%20Commons%20licensing%2C%20accessibility%20needs%2C%20or%20alignment%20with%20existing%20course%20materials.%20If%20you%E2%80%99re%20replacing%20a%20current%20textbook%2C%20sharing%20its%20title%20is%20also%20useful.%20The%20librarian%20reviewing%20your%20request%20will%20follow%20up%20with%20any%20additional%20questions."
+           class="wt-service-link" target="_blank" rel="noopener">
+          Request OER Support →
+        </a>
+      </article>
+
+      <!-- Curriculum Mapping Consultations -->
+      <article class="wt-service-item cs--half">
+        <h3>Curriculum Mapping Consultations</h3>
+        <p>Work with a librarian to align library resources, information literacy instruction, and program-level outcomes to support assessment and accreditation needs.</p>
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=2YrMFv6EHUi5sEjndYxBqm7KIY1c5rZCghnuRkYF58dUQ0E3VFZVQkIzQVE5TTI3UjUwRTNQUlZXNi4u&rc15b093af48b4c3bb9c52f7b3a2b84ae=%22Perry%20Health%20Sciences%20Campus%20Library%22&rd0ac7bc9c9ea42a8b0f7110489b8024c=Curriculum%20Mapping%20Consultations&rf2f56f382eee4cbc8758f6bb356a63e4=To%20support%20a%20curriculum%20mapping%20consultation%2C%20it%E2%80%99s%20helpful%20to%20share%20the%20program%20or%20course%20name%2C%20key%20learning%20outcomes%2C%20any%20accreditation%20or%20assessment%20requirements%2C%20and%20the%20skills%20or%20competencies%20you%20want%20students%20to%20develop%20across%20the%20curriculum.%20If%20you%20already%20have%20existing%20course%20sequences%2C%20assignments%2C%20or%20areas%20where%20students%20commonly%20struggle%2C%20including%20those%20is%20useful%20as%20well.%20The%20librarian%20reviewing%20your%20request%20will%20reach%20out%20for%20any%20additional%20details."
+           class="wt-service-link" target="_blank" rel="noopener">
+          Request a Consultation →
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+	
