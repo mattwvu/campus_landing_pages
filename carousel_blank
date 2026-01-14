@@ -1,0 +1,161 @@
+<section class="wt-fsc wt-fsc--split" aria-labelledby="wt-fsc-title">
+  <div class="wt-fsc__split">
+
+    <!-- LEFT: Header / CTA block -->
+    <div class="wt-fsc__left">
+      <h2 id="wt-fsc-title" class="wt-fsc__title">New Books</h2>
+      <p class="wt-fsc__sub">
+        Browse newly added titles across Wake Tech Libraries.
+      </p>
+
+      <a class="wt-fsc__cta" href="#" target="_blank" rel="noopener">
+        View All New Books
+      </a>
+    </div>
+
+    <!-- RIGHT: Carousel -->
+    <div class="wt-fsc__right">
+      <div class="wt-fsc__carousel" data-wt-carousel>
+        <button class="wt-fsc__arrow wt-fsc__arrow--prev" type="button" aria-label="Previous items" data-prev>
+          ‹
+        </button>
+
+        <div class="wt-fsc__viewport" data-viewport>
+          <ul class="wt-fsc__track" data-track>
+
+<!-- Book 1 -->            
+
+<li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-1.jpg" alt="Book title 1 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title One</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+<!-- Book 2 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-2.jpg" alt="Book title 2 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Two</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+<!-- Book 3 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 3 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Three</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+<!-- Book 4 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 4 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Four</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+<!-- Book 5 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 5 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Five</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+<!-- Book 6 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 6 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Six</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+<!-- Book 7 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 7 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Seven</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+<!-- Book 8 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 8 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Eight</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+<!-- Book 9 -->
+            <li class="wt-fsc__item">
+              <a class="wt-fsc__card" href="#" target="_blank" rel="noopener">
+                <div class="wt-fsc__cover">
+                  <img src="BOOK-COVER-3.jpg" alt="Book title 9 cover" loading="lazy">
+                </div>
+                <div class="wt-fsc__meta">
+                  <div class="wt-fsc__booktitle">Book Title Nine</div>
+                  <div class="wt-fsc__author">Author Name</div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Optional "View all" tile inside the carousel -->
+            <li class="wt-fsc__item wt-fsc__item--viewall">
+              <a class="wt-fsc__viewall" href="#" target="_blank" rel="noopener" aria-label="View all new books">
+                <span>View All</span>
+                <span aria-hidden="true">›</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="wt-fsc__arrow wt-fsc__arrow--next" type="button" aria-label="Next items" data-next>
+          ›
+        </button>
+      </div>
+
+      <div class="wt-fsc__dots" aria-label="Carousel pages" data-dots></div>
+    </div>
+
+  </div>
+</section>
