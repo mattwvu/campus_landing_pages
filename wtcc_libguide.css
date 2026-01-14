@@ -2630,7 +2630,7 @@ html { scroll-behavior: smooth; }
 .wt-search-strip{
   width: 100%;
   margin: 2.5rem 0;
-  padding: 3rem 5rem;
+  padding: 3rem 2rem;
 }
 
 /* Bigger uppercase header */
@@ -3077,6 +3077,7 @@ html { scroll-behavior: smooth; }
     text-align: left;
   }
 }
+
 
 
 
