@@ -249,6 +249,14 @@ header.wt-header{
   margin: 1.5rem 0;
 }
 
+/* Solid, thick horizontal rule */
+.hr-thicc{
+  border: 0;
+  height: 3px;
+  background-color: var(--bluegrey-soft);
+  margin: 1.25rem 0;
+}
+
 
 /* Librarian Card */
     .card {
@@ -2612,4 +2620,406 @@ html { scroll-behavior: smooth; }
   background: rgba(168, 153, 104, .18); /* gold tint */
   border-color: rgba(168, 153, 104, .45);
 }
+
+
+
+/* =========================================
+   Catalog Search Bar SNWC
+========================================= */
+
+.wt-search-strip{
+  width: 100%;
+  margin: 2.5rem 0;
+  padding: 3rem 5rem;
+}
+
+/* Bigger uppercase header */
+.wt-search-title--xxl{
+  font-family: "Montserrat", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--brand-dark);
+  margin: 0 0 1.1rem 0;
+  font-size: clamp(2.0rem, 1.5rem + 1.6vw, 2.8rem);
+  margin-bottom:3rem;
+}
+
+.wt-search-form--icon{
+  position: relative;
+  width: 100%;
+}
+
+/* Very tall, square, strong-stroke input */
+.wt-search-input--xxl{
+  width: 100%;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.55rem;
+  padding: 1.45rem 6.25rem 1.45rem 1.0rem;
+  border: none;
+  border-bottom: 0.25rem solid var(--brand-dark);
+  background: transparent;
+  color: var(--text-dark);
+  caret-color: var(--brand-dark);
+  outline: none;
+  transition: border-color .18s ease, color .18s ease;
+}
+
+/* Large placeholder */
+.wt-search-input--xxl::placeholder{
+  font-size: 2.6rem;
+  color: #eaeaea;
+}
+
+.wt-search-input--xxl:focus{
+  color: var(--brand-dark);
+  border-bottom-color: var(--brand-bright);
+  background-color: transparent; /* remove if you want tint */
+}
+
+.wt-search-input--xxl:focus::placeholder{
+  color: var(--brand-bright);
+  opacity: 0.8;
+}
+
+/* Plain icon button inside (no background, no border) */
+.wt-search-iconbtn--plain{
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;                 /* more breathing room from right edge */
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;        /* no background color */
+  padding: .25rem;                /* small click padding */
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.wt-search-iconbtn--plain:focus{
+  outline: none;
+}
+
+.wt-search-icon--stroke svg{
+  width: 2.6rem;          /* BIGGER icon */
+  height: 2.6rem;
+  stroke: var(--brand-dark);
+  stroke-width: 2.6;      /* slightly heavier stroke */
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke .18s ease, transform .18s ease;
+}
+
+
+.wt-search-iconbtn--plain:hover .wt-search-icon--stroke svg,
+.wt-search-iconbtn--plain:focus .wt-search-icon--stroke svg{
+  stroke: var(--brand-bright);
+  transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .wt-search-title--xxl{
+    font-size: clamp(1.7rem, 1.2rem + 2vw, 2.2rem);
+  }
+
+  .wt-search-input--xxl{
+    font-size: 1.25rem;
+    padding: 1.25rem 5.5rem 1.25rem 1.1rem;
+    border-width: 4px;
+  }
+
+  .wt-search-input--xxl::placeholder{
+    font-size: 1.25rem;
+  }
+
+  .wt-search-iconbtn--plain{
+    right: 1.0rem;
+  }
+
+  .wt-search-icon--stroke svg{
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* Link under search bar */
+.wt-search-alt-link{
+  margin-top: 1.25rem;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.5rem;
+  opacity: .85;
+  text-align: right;
+ 
+	
+}
+
+.wt-search-alt-link a{
+  color: var(--bluegrey, #5a8296);
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  transition: color .18s ease;
+	 margin-top:1rem;
+}
+
+.wt-search-alt-link a:hover,
+.wt-search-alt-link a:focus{
+  color: var(--brand-bright);
+  outline: none;
+}
+
+/* =========================================
+  New Books Carousel
+========================================= */
+
+.wt-fsc{
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  margin: 2.5rem 0;
+}
+
+.wt-fsc--split .wt-fsc__split{
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr; /* narrower left, wider right */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Left block */
+.wt-fsc__left .wt-fsc__title{
+  font-size: clamp(2rem, 1.4rem + 2vw, 3.1rem);
+  line-height: 1.05;
+  margin: 0 0 .75rem 0;
+  color: var(--brand-dark);
+  font-weight: 800;
+}
+
+.wt-fsc__left .wt-fsc__sub{
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  color: #2b2b2b;
+  opacity: .85;
+}
+
+/* CTA */
+.wt-fsc__cta{
+  display: inline-block;
+  width: fit-content;
+  background: var(--brand-dark);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: .85rem 1.25rem;
+  border: 2px solid var(--brand-dark);
+  box-shadow: var(--shadow);
+}
+
+.wt-fsc__cta:hover{
+  background: #fff;
+  color: var(--brand-dark) !important;
+}
+
+/* Mobile stack */
+@media (max-width: 900px){
+  .wt-fsc--split .wt-fsc__split{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* =========================================
+   Carousel Core (CPL-style)
+========================================= */
+
+.wt-fsc__carousel{
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* Remove background panel entirely */
+.wt-fsc__viewport{
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Track */
+.wt-fsc__track{
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 180px;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.wt-fsc__track::-webkit-scrollbar{
+  display: none;
+}
+
+.wt-fsc__item{
+  scroll-snap-align: start;
+}
+
+/* =========================================
+   Book Card
+========================================= */
+
+.wt-fsc__card{
+  display: grid;
+  grid-template-rows: 240px auto; /* reverted height */
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Cover */
+.wt-fsc__cover{
+  background: #fff;
+  border: 1px solid rgba(90,130,150,.25);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transition: transform .15s ease;
+}
+
+.wt-fsc__cover img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle CPL-style hover lift */
+.wt-fsc__card:hover .wt-fsc__cover{
+  transform: translateY(-2px);
+}
+
+/* Text */
+.wt-fsc__meta{
+  padding-top: .4rem;   /* tighter */
+  min-height: 3.1rem;
+}
+
+.wt-fsc__booktitle{
+  font-weight: 800;
+  font-size: .95rem;
+  color: var(--brand-dark);
+  line-height: 1.15;
+}
+
+.wt-fsc__author{
+  font-size: .85rem;
+  color: rgba(0,0,0,.7);
+  margin-top: .12rem;
+}
+
+/* =========================================
+   View All Tile
+========================================= */
+
+.wt-fsc__item--viewall .wt-fsc__viewall{
+  height: 240px; /* match cover height */
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border: 2px dashed rgba(168,153,104,.55);
+  background: rgba(168,153,104,.08);
+  color: var(--brand-dark);
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+
+.wt-fsc__item--viewall .wt-fsc__viewall:hover{
+  background: rgba(0,181,226,.08);
+  border-color: rgba(0,181,226,.35);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   Arrows
+========================================= */
+
+.wt-fsc__arrow{
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--bluegrey-soft);
+  background: #fff;
+  color: var(--brand-dark);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.wt-fsc__arrow:disabled{
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   Dots
+========================================= */
+
+.wt-fsc__dots{
+  display: none;
+ 
+}
+
+.wt-fsc__dot{
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(0,59,92,.35);
+  background: transparent;
+  cursor: pointer;
+}
+
+.wt-fsc__dot.is-active{
+  border-color: var(--brand-bright);
+  background: rgba(0,181,226,.25);
+}
+
+/* Hide dots on mobile (CPL-style) */
+@media (max-width: 600px){
+  .wt-fsc__dots{
+    display: none;
+  }
+}
+
+/* =========================================
+   Responsive adjustments
+========================================= */
+
+@media (max-width: 900px){
+  .wt-fsc__carousel{
+    grid-template-columns: 36px 1fr 36px;
+  }
+
+  .wt-fsc__track{
+    grid-auto-columns: 150px;
+  }
+
+  .wt-fsc__card{
+    grid-template-rows: 210px auto;
+  }
+
+  .wt-fsc__item--viewall .wt-fsc__viewall{
+    height: 210px;
+  }
+}
+
+
 
