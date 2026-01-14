@@ -3023,3 +3023,60 @@ html { scroll-behavior: smooth; }
 
 
 
+/* =========================================
+   Tab row (matches screenshot)
+========================================= */
+
+.wt-search-tabs{
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  
+}
+
+/* tab button */
+.wt-search-tab{
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  padding: 1rem 1.75rem;
+  border-bottom: 2px solid var(--brand-dark);
+  background: #fff;
+  color: var(--brand-dark);
+  cursor: pointer;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+/* hover */
+.wt-search-tab:hover{
+  border-color: var(--brand-bright);
+  transform: translateY(-1px);
+}
+
+/* active tab: dark bg + white text */
+.wt-search-tab.wt-is-active{
+  background: var(--brand-dark);
+  color: #fff;
+  border-color: var(--brand-dark);
+}
+
+/* keyboard focus */
+.wt-search-tab:focus{
+  outline: 3px solid rgba(0,181,226,.35);
+  outline-offset: 3px;
+}
+
+/* mobile */
+@media (max-width: 640px){
+  .wt-search-tabs{
+    gap: 1rem;
+  }
+  .wt-search-tab{
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+
