@@ -1,0 +1,48 @@
+<section class="wt-search-strip" aria-labelledby="wt-search-title">
+  <div class="container-flex">
+    <h2 id="wt-search-title" class="wt-search-title--xxl">Search books<br>at Scott Northern Campus</h2>
+
+ <form
+  class="wt-search-form--icon"
+  action="https://noca.ent.sirsi.net/client/en_US/waketech/search/results?&lm=WAKE_NORTH"
+  method="get"
+  target="_blank"
+  rel="noopener"
+>
+  <input type="hidden" name="lm" value="WAKE_NORTH" />
+  <input type="hidden" name="te" value="" />
+
+  <label for="wt-catalog-q" class="visually-hidden">Search books<br>at Scott Northern Campus</label>
+
+  <input
+    class="wt-search-input--xxl"
+    type="text"
+    id="wt-catalog-q"
+    name="q"
+    maxlength="256"
+    placeholder="Search  …"
+  />
+
+  <button class="wt-search-iconbtn--plain" type="submit" aria-label="Search">
+    <span aria-hidden="true" class="wt-search-icon--stroke">
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="M16.2 16.2L21 21"></path>
+      </svg>
+    </span>
+  </button>
+</form>
+	  
+	  <p class="wt-search-alt-link">
+  <a
+    href="https://noca.ent.sirsi.net/client/en_US/waketech"
+    target="_blank"
+    rel="noopener"
+  >
+    Search all Wake Tech libraries →
+  </a>
+</p>
+
+
+  </div>
+</section>
