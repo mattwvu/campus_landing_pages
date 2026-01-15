@@ -2394,6 +2394,52 @@ html { scroll-behavior: smooth; }
   line-height: 1.4;
 }
 
+/* =========================================
+   Vertical Campus Appointment List
+========================================= */
+
+.wt-campus-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Each row */
+.wt-campus-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(0, 59, 92, 0.15);
+}
+
+/* Campus name */
+.wt-campus-row h3 {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand-dark);
+}
+
+/* Last row divider cleanup */
+.wt-campus-row:last-child {
+  border-bottom: none;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .wt-campus-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wt-campus-row a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 /* =========================================
    WT Equipment Accordion (compact but readable)
@@ -3235,6 +3281,7 @@ html { scroll-behavior: smooth; }
     height: 210px;
   }
 }
+
 
 
 
