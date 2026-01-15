@@ -34,6 +34,13 @@
   --no:#d64545;
   --atq-sub-radius: 14px;
   --atq-sub-shadow: 0 3px 14px rgba(0,0,0,.08);
+  --wt-space-1: 8px;
+  --wt-space-2: 16px;
+  --wt-space-3: 24px;
+  --wt-space-4: 32px;
+  --wt-space-5: 40px;
+  --wt-space-6: 48px;
+
 }
 
 
@@ -2625,8 +2632,9 @@ html { scroll-behavior: smooth; }
 
 /* =========================================
    Search Box with Tabs
-========================================= */
+   ========================================= */
 
+/* Wrapper */
 .wt-search-strip{
   width: 100%;
   margin: 2.5rem 0;
@@ -2639,14 +2647,24 @@ html { scroll-behavior: smooth; }
   text-transform: uppercase;
   letter-spacing: .15em;
   color: var(--brand-dark);
-  margin: 0 0 1.1rem 0;
+  margin: 0;
+
   font-size: clamp(2.0rem, 1.5rem + 1.6vw, 2.8rem);
-  margin-bottom:3rem;
+
+  /* POLISH: slightly more comfortable header leading */
+  line-height: 1.15;
+
+  /* RECOMMENDED: more whitespace before the form (8px rhythm) */
+  margin-bottom: var(--wt-space-6); /* 48px (was ~3rem) */
 }
 
+/* Search form */
 .wt-search-form--icon{
   position: relative;
   width: 100%;
+
+  /* RECOMMENDED: explicit spacing between input and the alt link */
+  margin-bottom: var(--wt-space-3); /* 24px */
 }
 
 /* Very tall, square, strong-stroke input */
@@ -2710,48 +2728,24 @@ html { scroll-behavior: smooth; }
   transition: stroke .18s ease, transform .18s ease;
 }
 
-
 .wt-search-iconbtn--plain:hover .wt-search-icon--stroke svg,
 .wt-search-iconbtn--plain:focus .wt-search-icon--stroke svg{
   stroke: var(--brand-bright);
   transform: scale(1.05);
 }
 
-/* Mobile */
-@media (max-width: 640px){
-  .wt-search-title--xxl{
-    font-size: clamp(1.7rem, 1.2rem + 2vw, 2.2rem);
-  }
-
-  .wt-search-input--xxl{
-    font-size: 1.25rem;
-    padding: 1.25rem 5.5rem 1.25rem 1.1rem;
-    border-width: 4px;
-  }
-
-  .wt-search-input--xxl::placeholder{
-    font-size: 1.25rem;
-  }
-
-  .wt-search-iconbtn--plain{
-    right: 1.0rem;
-  }
-
-  .wt-search-icon--stroke svg{
-    width: 1.75rem;
-    height: 1.75rem;
-  }
-}
-
 /* Link under search bar */
 .wt-search-alt-link{
-  margin-top: 1.25rem;
+  /* RECOMMENDED: reset top margin; make spacing controlled & consistent */
+  margin-top: 0;
+
+  /* RECOMMENDED: add whitespace before tabs / hamburger */
+  margin-bottom: var(--wt-space-5); /* 40px */
+
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 1.5rem;
   opacity: .85;
   text-align: right;
- 
-	
 }
 
 .wt-search-alt-link a{
@@ -2759,7 +2753,6 @@ html { scroll-behavior: smooth; }
   text-decoration: underline;
   text-underline-offset: 1rem;
   transition: color .18s ease;
-	 margin-top:1rem;
 }
 
 .wt-search-alt-link a:hover,
@@ -2768,28 +2761,49 @@ html { scroll-behavior: smooth; }
   outline: none;
 }
 
-@media (max-width: 640px){
-  .wt-search-alt-link{
-    font-size: 1.05rem;
-  }
+/* =========================================
+   OPTIONAL: faint divider/tint between search + tabs
+   - Helps visually separate "search" from "choose source"
+========================================= */
 
-  .wt-search-alt-link a{
-    text-underline-offset: .5rem;
-  }
+/* Place divider *after* the alt-link and before tabs */
+.wt-search-alt-link{
+  position: relative;
+  padding-bottom: var(--wt-space-3); /* 24px */
 }
 
+/* Thin rule + faint tint band */
+.wt-search-alt-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
+  height: 1px;
+  background: rgba(0, 59, 92, 0.18); /* brand-dark at low opacity */
+}
+
+/* (Optional) faint tint behind the tabs zone */
+.wt-tabs-zone{
+  /* If you wrap hamburger+tabs in a div.wt-tabs-zone, this will apply.
+     If you DON'T want extra HTML, ignore this block. */
+  background: rgba(0, 59, 92, 0.03);
+  border-radius: 16px;
+  padding: var(--wt-space-3);
+}
 
 /* =========================================
-   Tab row (matches screenshot)
+   Tab row
 ========================================= */
 
 .wt-search-tabs{
-  margin-top: 2rem;
+  /* RECOMMENDED: more whitespace above tabs */
+  margin-top: var(--wt-space-5); /* 40px (was 2rem / 32px) */
+
   display: flex;
   gap: 1.75rem;
   flex-wrap: wrap;
-  
 }
 
 /* tab button */
@@ -2824,24 +2838,15 @@ html { scroll-behavior: smooth; }
   outline-offset: 3px;
 }
 
-/* mobile */
-@media (max-width: 640px){
-  .wt-search-tabs{
-    gap: 1rem;
-  }
-  .wt-search-tab{
-    width: 100%;
-    text-align: left;
-  }
-}
-
 /* =========================
    Mobile hamburger tabs
 ========================= */
 
 .wt-tabs-mobilebar{
   display: none; /* desktop default */
-  margin-top: 2rem;
+
+  /* RECOMMENDED: slightly more space above hamburger */
+  margin-top: var(--wt-space-5); /* 40px */
 }
 
 .wt-tabs-hamburger{
@@ -2916,16 +2921,60 @@ html { scroll-behavior: smooth; }
   transform: translateY(50%) rotate(-45deg);
 }
 
-/* MOBILE BEHAVIOR */
+/* =========================================
+   Mobile tweaks
+========================================= */
+
 @media (max-width: 640px){
-  .wt-tabs-mobilebar{
-    display: block;
+  /* Header */
+  .wt-search-title--xxl{
+    font-size: clamp(1.7rem, 1.2rem + 2vw, 2.2rem);
+
+    /* MOBILE spacing tuning (still 8px rhythm) */
+    margin-bottom: var(--wt-space-5); /* 40px */
   }
 
-  /* turn your tablist into a dropdown panel */
+  /* Search input */
+  .wt-search-input--xxl{
+    font-size: 1.25rem;
+    padding: 1.25rem 5.5rem 1.25rem 1.1rem;
+    border-width: 4px;
+  }
+
+  .wt-search-input--xxl::placeholder{
+    font-size: 1.25rem;
+  }
+
+  .wt-search-iconbtn--plain{
+    right: 1.0rem;
+  }
+
+  .wt-search-icon--stroke svg{
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  /* Alt link: smaller + tighter underline */
+  .wt-search-alt-link{
+    font-size: 1.05rem;
+    margin-bottom: var(--wt-space-4); /* 32px */
+    padding-bottom: var(--wt-space-2); /* 16px */
+  }
+
+  .wt-search-alt-link a{
+    text-underline-offset: .5rem;
+  }
+
+  /* Show hamburger */
+  .wt-tabs-mobilebar{
+    display: block;
+    margin-top: var(--wt-space-4); /* 32px */
+  }
+
+  /* Hide desktop tab row unless opened */
   .wt-search-tabs{
     display: none;              /* closed by default */
-    margin-top: .75rem;
+    margin-top: var(--wt-space-2); /* 16px */
     flex-direction: column;
     gap: .5rem;
     padding: .75rem;
@@ -3208,6 +3257,7 @@ html { scroll-behavior: smooth; }
     height: 210px;
   }
 }
+
 
 
 
