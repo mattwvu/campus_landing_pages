@@ -2768,6 +2768,17 @@ html { scroll-behavior: smooth; }
   outline: none;
 }
 
+@media (max-width: 640px){
+  .wt-search-alt-link{
+    font-size: 1.05rem;
+  }
+
+  .wt-search-alt-link a{
+    text-underline-offset: .5rem;
+  }
+}
+
+
 
 /* =========================================
    Tab row (matches screenshot)
@@ -2821,6 +2832,126 @@ html { scroll-behavior: smooth; }
   .wt-search-tab{
     width: 100%;
     text-align: left;
+  }
+}
+
+/* =========================
+   Mobile hamburger tabs
+========================= */
+
+.wt-tabs-mobilebar{
+  display: none; /* desktop default */
+  margin-top: 2rem;
+}
+
+.wt-tabs-hamburger{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;                 /* space between icon + label */
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+
+  padding: 1rem 1.25rem;
+  background: #fff;
+  color: var(--brand-dark);
+  border: 2px solid var(--brand-dark);
+  cursor: pointer;
+}
+
+/* LEFT-JUSTIFIED LABEL + POLISH */
+.wt-tabs-hamburger-label{
+  flex: 1;                   /* take remaining horizontal space */
+  text-align: left;          /* left-align text */
+  margin-left: .75rem;       /* nice visual breathing room from icon */
+}
+
+.wt-tabs-hamburger:focus{
+  outline: 3px solid rgba(0,181,226,.35);
+  outline-offset: 3px;
+}
+
+/* simple hamburger icon */
+.wt-hamburger-icon{
+  width: 1.75rem;
+  height: 1.25rem;
+  position: relative;
+  flex: 0 0 auto;            /* prevent shrinking */
+}
+
+.wt-hamburger-icon::before,
+.wt-hamburger-icon::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-dark);
+  border-radius: 2px;
+  transition: transform .18s ease, top .18s ease, bottom .18s ease;
+}
+
+.wt-hamburger-icon::before{ top: 0; }
+.wt-hamburger-icon::after{ bottom: 0; }
+
+/* middle line */
+.wt-hamburger-icon{
+  background:
+    linear-gradient(var(--brand-dark), var(--brand-dark))
+    center / 100% 3px no-repeat;
+}
+
+/* open state: turn into an X */
+.wt-tabs-hamburger[aria-expanded="true"] .wt-hamburger-icon{
+  background: none;
+}
+.wt-tabs-hamburger[aria-expanded="true"] .wt-hamburger-icon::before{
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.wt-tabs-hamburger[aria-expanded="true"] .wt-hamburger-icon::after{
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* MOBILE BEHAVIOR */
+@media (max-width: 640px){
+  .wt-tabs-mobilebar{
+    display: block;
+  }
+
+  /* turn your tablist into a dropdown panel */
+  .wt-search-tabs{
+    display: none;              /* closed by default */
+    margin-top: .75rem;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .75rem;
+    border: 2px solid var(--brand-dark);
+    background: #fff;
+  }
+
+  /* open state */
+  .wt-search-tabs.wt-tabs-open{
+    display: flex;
+  }
+
+  /* tabs in dropdown */
+  .wt-search-tab{
+    width: 100%;
+    text-align: left;
+    border: 2px solid var(--brand-dark);
+    border-radius: .5rem;
+    padding: .9rem 1rem;
+  }
+
+  /* keep your active styling obvious */
+  .wt-search-tab.wt-is-active{
+    background: var(--brand-dark);
+    color: #fff;
+    border-color: var(--brand-dark);
   }
 }
 
@@ -3077,6 +3208,7 @@ html { scroll-behavior: smooth; }
     height: 210px;
   }
 }
+
 
 
 
