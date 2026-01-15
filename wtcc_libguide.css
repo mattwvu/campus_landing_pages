@@ -2761,28 +2761,6 @@ html { scroll-behavior: smooth; }
   outline: none;
 }
 
-/* =========================================
-   OPTIONAL: faint divider/tint between search + tabs
-   - Helps visually separate "search" from "choose source"
-========================================= */
-
-/* Place divider *after* the alt-link and before tabs */
-.wt-search-alt-link{
-  position: relative;
-  padding-bottom: var(--wt-space-3); /* 24px */
-}
-
-/* Thin rule + faint tint band */
-.wt-search-alt-link::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 1px;
-  background: rgba(0, 59, 92, 0.18); /* brand-dark at low opacity */
-}
 
 /* (Optional) faint tint behind the tabs zone */
 .wt-tabs-zone{
@@ -3257,6 +3235,7 @@ html { scroll-behavior: smooth; }
     height: 210px;
   }
 }
+
 
 
 
