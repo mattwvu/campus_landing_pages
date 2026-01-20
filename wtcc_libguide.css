@@ -238,33 +238,63 @@ header.wt-header{
    - Hours/link on second line
 ========================================= */
 @media (max-width: 576px){
-  .lib-hours-all-list .lib-hours-row{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .35rem;              /* space between the two lines */
+
+  /* force the row itself to stop being a horizontal layout */
+  #lib-hero-hours-all .lib-hours-all-list .lib-hours-row{
+    display: block !important;
   }
 
-  .lib-hours-all-list .lib-hours-location,
-  .lib-hours-all-list .lib-hours-time{
-    width: 100%;
+  /* force each piece onto its own line */
+  #lib-hero-hours-all .lib-hours-location{
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 .35rem 0;
   }
 
-  /* Optional: keep the second line visually lighter */
-  .lib-hours-all-list .lib-hours-time{
-    font-weight: 600;
+  #lib-hero-hours-all .lib-hours-time{
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
   }
 
-  /* Optional: if the "See All Hours →" link is on row 2, keep it left-aligned */
-  .lib-hours-all-list .lib-hours-time .lib-hours-all-link{
+  /* optional: make the "See All Hours →" link behave nicely on line 2 */
+  #lib-hero-hours-all .lib-hours-time .lib-hours-all-link{
     display: inline-flex;
     align-items: center;
     gap: .4rem;
   }
 }
 
+@media (max-width: 768px){ /* same rules */ }
+  /* force the row itself to stop being a horizontal layout */
+  #lib-hero-hours-all .lib-hours-all-list .lib-hours-row{
+    display: block !important;
+  }
 
-/* Horizontal Line */
+  /* force each piece onto its own line */
+  #lib-hero-hours-all .lib-hours-location{
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 .35rem 0;
+  }
+
+  #lib-hero-hours-all .lib-hours-time{
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  /* optional: make the "See All Hours →" link behave nicely on line 2 */
+  #lib-hero-hours-all .lib-hours-time .lib-hours-all-link{
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+  }
+}
+
+/* ======================================================
+Horizontal Line
+==========================================================*/
 
 /* Solid, faint 1px line */
 .hr-soft {
@@ -3987,6 +4017,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
