@@ -232,6 +232,37 @@ header.wt-header{
     }
 }
 
+/* =========================================
+   Library Hours: stack rows on mobile
+   - Location on first line
+   - Hours/link on second line
+========================================= */
+@media (max-width: 576px){
+  .lib-hours-all-list .lib-hours-row{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;              /* space between the two lines */
+  }
+
+  .lib-hours-all-list .lib-hours-location,
+  .lib-hours-all-list .lib-hours-time{
+    width: 100%;
+  }
+
+  /* Optional: keep the second line visually lighter */
+  .lib-hours-all-list .lib-hours-time{
+    font-weight: 600;
+  }
+
+  /* Optional: if the "See All Hours →" link is on row 2, keep it left-aligned */
+  .lib-hours-all-list .lib-hours-time .lib-hours-all-link{
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+  }
+}
+
 
 /* Horizontal Line */
 
@@ -3767,6 +3798,195 @@ html { scroll-behavior: smooth; }
   border: none;
 }
 
+/* =========================
+   Mobile hamburger tabs
+========================= */
+
+.wt-tabs-mobilebar{
+  display: none; /* desktop default */
+  margin-top: 2rem;
+}
+
+.wt-tabs-hamburger{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;                 /* space between icon + label */
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+
+  padding: 1rem 1.25rem;
+  background: #fff;
+  color: var(--brand-dark);
+  border: 2px solid var(--brand-dark);
+  cursor: pointer;
+}
+
+/* LEFT-JUSTIFIED LABEL + POLISH */
+.wt-tabs-hamburger-label{
+  flex: 1;                   /* take remaining horizontal space */
+  text-align: left;          /* left-align text */
+  margin-left: .75rem;       /* nice visual breathing room from icon */
+}
+
+.wt-tabs-hamburger:focus{
+  outline: 3px solid rgba(0,181,226,.35);
+  outline-offset: 3px;
+}
+
+/* simple hamburger icon */
+.wt-hamburger-icon{
+  width: 1.75rem;
+  height: 1.25rem;
+  position: relative;
+  flex: 0 0 auto;            /* prevent shrinking */
+}
+
+.wt-hamburger-icon::before,
+.wt-hamburger-icon::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-dark);
+  border-radius: 2px;
+  transition: transform .18s ease, top .18s ease, bottom .18s ease;
+}
+
+.wt-hamburger-icon::before{ top: 0; }
+.wt-hamburger-icon::after{ bottom: 0; }
+
+/* middle line */
+.wt-hamburger-icon{
+  background:
+    linear-gradient(var(--brand-dark), var(--brand-dark))
+    center / 100% 3px no-repeat;
+}
+
+/* open state: turn into an X */
+.wt-tabs-hamburger[aria-expanded="true"] .wt-hamburger-icon{
+  background: none;
+}
+.wt-tabs-hamburger[aria-expanded="true"] .wt-hamburger-icon::before{
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.wt-tabs-hamburger[aria-expanded="true"] .wt-hamburger-icon::after{
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* MOBILE BEHAVIOR */
+@media (max-width: 640px){
+  .wt-tabs-mobilebar{
+    display: block;
+  }
+
+  /* turn your tablist into a dropdown panel */
+  .wt-search-tabs{
+    display: none;              /* closed by default */
+    margin-top: .75rem;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .75rem;
+    border: 2px solid var(--brand-dark);
+    background: #fff;
+  }
+
+  /* open state */
+  .wt-search-tabs.wt-tabs-open{
+    display: flex;
+  }
+
+  /* tabs in dropdown */
+  .wt-search-tab{
+    width: 100%;
+    text-align: left;
+    border: 2px solid var(--brand-dark);
+    border-radius: .5rem;
+    padding: .9rem 1rem;
+  }
+
+  /* keep your active styling obvious */
+  .wt-search-tab.wt-is-active{
+    background: var(--brand-dark);
+    color: #fff;
+    border-color: var(--brand-dark);
+  }
+}
+
+/* Custom Blockquote Style */
+.custom-blockquote {
+  background: #f5f5f5;              /* light background */
+  border-left: 6px solid #005a9c;   /* accent left border */
+  padding: 1rem 1.25rem;            /* spacing */
+  margin: 1.5rem 0;                 /* vertical spacing */
+  font-style: italic;               /* emphasize quote */
+  color: #3a3a3a;
+  position: relative;
+  quotes: "“" "”";
+}
+
+.custom-blockquote::before {
+  content: open-quote;              /* decorative big opening quote */
+  font-size: 3rem;
+  color: #c2c2c2;
+  position: absolute;
+  left: 0.5rem;
+  top: -0.5rem;
+}
+
+.custom-blockquote p {
+  margin: 0;                        /* reset paragraph margin */
+  padding-left: 1rem;               /* spacing after border */
+  display: inline-block;
+}
+
+/* =====================================
+   Book Excerpt / Textbook Callout
+===================================== */
+
+.wt-book-excerpt {
+  background: #fafafa;
+  border-left: 6px solid var(--brand-dark, #003b5c);
+  padding: 1.75rem 2rem;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2a2a2a;
+  line-height: 1.7;
+  position: relative;
+}
+
+.wt-book-excerpt::before {
+  content: "Excerpt";
+  position: absolute;
+  top: -0.85rem;
+  left: 1.25rem;
+  background: #fff;
+  padding: 0 0.5rem;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-dark, #003b5c);
+  font-weight: 700;
+}
+
+.wt-book-excerpt h3 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+  color: var(--brand-dark, #003b5c);
+}
+
+.wt-book-excerpt p {
+  margin: 0;
+}
 
 
 
