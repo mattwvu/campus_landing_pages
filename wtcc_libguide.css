@@ -3283,6 +3283,491 @@ html { scroll-behavior: smooth; }
 }
 
 
+/* =========================================================
+   Campus Row + Directory (LibGuides)
+   - Shared by the vertical campus list AND the info-box directory
+   - UPDATED: fixes “one word per line” campus names in narrow boxes
+========================================================= */
+
+/* --- Remove any shaded row backgrounds everywhere --- */
+.wt-campus-row{
+  background: transparent !important;
+
+  /* UPDATED: use flex-wrap instead of grid to prevent name from being squeezed */
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem .75rem;
+
+  /* row spacing + divider */
+  padding: .75rem .25rem;
+  border-bottom: 1px solid rgba(0,59,92,.14);
+}
+
+.wt-campus-row:last-child{
+  border-bottom: none;
+}
+
+/* --- Campus name (linked) --- */
+.wt-campus-name{
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--brand-dark);
+  text-decoration: none;
+
+  /* UPDATED: prevent extreme word-by-word wrapping */
+  flex: 1 1 18rem;
+  min-width: 14rem;
+  margin: 0;
+}
+
+.wt-campus-name:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --- If you use <h3> in the appointment list, keep it consistent --- */
+.wt-campus-list .wt-campus-row h3{
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--brand-dark);
+
+  /* UPDATED: same anti-squeeze behavior as linked names */
+  flex: 1 1 18rem;
+  min-width: 14rem;
+}
+
+/* --- Two-button action group --- */
+.wt-campus-actions{
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  flex-wrap: wrap;      /* buttons can drop to next line */
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Keep button labels on one line, but allow buttons themselves to wrap */
+.wt-campus-actions .button-base{
+  white-space: nowrap;
+}
+
+/* Button size refinement for this list only */
+.wt-campus-list .button-base{
+  font-size: 0.95rem;
+  padding: 0.55rem 1rem;
+}
+
+/* --- Dark blue button variant --- */
+.button-base.wt-dark{
+  background-color: var(--brand-dark);
+  border-color: var(--brand-dark);
+  color: #fff;
+}
+
+.button-base.wt-dark:hover{
+  background-color: #002a43;
+  border-color: #002a43;
+  color: #fff;
+}
+
+/* --- Responsive behavior ---
+   When things get tight, put buttons on their own line */
+@media (max-width: 650px){
+  .wt-campus-actions{
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* Extra small screens: full-width buttons for tap targets */
+@media (max-width: 520px){
+  .wt-campus-actions .button-base{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   Info Box Wrapper (optional but recommended)
+   - Only used by the "Library Contact Information" block
+========================================================= */
+
+.wt-info-box{
+  background: #fff;
+  border: 1px solid rgba(0,59,92,.18);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.wt-info-header h3{
+  margin: 0 0 .35rem;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  color: var(--brand-dark);
+  letter-spacing: .2px;
+}
+
+.wt-info-phone{
+  margin: 0 0 .75rem;
+  font-size: 1.05rem;
+}
+
+.wt-link-external{
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.wt-divider{
+  margin: 1rem 0 1rem;
+  border: 0;
+  height: 1px;
+  background: rgba(0,59,92,.18);
+}
+
+.wt-section-title{
+  margin: 0 0 .75rem;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  color: var(--brand-dark);
+  font-size: 1.05rem;
+}
+
+.wt-campus-directory{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* =========================================================
+   System-wide Library Hours Widget (All Locations)
+   Matches individual campus library widgets
+   ========================================================= */
+
+/* Container */
+#lib-hero-hours-all{
+  font-family: "Nunito Sans","Helvetica Neue",Arial,sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #006ba6; /* Vibrant Blue */
+
+  display: block;
+  width: 100%;
+
+  padding: 16px 20px 18px;
+  margin-top: 3.5rem;
+
+  background: #fff;
+
+  border: 2px solid rgba(0,181,226,0.4);
+  border-left: 6px solid #003b5c; /* Navy accent */
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+#lib-hero-hours-all .lib-hours-header{
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .6rem;
+}
+
+#lib-hero-hours-all .libraryClockIcon{
+  font-size: 22px;
+  color: #006ba6;
+}
+
+#lib-hero-hours-all .lib-hours-title{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   List
+   ========================================================= */
+
+#lib-hero-hours-all .lib-hours-all-list{
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0;
+  font-size: 16px;
+}
+
+/* =========================================================
+   Rows (shared for all li)
+   ========================================================= */
+
+#lib-hero-hours-all .lib-hours-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 14px;
+  margin-bottom: 6px;
+
+  border-radius: 6px;
+  cursor: default;
+
+  transition:
+    background-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease;
+}
+
+/* Hover + keyboard focus */
+#lib-hero-hours-all .lib-hours-row:hover,
+#lib-hero-hours-all .lib-hours-row:focus{
+  background: rgba(0,181,226,0.16);
+  box-shadow: inset 0 0 0 2px rgba(0,181,226,0.35);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* =========================================================
+   Row content
+   ========================================================= */
+
+#lib-hero-hours-all .lib-hours-location{
+  color: #006ba6;
+  font-weight: 700;
+}
+
+#lib-hero-hours-all .lib-hours-time{
+  color: #a89968; /* Wake Tech Gold */
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Closed state */
+#lib-hero-hours-all .lib-hours-row.is-closed .lib-hours-time{
+  color: #003b5c;
+  font-weight: 800;
+}
+
+/* =========================================================
+   FIRST ROW: All Wake Tech Libraries
+   ========================================================= */
+
+#lib-hero-hours-all .lib-hours-row-all .lib-hours-time{
+  color: inherit; /* allow link color */
+}
+
+/* Link styled like a "time" value */
+#lib-hero-hours-all .lib-hours-all-link{
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  color: #00b5e2; /* Bright Blue */
+  white-space: nowrap;
+
+  transition: color .18s ease;
+}
+
+/* Link color deepens on row interaction */
+#lib-hero-hours-all .lib-hours-row:hover .lib-hours-all-link,
+#lib-hero-hours-all .lib-hours-row:focus .lib-hours-all-link{
+  color: #003b5c;
+}
+
+/* Focus ring on the link itself */
+#lib-hero-hours-all .lib-hours-all-link:focus{
+  outline: 2px solid rgba(0,181,226,0.55);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px){
+  #lib-hero-hours-all{
+    padding: 18px 16px 20px;
+  }
+
+  #lib-hero-hours-all .lib-hours-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+  }
+
+  #lib-hero-hours-all .lib-hours-time{
+    white-space: normal;
+  }
+}
+
+/* =========================================================
+   add to button appointment area
+   ========================================================= */
+
+/* Icon inside buttons */
+.btn-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.5rem;
+  vertical-align: -0.15em;
+}
+
+.btn-icon svg{
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Contact the Library button */
+.contact-button_media {
+  background-color: #003b5c; /* Wake Tech dark blue */
+  color: #ffffff;
+}
+
+.contact-button_media:hover {
+  background-color: #002a42;
+}
+
+.button_media-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* =========================================================
+   Campus Directory Grid (scoped)
+   - Multiple campuses per row
+========================================================= */
+
+.wt-campus-directory{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+/* campus tile wrapper */
+.wt-campus-tile{
+  border: 1px solid rgba(0, 59, 92, 0.15);
+  border-radius: 14px;
+  background: #fff;
+  padding: 1.25rem;
+}
+
+/* campus title */
+.wt-campus-title{
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  color: #003b5c;
+  font-size: 1.25rem;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* staff area inside campus tile */
+.wt-campus-staff{
+  display: grid;
+  gap: 1rem;
+}
+
+/* for campuses with multiple staff: allow 2-up inside the tile on wider screens */
+@media (min-width: 1100px){
+  .wt-campus-staff-multi{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================
+   Faculty Feedback (Anonymous)
+   ============================ */
+
+.wt-testimonials{
+  margin: 3rem auto;
+  max-width: 1140px;
+  padding: 0 1rem;
+}
+
+.wt-testimonials .container-flex{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual feedback card */
+.wt-testimonial{
+  background: #ffffff;
+  border-left: 6px solid #00b5e2; /* Wake Tech bright */
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Quote text */
+.wt-testimonial blockquote{
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #003b5c; /* Wake Tech dark */
+  position: relative;
+}
+
+/* Subtle quotation mark accent */
+.wt-testimonial blockquote::before{
+  content: "“";
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(0, 181, 226, 0.35);
+  position: absolute;
+  top: -1rem;
+  left: -0.75rem;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px){
+  .wt-testimonial{
+    padding: 1.75rem;
+  }
+}
+
+/* ===== Responsive Full-Container iFrame ===== */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 150%; /* tweak based on aspect ratio needed */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
 
 
 
