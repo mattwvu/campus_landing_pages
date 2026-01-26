@@ -40,7 +40,14 @@
   --wt-space-4: 32px;
   --wt-space-5: 40px;
   --wt-space-6: 48px;
-
+  --wtr-dark: var(--brand-dark, #003b5c);
+  --wtr-bright: var(--brand-bright, #00b5e2);
+  --wtr-bluegrey: var(--bluegrey, #5a8296);
+  --wtr-yellow: #FFD300;
+  --wtr-yellow-hover: #e6bf00;
+  --wtr-divider: rgba(0,59,92,.14);
+  --wtr-shadow: 0 6px 14px rgba(0,0,0,.08);
+  --wtr-shadow-hover: 0 10px 18px rgba(0,0,0,.12);
 }
 
 
@@ -2287,6 +2294,64 @@ html { scroll-behavior: smooth; }
     display: block;
   }	
 
+/* ==========================================================
+   Video Grid (2 per row + titles) — SCOPED
+   ========================================================== */
+
+.wt-video-gallery{
+  margin: 2rem 0;
+}
+
+/* 2-up grid on desktop, 1-up on mobile */
+.wt-video-gallery .wt-video-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Card wrapper */
+.wt-video-gallery .wt-video-card{
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* Responsive embed with border like your current wrapper */
+.wt-video-gallery .wt-video-embed{
+  width: 100%;
+  border: 2px solid #5a8296;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+/* Absolute iframe to fill the aspect-ratio box */
+.wt-video-gallery .wt-video-embed iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* Title under video */
+.wt-video-gallery .wt-video-title{
+  margin: .65rem 0 0 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--brand-dark, #003b5c);
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 800px){
+  .wt-video-gallery .wt-video-grid{
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
 
 
 /* =========================================================
@@ -2735,6 +2800,188 @@ html { scroll-behavior: smooth; }
   border-color: rgba(168, 153, 104, .45);
 }
 
+
+/* -----------------------------
+   Component wrapper + layout
+------------------------------ */
+.wtr-wrap{
+  margin: 2.5rem 0;
+  font-family: "Montserrat","Nunito Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+.wtr-list{ display: block; }
+
+.wtr-row{
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(620px, 760px);
+  align-items: center;
+  column-gap: 1.75rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--wtr-divider, rgba(0,59,92,.14));
+}
+
+.wtr-name{
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  color: var(--wtr-dark, #003b5c);
+  text-decoration: none;
+  margin: 0;
+}
+
+.wtr-name:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* -----------------------------
+   Actions grid + slot locking
+------------------------------ */
+.wtr-actions{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.wtr-actions .wtr-slot-1{ grid-column: 1; }
+.wtr-actions .wtr-slot-2{ grid-column: 2; }
+.wtr-actions .wtr-slot-3{ grid-column: 3; }
+
+/* -----------------------------
+   Button base + size modifiers
+------------------------------ */
+.wtr-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .8rem 1rem;
+
+  border-radius: 0;
+  border: 2px solid transparent;
+
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.05;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease, background-color .12s ease;
+  box-shadow: var(--wtr-shadow, 0 6px 14px rgba(0,0,0,.08));
+}
+
+.wtr-btn:focus{
+  outline: 3px solid rgba(0,181,226,.35);
+  outline-offset: 2px;
+}
+
+.wtr-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(.98);
+  box-shadow: var(--wtr-shadow-hover, 0 10px 18px rgba(0,0,0,.12));
+}
+
+/* Larger CTA */
+.wtr-btn--large{
+  font-size: 1.15rem;          /* cleaned: was 1.5rem */
+  padding: 1.05rem 1.6rem;
+}
+
+/* Width helpers (fixed: narrow was incorrectly 60%) */
+.wtr-btn--narrow{ width: 40%; }
+.wtr-btn--wide{ width: 60%; }
+
+/* -----------------------------
+   Color variants (component-native)
+   (keep these if you still use wtr-btn--blue etc.)
+------------------------------ */
+.wtr-btn--blue{
+  background: var(--wtr-bright, #00b5e2);
+  color: var(--wtr-dark, #003b5c);
+}
+
+.wtr-btn--dark{
+  background: var(--wtr-dark, #003b5c);
+  color: #fff;
+}
+
+.wtr-btn--bluegray{
+  background: var(--wtr-bluegrey, #5a8296);
+  color: #fff;
+}
+
+/* -----------------------------
+   Utility button variants (.btn-*)
+   Cleaned: fixed incorrect hover on .btn-bluegrey
+------------------------------ */
+.btn-yellow{
+  background-color: var(--wtr-yellow, #FFD300);
+  color: #fff;
+  border-color: var(--wtr-yellow, #FFD300);
+}
+.btn-yellow:hover{
+  background-color: var(--wtr-yellow-hover, #e6bf00);
+  border-color: var(--wtr-yellow-hover, #e6bf00);
+}
+
+.btn-bluegrey{
+  background-color: var(--wtr-bluegrey, #5a8296);
+  color: #fff;
+  border-color: var(--wtr-bluegrey, #5a8296);
+}
+.btn-bluegrey:hover{
+  background-color: #4e7284;
+  border-color: #4e7284;
+}
+
+/* -----------------------------
+   Icon spacing (shared)
+------------------------------ */
+.wtr-btn-icon{
+  display: inline-flex;
+  align-items: center;
+  margin-right: .65rem;
+}
+.wtr-btn-icon svg{
+  width: 1.3em;
+  height: 1.3em;
+}
+
+/* -----------------------------
+   Responsive behavior
+------------------------------ */
+@media (max-width: 768px){
+  .wtr-row{
+    grid-template-columns: 1fr;
+    row-gap: .9rem;
+    align-items: start;
+    padding: 1.25rem 0;
+  }
+
+  .wtr-actions{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Let buttons flow naturally on small screens */
+  .wtr-actions .wtr-slot-1,
+  .wtr-actions .wtr-slot-2,
+  .wtr-actions .wtr-slot-3{
+    grid-column: auto;
+  }
+
+  /* Make width helpers full-width on smaller screens */
+  .wtr-btn--narrow,
+  .wtr-btn--wide{
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px){
+  .wtr-actions{ grid-template-columns: 1fr; }
+  .wtr-btn{ white-space: normal; }
+}
 
 
 /* =========================================
@@ -4017,6 +4264,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
