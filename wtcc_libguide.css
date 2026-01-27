@@ -2591,7 +2591,7 @@ html { scroll-behavior: smooth; }
   border-bottom: 1px solid rgba(0, 59, 92, 0.15);
 }
 
-/* Campus name */
+/* Campus name (only if you're actually using an h3 somewhere) */
 .wt-campus-row h3 {
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
@@ -2605,39 +2605,73 @@ html { scroll-behavior: smooth; }
   border-bottom: none;
 }
 
-/* Mobile stacking */
-@media (max-width: 768px) {
-  .wt-campus-row {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start; /* prevent space-between creating vertical gap */
-    gap: 0.75rem;                /* controls space between name + buttons */
-    padding: 0.75rem 0;          /* tighter vertical padding on mobile */
+/* =========================================================
+   FIX: Mobile gap between campus name and buttons
+   ========================================================= */
+
+@media (max-width: 650px){
+
+  .wt-campus-row{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 0.75rem 0 !important;
   }
 
- /* If your campus name is an <a> (as in your HTML) */
-  .wt-campus-name {
-    width: 100%;
-    text-align: left;
-    margin: 0;
-    line-height: 1.3;
-  }
-	
- /* Button group */
-  .wt-campus-actions {
-    width: 100%;
-    margin-top: 0;
+  /* Campus name is a link in your HTML */
+  .wt-campus-name{
+    width: 100% !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.25 !important;
   }
 
-  /* Buttons */
-  .wt-campus-actions a {
-    width: 100%;
-    text-align: center;
-    margin: 0.5rem 0 0;          /* consistent spacing between buttons */
+  /* If a heading is used anywhere */
+  .wt-campus-row h3{
+    margin: 0 !important;
   }
 
-  .wt-campus-actions a:first-child {
-    margin-top: 0;               /* no extra space before first button */
+  /* Campus name (link styled like a heading) */
+.wt-campus-name{
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand-dark);
+  text-decoration: none;
+  display: block;          /* ensures clean stacking on mobile */
+}
+
+.wt-campus-name:hover{
+  text-decoration: underline;
+}
+
+  .wt-campus-actions{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Kill any mystery margins on the buttons */
+  .wt-campus-actions .button-base,
+  .wt-campus-actions .reserve-button_media{
+    margin-top: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .wt-campus-actions .button-base:last-child{
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 520px){
+  .wt-campus-actions .button-base{
+    width: 100% !important;
+    text-align: center !important;
   }
 }
 
@@ -4338,6 +4372,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
