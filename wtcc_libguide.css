@@ -51,27 +51,79 @@
 }
 
 
-/* Main Header */
+/* =========================================================
+   Wake Tech Libraries — Header
+   ========================================================= */
+
+/* -------------------------
+   Header wrapper
+------------------------- */
 header.wt-header{
   background-color: var(--brand-dark, #003b5c) !important;
   padding: 1rem 0 !important;
-  width: 100%;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
 }
 
-.wt-header-logo {
-  height: 10rem;   /* try 6–8rem */
+/* -------------------------
+   Full-bleed header + bar (desktop)
+------------------------- */
+@media (min-width: 768px){
+  header.wt-header,
+  .wt-header-bar{
+    width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+}
+
+/* -------------------------
+   Header bar
+------------------------- */
+.wt-header-bar{
+  height: 1.5rem;
+  background-color: #00b5e2 !important;
+}
+
+/* -------------------------
+   Logo
+------------------------- */
+.wt-header-logo{
+  display: block;
+  height: 12rem;     /* desktop size */
   width: auto;
   max-width: none;
 }
 
-.wt-header-bar{
-  height: 1.5rem;
-  background-color: #00b5e2 !important;
+/* -------------------------
+   Mobile behavior
+------------------------- */
+@media (max-width: 767.98px){
+  /* stop full-bleed on mobile */
+  header.wt-header,
+  .wt-header-bar{
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* center logo */
+  header.wt-header .container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .wt-header-logo{
+    width: min(320px, 88vw);
+    height: auto;
+    max-width: 88vw;
+  }
+}
+
+/* -------------------------
+   Safety net for overflow
+------------------------- */
+html, body{
   width: 100%;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  overflow-x: hidden;
 }
 
 
@@ -4286,6 +4338,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
