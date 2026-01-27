@@ -2949,6 +2949,8 @@ html { scroll-behavior: smooth; }
 ------------------------------ */
 .wtr-wrap{
   margin: 2.5rem 0;
+  max-width: 100%;
+  overflow-x: clip; /* prevents horizontal scroll / layout pushing */
   font-family: "Montserrat","Nunito Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
@@ -2956,11 +2958,20 @@ html { scroll-behavior: smooth; }
 
 .wtr-row{
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(620px, 760px);
+
+  /* KEY FIX: remove the 620px minimum that can force overflow */
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 760px);
+
   align-items: center;
   column-gap: 1.75rem;
   padding: 1.35rem 0;
   border-bottom: 1px solid var(--wtr-divider, rgba(0,59,92,.14));
+}
+
+/* KEY FIX: grid items must be allowed to shrink */
+.wtr-name,
+.wtr-actions{
+  min-width: 0;
 }
 
 .wtr-name{
@@ -3095,6 +3106,20 @@ html { scroll-behavior: smooth; }
 /* -----------------------------
    Responsive behavior
 ------------------------------ */
+/* -----------------------------
+   WRAP EARLIER (this is the “buttons wrap” fix)
+   Use wider breakpoints because LibGuides content is often narrow
+------------------------------ */
+@media (max-width: 1100px){
+  .wtr-actions{
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+  /* Slot 3 drops to next line and spans full width (nice CTA look) */
+  .wtr-actions .wtr-slot-3{
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 768px){
   .wtr-row{
     grid-template-columns: 1fr;
@@ -3113,19 +3138,12 @@ html { scroll-behavior: smooth; }
   .wtr-actions .wtr-slot-3{
     grid-column: auto;
   }
-
-  /* Make width helpers full-width on smaller screens */
-  .wtr-btn--narrow,
-  .wtr-btn--wide{
-    width: 100%;
-  }
 }
 
 @media (max-width: 576px){
   .wtr-actions{ grid-template-columns: 1fr; }
   .wtr-btn{ white-space: normal; }
 }
-
 
 /* =========================================
    Search Box with Tabs
@@ -4407,6 +4425,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
