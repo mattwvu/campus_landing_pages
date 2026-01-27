@@ -2947,6 +2947,9 @@ html { scroll-behavior: smooth; }
 /* -----------------------------
    Component wrapper + layout
 ------------------------------ */
+/* -----------------------------
+   Component wrapper + layout
+------------------------------ */
 .wtr-wrap{
   margin: 2.5rem 0;
   max-width: 100%;
@@ -2989,27 +2992,29 @@ html { scroll-behavior: smooth; }
 }
 
 /* -----------------------------
-   Actions grid + slot locking
+   Actions layout + slot locking
+   (Changed to FLEX so wrapping works on mobile even if media queries don’t fire)
 ------------------------------ */
 .wtr-actions{
   width: 100%;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;          /* ✅ allow wrap */
+  gap: .9rem;               /* (kept) */
+  align-items: stretch;
 
-  /* keep 3 “slots” so the system stays consistent */
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .9rem;
+  /* NOTE: grid-template-columns removed (conflicts with flex and does nothing) */
 }
 
-/* Slot locking (default) */
-.wtr-actions .wtr-slot-1{ grid-column: 1; }
-.wtr-actions .wtr-slot-2{ grid-column: 2; }
-.wtr-actions .wtr-slot-3{ grid-column: 3; }
+/* Slot “locking” via order (replaces grid-column) */
+.wtr-actions .wtr-slot-1{ order: 1; }
+.wtr-actions .wtr-slot-2{ order: 2; }
+.wtr-actions .wtr-slot-3{ order: 3; }
 
 /* ✅ iOS-safe KEY FIX:
-   Add class "wtr-actions--2" to rows that only have 2 buttons.
-   This makes slot-2 take columns 2–3 so buttons aren’t tiny. */
+   If the row has only 2 buttons, keep the class.
+   (In flex, this is optional, but harmless. We use it to slightly tune sizing.) */
 .wtr-actions--2 .wtr-slot-2{
-  grid-column: 2 / -1;
+  /* grid-column removed (conflicts with flex and does nothing) */
 }
 
 /* -----------------------------
@@ -3019,9 +3024,14 @@ html { scroll-behavior: smooth; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: .8rem 1rem;
 
+  /* CHANGED for flex sizing:
+     Prevents tiny buttons + enables natural wrapping */
+  flex: 1 1 240px;
+  min-width: 240px;
+  width: 100%;
+
+  padding: .8rem 1rem;
   border-radius: 0;
   border: 2px solid transparent;
 
@@ -3121,18 +3131,19 @@ html { scroll-behavior: smooth; }
    Use wider breakpoints because LibGuides content is often narrow
 ------------------------------ */
 @media (max-width: 1100px){
-  .wtr-actions{
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  /* With flex, wrapping already works; we just relax sizing slightly */
+  .wtr-btn{
+    flex-basis: 220px;
+    min-width: 220px;
   }
 
-  /* Slot 3 drops to next line and spans full width (nice CTA look) */
+  /* Previous grid-only rules removed/neutralized (conflict with flex) */
   .wtr-actions .wtr-slot-3{
-    grid-column: 1 / -1;
+    /* grid-column removed (conflicts with flex and does nothing) */
   }
 
-  /* ✅ Important: in 2-column mode, don’t force slot-2 spanning */
   .wtr-actions--2 .wtr-slot-2{
-    grid-column: auto;
+    /* grid-column removed (conflicts with flex and does nothing) */
   }
 }
 
@@ -3144,21 +3155,30 @@ html { scroll-behavior: smooth; }
     padding: 1.25rem 0;
   }
 
-  .wtr-actions{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Flex already wraps, but we can tighten the minimum so two fit more often */
+  .wtr-btn{
+    flex-basis: 200px;
+    min-width: 200px;
   }
 
-  /* Let buttons flow naturally on small screens */
+  /* Previous grid-only rules removed/neutralized (conflict with flex) */
   .wtr-actions .wtr-slot-1,
   .wtr-actions .wtr-slot-2,
   .wtr-actions .wtr-slot-3{
-    grid-column: auto;
+    /* grid-column removed (conflicts with flex and does nothing) */
   }
 }
 
 @media (max-width: 576px){
-  .wtr-actions{ grid-template-columns: 1fr; }
-  .wtr-btn{ white-space: normal; }
+  /* Force full-width stacking on very small screens */
+  .wtr-btn{
+    flex-basis: 100%;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  /* Keep this (harmless) */
+  .wtr-actions{ /* no grid-template-columns in flex */ }
 }
 
 /* =========================================
@@ -4441,6 +4461,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
