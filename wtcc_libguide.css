@@ -2675,6 +2675,41 @@ html { scroll-behavior: smooth; }
   }
 }
 
+@media (max-width: 650px){
+
+  /* Stack name + actions vertically (this is the missing piece) */
+  .wt-campus-row{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Your HTML uses <a class="wt-campus-name"> (not an h3) */
+  .wt-campus-name{
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.25 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .wt-campus-actions{
+    width: 100% !important;
+    margin: 0 !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+
+  .wt-campus-actions .button-base{
+    margin: 0 0 0.5rem 0 !important;
+  }
+
+  .wt-campus-actions .button-base:last-child{
+    margin-bottom: 0 !important;
+  }
+}
+
 /* =========================================
    WT Equipment Accordion (compact but readable)
    Larger fonts + larger overall spacing
@@ -4372,6 +4407,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
