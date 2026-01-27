@@ -2558,14 +2558,36 @@ html { scroll-behavior: smooth; }
   .wt-campus-row {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start; /* prevent space-between creating vertical gap */
+    gap: 0.75rem;                /* controls space between name + buttons */
+    padding: 0.75rem 0;          /* tighter vertical padding on mobile */
   }
 
-  .wt-campus-row a {
+ /* If your campus name is an <a> (as in your HTML) */
+  .wt-campus-name {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    line-height: 1.3;
+  }
+	
+ /* Button group */
+  .wt-campus-actions {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* Buttons */
+  .wt-campus-actions a {
     width: 100%;
     text-align: center;
+    margin: 0.5rem 0 0;          /* consistent spacing between buttons */
+  }
+
+  .wt-campus-actions a:first-child {
+    margin-top: 0;               /* no extra space before first button */
   }
 }
-
 
 /* =========================================
    WT Equipment Accordion (compact but readable)
@@ -4264,6 +4286,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
