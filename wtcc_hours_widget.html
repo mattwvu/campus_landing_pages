@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>all_hours</title>
+</head>
+
+<body>
+	
+<!-- =========================================================
+     System-wide Library Hours Widget
+     - LibGuides / Springshare safe
+     - Uses LibCal lid=0 (all locations)
+     ========================================================= -->
+
+<div id="lib-hero-hours-all"
+     class="lib-hours-container"
+     role="region"
+     aria-label="Library hours for all Wake Tech locations">
+
+  <!-- Header -->
+  <div class="lib-hours-header">
+    <span class="fa fa-clock-o libraryClockIcon" aria-hidden="true"></span>
+    <!-- Visible text CAN use curly apostrophe safely -->
+    <span class="lib-hours-title">Today’s Library Hours</span>
+  </div>
+
+  <!-- Hours List -->
+  <ul class="lib-hours-all-list"
+      id="lib-hours-all-list"
+      aria-label="List of library locations and todays hours">
+    <!-- JS injects rows here -->
+  </ul>
+
+</div>
+
+<script>
+/* =========================================================
+   LibCal Hours – System-wide (lid=0)
+   Option A: Exclude locations by lid
+   ========================================================= */
+
+(function () {
+
+  const LIST_ID = "lib-hours-all-list";
+  const HOURS_API = "https://waketech.libcal.com/api_hours_today.php?lid=0&format=json&systemTime=0";
+  const ALL_HOURS_URL = "https://waketech.libcal.com/hours/";
+
+  /* ---------------------------------------------------------
+     Excluded locations (by LibCal lid)
+     --------------------------------------------------------- */
+  const EXCLUDED_LIDS = [25654, 25398]; // Beltline, Makerspace
+
+  const listEl = document.getElementById(LIST_ID);
+  if (!listEl) return;
+
+  /* ---------------------------------------------------------
+     Utilities
+     --------------------------------------------------------- */
+
+  function escapeHtml(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function normalizeHours(rendered) {
+    const txt = String(rendered || "").trim();
+    if (!txt) return "Hours not available";
+    if (/closed/i.test(txt)) return "Closed";
+    return txt;
+  }
+
+  function makeRow(leftText, rightHtml, extraClass) {
+    const cls = ["lib-hours-row", extraClass].filter(Boolean).join(" ");
+    return (
+      '<li class="' + cls + '" tabindex="0">' +
+        '<span class="lib-hours-location">' + escapeHtml(leftText) + '</span>' +
+        '<span class="lib-hours-time">' + rightHtml + '</span>' +
+      '</li>'
+    );
+  }
+
+  /* ---------------------------------------------------------
+     FIRST ROW (always shown)
+     --------------------------------------------------------- */
+
+  const firstRow =
+    makeRow(
+      "All Wake Tech Libraries",
+      '<a class="lib-hours-all-link" href="' + ALL_HOURS_URL + '">' +
+        'See All Hours <span class="fa fa-long-arrow-right" aria-hidden="true"></span>' +
+      '</a>',
+      "lib-hours-row-all"
+    );
+
+  // Loading placeholder
+  listEl.innerHTML =
+    firstRow +
+    makeRow("Loading locations", "<span>Loading…</span>", "");
+
+  /* ---------------------------------------------------------
+     Fetch LibCal data
+     --------------------------------------------------------- */
+
+  fetch(HOURS_API)
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+
+      const locations = Array.isArray(data.locations)
+        ? data.locations.filter(function (loc) {
+            return !EXCLUDED_LIDS.includes(Number(loc.lid));
+          })
+        : [];
+
+      if (!locations.length) {
+        listEl.innerHTML =
+          firstRow +
+          makeRow("No locations available", "<span>Unavailable</span>", "is-closed");
+        return;
+      }
+
+      const rows = locations.map(function (loc) {
+        const name = loc.name || "Library";
+        const hours = normalizeHours(loc.rendered);
+        const cls = hours === "Closed" ? "is-closed" : "";
+        return makeRow(name, escapeHtml(hours), cls);
+      });
+
+      /* -----------------------------------------------------
+         Optional: alphabetical sort
+         Comment out to keep LibCal order
+         ----------------------------------------------------- */
+      rows.sort(function (a, b) {
+        const getName = function (html) {
+          const m = html.match(/lib-hours-location">([^<]+)</);
+          return m ? m[1].toLowerCase() : "";
+        };
+        return getName(a).localeCompare(getName(b));
+      });
+
+      listEl.innerHTML = firstRow + rows.join("");
+    })
+    .catch(function (err) {
+      console.error("LibCal hours error:", err);
+      listEl.innerHTML =
+        firstRow +
+        makeRow("Unable to load hours", "<span>Unavailable</span>", "is-closed");
+    });
+
+})();
+</script>
+
+
+</body>
+</html>

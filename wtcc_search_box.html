@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>wtcc_search_box</title>
+<link href="wtcc_search_box.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+<section class="wt-search-strip" aria-labelledby="wt-search-title">
+  <div class="container-flex">
+
+    <!-- 1. Heading -->
+    <h2 id="wt-search-title" class="wt-search-title--xxl">
+      Search the Library's Resources
+    </h2>
+
+    <!-- 2. Search form -->
+    <form
+      id="wtSearchTabsForm"
+      class="wt-search-form--icon"
+      action="https://waketech.summon.serialssolutions.com/"
+      method="get"
+      target="_blank"
+      rel="noopener"
+    >
+      <label for="wt-catalog-q" class="visually-hidden">Search</label>
+
+      <input
+        class="wt-search-input--xxl"
+        type="text"
+        id="wt-catalog-q"
+        name="q"
+        maxlength="256"
+        placeholder="Search …"
+      />
+
+      <button
+        class="wt-search-iconbtn--plain"
+        type="submit"
+        aria-label="Search"
+      >
+        <span aria-hidden="true" class="wt-search-icon--stroke">
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="M16.2 16.2L21 21"></path>
+          </svg>
+        </span>
+      </button>
+    </form>
+
+    <!-- 3. Link under search -->
+    <p class="wt-search-alt-link">
+      <a
+        id="wtSearchAltLink"
+        href="https://waketech.summon.serialssolutions.com/advanced#!/advanced"
+        target="_blank"
+        rel="noopener"
+      >
+        Advanced search →
+      </a>
+    </p>
+
+    <!-- 4. Mobile hamburger -->
+    <div class="wt-tabs-mobilebar">
+      <button
+        type="button"
+        class="wt-tabs-hamburger"
+        aria-controls="wtSearchTablist"
+        aria-expanded="false"
+      >
+        <span class="wt-hamburger-icon" aria-hidden="true"></span>
+        <span class="wt-tabs-hamburger-label">Search options</span>
+      </button>
+    </div>
+
+    <!-- 5. Tabs -->
+    <div
+      id="wtSearchTablist"
+      class="wt-search-tabs"
+      role="tablist"
+      aria-label="Search options"
+    >
+      <button type="button" class="wt-search-tab" role="tab" data-wt-tab="all">
+        Search All
+      </button>
+
+      <button type="button" class="wt-search-tab" role="tab" data-wt-tab="nclive">
+        NC LIVE
+      </button>
+
+      <button type="button" class="wt-search-tab" role="tab" data-wt-tab="books">
+        Books
+      </button>
+
+      <!-- NEW: Database Finder tab (placed after Books) -->
+      <button type="button" class="wt-search-tab" role="tab" data-wt-tab="dbfinder">
+        Database Finder
+      </button>
+
+      <button type="button" class="wt-search-tab" role="tab" data-wt-tab="guides">
+        Research Guides
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  /* -----------------------------
+     Grab DOM elements
+  ----------------------------- */
+  const form = document.getElementById("wtSearchTabsForm");
+  const input = document.getElementById("wt-catalog-q");
+  const tabs = Array.from(document.querySelectorAll("[data-wt-tab]"));
+  const altLinkEl = document.getElementById("wtSearchAltLink");
+
+  if (!form || !input || !tabs.length) return;
+
+  /* -----------------------------
+     Hamburger controller
+  ----------------------------- */
+  const hamburger = document.querySelector(".wt-tabs-hamburger");
+  const tablistId = hamburger?.getAttribute("aria-controls");
+  const tablist = tablistId ? document.getElementById(tablistId) : null;
+
+  function openMenu() {
+    if (!hamburger || !tablist) return;
+    hamburger.setAttribute("aria-expanded", "true");
+    tablist.classList.add("wt-is-open");
+  }
+
+  function closeMenu() {
+    if (!hamburger || !tablist) return;
+    hamburger.setAttribute("aria-expanded", "false");
+    tablist.classList.remove("wt-is-open");
+  }
+
+  function toggleMenu() {
+    const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+    isOpen ? closeMenu() : openMenu();
+  }
+
+  hamburger?.addEventListener("click", toggleMenu);
+
+  // Close menu when a tab is selected (mobile UX)
+  tabs.forEach(btn => btn.addEventListener("click", closeMenu));
+
+  // Close on Escape
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  /* -----------------------------
+     Per-tab routing + alt link
+  ----------------------------- */
+  const TAB_CONFIG = {
+    all: {
+      action: "https://waketech.summon.serialssolutions.com/",
+      queryName: "q",
+      placeholder: "Search all library resources…",
+      hidden: {},
+      altLink: {
+        text: "Advanced search →",
+        href: "https://waketech.summon.serialssolutions.com/advanced#!/advanced"
+      }
+    },
+
+    nclive: {
+      action: "https://nclive.summon.serialssolutions.com/",
+      queryName: "q",
+      placeholder: "Search NC LIVE…",
+      hidden: {},
+      altLink: {
+        text: "Advanced search →",
+        href: "https://nclive.summon.serialssolutions.com/advanced#!/advanced"
+      }
+    },
+
+    books: {
+      action: "https://noca.ent.sirsi.net/client/en_US/waketech/search/results",
+      queryName: "q",
+      placeholder: "Search books…",
+      hidden: { lm: "WAKE_NORTH", te: "" },
+      altLink: {
+        text: "Advanced search →",
+        href: "https://noca.ent.sirsi.net/client/en_US/waketech/search/advanced?"
+      }
+    },
+
+    /* NEW: Database Finder */
+    dbfinder: {
+      action: "https://researchguides.waketech.edu/az/databases",
+      queryName: "q",
+      placeholder: "Search for database by name or subject",
+      hidden: {},
+      altLink: {
+        text: "View All Databases",
+        href: "https://researchguides.waketech.edu/az/databases"
+      }
+    },
+
+    guides: {
+      action: "https://researchguides.waketech.edu/srch.php",
+      queryName: "q",
+      placeholder: "Search research guides…",
+      hidden: {},
+      altLink: {
+        text: "See all research guides →",
+        href: "https://researchguides.waketech.edu/"
+      }
+    }
+  };
+
+  function clearInjectedHidden() {
+    form.querySelectorAll('input[data-wt-hidden="1"]').forEach(el => el.remove());
+  }
+
+  function injectHidden(hiddenObj) {
+    Object.entries(hiddenObj || {}).forEach(([name, value]) => {
+      const el = document.createElement("input");
+      el.type = "hidden";
+      el.name = name;
+      el.value = value;
+      el.setAttribute("data-wt-hidden", "1");
+      form.insertBefore(el, form.firstChild);
+    });
+  }
+
+  function setActiveTab(key) {
+    const cfg = TAB_CONFIG[key] || TAB_CONFIG.all;
+
+    form.action = cfg.action;
+    input.name = cfg.queryName || "q";
+    input.placeholder = cfg.placeholder || "Search …";
+
+    clearInjectedHidden();
+    injectHidden(cfg.hidden);
+
+    tabs.forEach(btn => {
+      const active = btn.dataset.wtTab === key;
+      btn.classList.toggle("wt-is-active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    if (altLinkEl) {
+      altLinkEl.textContent = cfg.altLink.text;
+      altLinkEl.href = cfg.altLink.href;
+    }
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => setActiveTab(btn.dataset.wtTab));
+  });
+
+  setActiveTab("all");
+});
+</script>
+
+
+	
+</body>
+</html>

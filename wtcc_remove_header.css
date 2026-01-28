@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style>
+
+/* =========================================
+  Keep breadcrumb, remove title & search
+   ========================================= */
+
+/* Hide guide title */
+#s-lg-guide-name,
+#s-lg-guide-header-title {
+  display: none !important;
+}
+
+/* Hide "Search this Guide" box */
+#s-lg-guide-search,
+#s-lg-guide-header-search {
+  display: none !important;
+}
+
+/* Optional: tighten spacing so breadcrumb sits nicely */
+#s-lg-guide-header {
+  padding-bottom: 0.25rem !important;
+}
+
+/* Remove extra spacing below header */
+#s-lg-guide-main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Keep breadcrumb visible and clean */
+#s-lib-bc {
+  margin-bottom: 0.5rem !important;
+}
+
+
+
+</style>
