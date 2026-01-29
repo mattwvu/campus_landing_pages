@@ -3036,7 +3036,7 @@ html { scroll-behavior: smooth; }
   border: 2px solid transparent;
 
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.05;
   text-decoration: none;
   text-align: center;
@@ -4465,6 +4465,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
