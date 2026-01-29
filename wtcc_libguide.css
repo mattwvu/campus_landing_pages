@@ -3094,7 +3094,7 @@ html { scroll-behavior: smooth; }
 ------------------------------ */
 .btn-yellow{
   background-color: var(--wtr-yellow, #FFD300);
-  color: #fff;
+  color: var(--wt-dark, #003b5c);
   border-color: var(--wtr-yellow, #FFD300);
 }
 .btn-yellow:hover{
@@ -4467,6 +4467,7 @@ html { scroll-behavior: smooth; }
 .wt-book-excerpt p {
   margin: 0;
 }
+
 
 
 
