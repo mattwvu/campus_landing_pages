@@ -4468,6 +4468,129 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
+/* =========================================================
+   LibGuides Side Navigation → Wake Tech block style
+========================================================= */
+
+/* Reset container */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Remove spacing on li */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Base link styling (all tabs) */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li > a{
+  /* Undo any global .nav flex rules */
+  display: block !important;
+  width: 100% !important;
+
+  /* Brand */
+  background: var(--wtcc-color-navy, #003B5C) !important;
+  color: #fff !important;
+
+  /* Layout */
+  padding: 18px 14px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+
+  /* Typography */
+  font-family: var(--wt-font-sans, "Montserrat","Nunito Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif) !important;
+  text-transform: uppercase !important;
+  font-weight: 900 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: .03em !important;
+  line-height: 1.2 !important;
+
+  /* Wrapping */
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: normal !important;
+
+  /* Softer divider */
+  border-bottom: 1px solid rgba(168,153,104,0.75) !important;
+}
+
+/* Remove divider from last item */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:last-child > a{
+  border-bottom: 0 !important;
+}
+
+/* Hover / focus */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li > a:hover,
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li > a:focus{
+  background: var(--wtcc-color-navy-hover, #004B74) !important;
+  color: #fff !important;
+  outline: none !important;
+}
+
+/* =========================================================
+   Active tab (white + arrow)
+========================================================= */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li.active > a,
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li > a.active{
+  background: #fff !important;
+  color: var(--wtcc-color-navy, #003B5C) !important;
+
+  /* Active layout: allow arrow + text */
+  display: flex !important;
+  align-items: center !important;
+
+  /* Typography tweaks for active */
+  font-weight: 900 !important;
+  font-size: 1.25rem !important;
+
+  /* No divider on active (matches your intent) */
+  border-bottom: 0 !important;
+}
+
+/* Arrow indicator (adjust to "»»" if you prefer) */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li.active > a::before,
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li > a.active::before{
+  content: ">>" !important;
+  color: var(--wtcc-color-gold, #F2A900) !important;
+  font-weight: 300 !important;
+  margin-right: .5rem !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+}
+
+/* =========================================
+   Hover → Bright Brand Blue + >> indicator
+========================================= */
+
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):hover,
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):focus{
+  background: var(--brand-bright, #00b5e2) !important;
+  color: #ffffff !important;
+  position: relative !important;
+}
+
+/* Add >> arrow on hover (non-active, non-admin only) */
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):hover::before,
+.s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):focus::before{
+  content: ">>" !important;
+  margin-right: .5rem !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+
+}
+
+.s-lg-tabs-side{
+  margin-top: 3.5rem;
+}
+
+
+
 
 
 
