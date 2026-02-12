@@ -3153,7 +3153,7 @@ html { scroll-behavior: smooth; }
 
   /* In narrow boxes, let buttons go full-width */
   .wtr-btn{
-    flex-basis: 100%;
+    flex-basis: 30%;
     min-width: 0;
     white-space: normal;
   }
@@ -4620,6 +4620,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
