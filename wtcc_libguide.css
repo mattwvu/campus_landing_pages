@@ -4521,7 +4521,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li > a{
   /* Undo any global .nav flex rules */
   display: block !important;
-  width: 100% !important;
+  width: 90% !important;
 
   /* Brand */
   background: var(--wtcc-color-navy, #003B5C) !important;
@@ -4620,6 +4620,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
