@@ -3050,7 +3050,7 @@ html { scroll-behavior: smooth; }
   border: 2px solid transparent;
 
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   line-height: 1.05;
   text-decoration: none;
   text-align: center;
@@ -4620,6 +4620,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
