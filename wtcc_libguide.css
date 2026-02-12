@@ -965,7 +965,7 @@ Horizontal Line
 }
 
 /* ============================
-   MEDIA COLUMN (AUTO-CROP FIX)
+   MEDIA COLUMN
 ============================ */
 
 /* NEW: define a fixed crop box */
@@ -998,6 +998,20 @@ Horizontal Line
     border-top: 1px solid var(--bluegrey-soft);
   }
 }
+
+/* ============================
+   Additional Details -- date and time
+============================ */
+
+.cs-details {
+  margin-top: 0.75rem;
+}
+
+.cs-meta {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
 
 /* ============================
    CONTROLS
@@ -4468,6 +4482,24 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
+/* Guide intro callout --- beginners guide blockquote */
+.wt-guide-intro{
+  background-color: var(--wt-dark);
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0 2rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-left: 6px solid var(--brand-bright);
+
+}
+
+.wt-guide-intro strong{
+  color: #ffffff;
+  font-weight: 800;
+}
+
+
 /* =========================================================
    LibGuides Side Navigation → Wake Tech block style
 ========================================================= */
@@ -4588,6 +4620,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
