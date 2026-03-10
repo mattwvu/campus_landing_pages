@@ -50,23 +50,36 @@
   --wtr-shadow-hover: 0 10px 18px rgba(0,0,0,.12);
 }
 
-p {
-  font-size: 1.125rem;   /* ~18px for better readability */
+/* Base accessibility typography */
+html {
+  font-size: 100%;
+}
+
+body {
   line-height: 1.7;
 }
 
-/* Maintain readability inside components */
-.wt-service-item p,
-.wt-box p,
-.box p,
-.cs-text,
-.atq-step p {
+/* Paragraphs and list text */
+p,
+li {
   font-size: 1.125rem;
   line-height: 1.7;
 }
 
-body {
-  font-size: 100%; /* ensures browser default scaling */
+/* Component-level overrides that were shrinking text */
+.wt-service-item p,
+.wt-box p,
+.box p,
+.cs-text,
+.atq-step p,
+.wt-subheader-text p,
+.atq-subheader-text p,
+.atq-header-banner p,
+.atq-header-transparent p,
+.atq-header-text p,
+.card-action p {
+  font-size: 1.125rem;
+  line-height: 1.7;
 }
 
 /* =========================================================
@@ -4638,6 +4651,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
