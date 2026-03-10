@@ -2,7 +2,7 @@
 /* CSS Document */
 
 :root{
-  --bluegrey:#5a8296;              /* your base */
+  --bluegrey:#4B7084;              /* your base */
   --bluegrey-soft: rgba(90,130,150,.25); /* faint */
   --brand-dark: #003b5c;
   --brand-bright: #00b5e2;
@@ -42,7 +42,7 @@
   --wt-space-6: 48px;
   --wtr-dark: var(--brand-dark, #003b5c);
   --wtr-bright: var(--brand-bright, #00b5e2);
-  --wtr-bluegrey: var(--bluegrey, #5a8296);
+  --wtr-bluegrey: var(--bluegrey, #4B7084);
   --wtr-yellow: #FFD300;
   --wtr-yellow-hover: #e6bf00;
   --wtr-divider: rgba(0,59,92,.14);
@@ -182,7 +182,7 @@ html, body{
     margin: 0;             /* remove extra spacing */
     font-size: 0.45em;
     font-weight: 600;
-    color: #5a8296;
+    color: #4B7084;
     text-transform: none;
     position: relative;
 }
@@ -413,7 +413,7 @@ Horizontal Line
   font-family: "Montserrat", system-ui, sans-serif !important;
   font-size: 14px !important;
   line-height: 1.8 !important;
-  color: #5a8296 !important;
+  color: #4B7084 !important;
 }
 
 /* Each item row */
@@ -452,7 +452,7 @@ Horizontal Line
   display: block !important;
   font-size: 1.15rem !important;
   font-weight: 600 !important;
-  color: #5a8296 !important;
+  color: #4B7084 !important;
   margin-bottom: 0.35rem !important;
 }
 
@@ -665,7 +665,7 @@ Horizontal Line
 /* Base box look for this variant */
 .multicolor-boxes .box{
   /* no background here so the tint classes can win */
-  border: 2px solid #5a8296 !important;
+  border: 2px solid #4B7084 !important;
 	box-shadow:var(--shadow); 
 }
 
@@ -778,7 +778,7 @@ Horizontal Line
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 1.5rem;          /* ↑ bigger text */
   font-weight: 700;
-  color: #5a8296;
+  color: #4B7084;
 
   border: 1px solid transparent;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -789,7 +789,7 @@ Horizontal Line
 /* Icon inline */
 .wt-quick-link i {
   font-size: 14px;
-  color: #5a8296 !important;
+  color: #4B7084 !important;
 }
 
 /* Hover */
@@ -867,7 +867,7 @@ Horizontal Line
   --bright: var(--wt-bright, #00b5e2);
   --gold: var(--wt-gold, #a89968);
   --muted: var(--wt-muted, #30607b);
-  --bluegrey: #5a8296;
+  --bluegrey: #4B7084;
   --bluegrey-soft: rgba(90,130,150,.25);
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   position: relative;
@@ -1737,7 +1737,7 @@ Horizontal Line
 .wt-subheader-text p {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.1rem);
-  color: #5a8296; /* blue-grey accent text */
+  color: #4B7084; /* blue-grey accent text */
   margin: 0.25rem 0 0;
 }
 
@@ -1796,7 +1796,7 @@ Horizontal Line
 }
 .wt-box p {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.25rem; line-height: 1.7; color: #5a8296; margin: 0;
+  font-size: 1.25rem; line-height: 1.7; color: #4B7084; margin: 0;
 }
 .wt-box a { color: #00b5e2; text-decoration: none; }
 .wt-box a:hover { color: #003b5c; text-decoration: underline; }
@@ -1889,7 +1889,7 @@ Horizontal Line
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: 12px;
   line-height: 1.6;
-  color: #5a8296;
+  color: #4B7084;
   margin: 0 0 0.75rem;
 }
 
@@ -2349,7 +2349,7 @@ html { scroll-behavior: smooth; }
 .wt-video-wrapper {
     width: 100%;
     max-width: 100%;
-    border: 2px solid #5a8296 !important;
+    border: 2px solid #4B7084 !important;
     padding: 0;
     margin: 0 auto;
   }
@@ -2384,7 +2384,7 @@ html { scroll-behavior: smooth; }
 /* Responsive embed with border like your current wrapper */
 .wt-video-gallery .wt-video-embed{
   width: 100%;
-  border: 2px solid #5a8296;
+  border: 2px solid #4B7084;
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
@@ -3098,7 +3098,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wtr-btn--bluegray{
-  background: var(--wtr-bluegrey, #5a8296);
+  background: var(--wtr-bluegrey, #4B7084);
   color: #fff;
 }
 
@@ -3117,9 +3117,9 @@ html { scroll-behavior: smooth; }
 }
 
 .btn-bluegrey{
-  background-color: var(--wtr-bluegrey, #5a8296);
+  background-color: var(--wtr-bluegrey, #4B7084);
   color: #fff;
-  border-color: var(--wtr-bluegrey, #5a8296);
+  border-color: var(--wtr-bluegrey, #4B7084);
 }
 .btn-bluegrey:hover{
   background-color: #4e7284;
@@ -3320,7 +3320,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-search-alt-link a{
-  color: var(--bluegrey, #5a8296);
+  color: var(--bluegrey, #4B7084);
   text-decoration: underline;
   text-underline-offset: 1rem;
   transition: color .18s ease;
