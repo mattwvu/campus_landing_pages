@@ -50,6 +50,26 @@
   --wtr-shadow-hover: 0 10px 18px rgba(0,0,0,.12);
 }
 
+/* ==========================================
+   Base Accessible Typography
+   Ensures readable base text and prevents
+   Bootstrap/LibGuides from shrinking fonts
+   ========================================== */
+
+html {
+  font-size: 100%; /* respects browser default (usually 16px) */
+}
+
+body {
+  font-size: 1.125rem;   /* ~18px base body text */
+  line-height: 1.7;      /* comfortable reading spacing */
+}
+
+/* Maintain readable spacing for common text elements */
+p,
+li {
+  line-height: 1.7;
+}
 
 /* =========================================================
    Wake Tech Libraries — Header
@@ -4620,6 +4640,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
