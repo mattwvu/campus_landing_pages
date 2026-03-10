@@ -65,6 +65,10 @@ p {
   line-height: 1.7;
 }
 
+body {
+  font-size: 100%; /* ensures browser default scaling */
+}
+
 /* =========================================================
    Wake Tech Libraries — Header
    ========================================================= */
@@ -4634,6 +4638,7 @@ html { scroll-behavior: smooth; }
 .s-lg-tabs-side{
   margin-top: 3.5rem;
 }
+
 
 
 
