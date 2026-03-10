@@ -930,7 +930,7 @@ Horizontal Line
   letter-spacing: 0.08em;
   color: var(--bright);
   margin-bottom: 0.4rem;
-  font-size: 0.95rem;
+  font-size: 10px;
 }
 
 .cs-title {
@@ -942,7 +942,7 @@ Horizontal Line
 
 .cs-text {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.6;
   margin-bottom: 1.25rem;
 }
@@ -1009,7 +1009,7 @@ Horizontal Line
 
 .cs-meta {
   margin: 0.25rem 0;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 
@@ -3089,7 +3089,7 @@ html { scroll-behavior: smooth; }
 ------------------------------ */
 .wtr-btn--blue{
   background: var(--wtr-bright, #005F7A);
-  color: var(--wtr-dark, #003b5c);
+  color: #ffffff;
 }
 
 .wtr-btn--dark{
@@ -3580,7 +3580,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-fsc__left .wt-fsc__sub{
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 1.25rem;
   color: #2b2b2b;
   opacity: .85;
@@ -3701,13 +3701,13 @@ html { scroll-behavior: smooth; }
 
 .wt-fsc__booktitle{
   font-weight: 800;
-  font-size: .95rem;
+  font-size: 12px;
   color: var(--brand-dark);
   line-height: 1.15;
 }
 
 .wt-fsc__author{
-  font-size: .85rem;
+  font-size: 12px;
   color: rgba(0,0,0,.7);
   margin-top: .12rem;
 }
