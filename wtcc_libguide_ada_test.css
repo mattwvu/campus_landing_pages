@@ -5,7 +5,7 @@
   --bluegrey:#4B7084;              /* your base */
   --bluegrey-soft: rgba(90,130,150,.25); /* faint */
   --brand-dark: #003b5c;
-  --brand-bright: #00b5e2;
+  --brand-bright: #005F7A;
   --light-grey:#f4f4f4;
   --white-transparent:rgba(255,255,255,0.9);
   --radius:14px;
@@ -13,7 +13,7 @@
   --shadow-hover:0 10px 30px rgba(0,0,0,.10);
   --icon-light:#8eaab9;
   --border-light:#dcdcdc; /* NEW light grey border tone */
-  --brand-gold:#a89968;                 /* Wake Tech gold */
+  --brand-gold:#7A6A3F;                 /* Wake Tech gold */
   /* Light tint helpers */
   --tint-blue-bg: rgba(0,181,226,.12);  /* light of bright blue */
   --tint-blue-br: rgba(0,181,226,.28);
@@ -26,8 +26,8 @@
   --wt-vibrant:#006ba6;
   --wt-dark:#003b5c;
   --wt-muted:#30607b;
-  --wt-bright:#00b5e2;   /* added */
-  --wt-gold:#a89968;     /* added */
+  --wt-bright:#005F7A;   /* added */
+  --wt-gold:#7A6A3F;     /* added */
   --wt-white:#ffffff;    /* added */
   --card-max:1100px;     /* added */
   --yes:#1e9e4a;
@@ -41,7 +41,7 @@
   --wt-space-5: 40px;
   --wt-space-6: 48px;
   --wtr-dark: var(--brand-dark, #003b5c);
-  --wtr-bright: var(--brand-bright, #00b5e2);
+  --wtr-bright: var(--brand-bright, #005F7A);
   --wtr-bluegrey: var(--bluegrey, #4B7084);
   --wtr-yellow: #FFD300;
   --wtr-yellow-hover: #e6bf00;
@@ -80,7 +80,7 @@ header.wt-header{
 ------------------------- */
 .wt-header-bar{
   height: 1.5rem;
-  background-color: #00b5e2 !important;
+  background-color: #005F7A !important;
 }
 
 /* -------------------------
@@ -137,7 +137,7 @@ html, body{
 }
 
 .footer-bar {
-  background-color: #00b5e2; /* Bright Blue (accent) */
+  background-color: #005F7A; /* Bright Blue (accent) */
   height: 20px; /* Adjust thickness of the bar */
   width: 100%;
   position: absolute;
@@ -243,13 +243,13 @@ html, body{
 #lib-hero-hours:hover,
 #lib-hero-hours:focus {
     background: rgba(0,181,226,0.18);
-    border-color: #a89968; /* Wake Tech Gold */
+    border-color: #7A6A3F; /* Wake Tech Gold */
     transform: translateY(-2px);
 }
 
 /* Gold-colored Hours Text */
 #lib-today-hours {
-    color: #a89968; /* Wake Tech Gold */
+    color: #7A6A3F; /* Wake Tech Gold */
     font-weight: 700;
 }
 
@@ -263,7 +263,7 @@ html, body{
 /* See All Hours Link */
 .lib-hero-all-hours a {
     text-decoration: none;
-    color: #00b5e2; /* Bright Blue Accent */
+    color: #005F7A; /* Bright Blue Accent */
     font-weight: 600;
     transition: color 0.2s ease;
 }
@@ -443,7 +443,7 @@ Horizontal Line
 }
 
 .wt-event-item [id^="api_upc_cid"] li a:hover {
-  color: #00b5e2 !important;      /* bright blue hover */
+  color: #005F7A !important;      /* bright blue hover */
   text-decoration: underline !important;
 }
 
@@ -613,7 +613,7 @@ Horizontal Line
 }
 
 .box-link:focus-visible {
-  outline: 3px solid #00b5e2; /* Wake Tech blue */
+  outline: 3px solid #005F7A; /* Wake Tech blue */
   outline-offset: 4px;
 }
 
@@ -703,7 +703,7 @@ Horizontal Line
   border-color:var(--tint-blue-br);
 }
 .box--blue:hover{
-  border-color:var(--brand-bright);          /* #00b5e2 */
+  border-color:var(--brand-bright);          /* #005F7A */
 }
 .box--blue .wt-link,
 .box--blue a{ color:var(--brand-bright); }
@@ -795,7 +795,7 @@ Horizontal Line
 /* Hover */
 .wt-quick-link:hover {
   transform: translateY(-3px);
-  border-color: #a89968;
+  border-color: #7A6A3F;
   color: #003b5c;
 }
 
@@ -864,8 +864,8 @@ Horizontal Line
 
 .campus-slider {
   --dark: var(--wt-dark, #003b5c);
-  --bright: var(--wt-bright, #00b5e2);
-  --gold: var(--wt-gold, #a89968);
+  --bright: var(--wt-bright, #005F7A);
+  --gold: var(--wt-gold, #7A6A3F);
   --muted: var(--wt-muted, #30607b);
   --bluegrey: #4B7084;
   --bluegrey-soft: rgba(90,130,150,.25);
@@ -1776,7 +1776,7 @@ Horizontal Line
 .wt-box {
   background: #fff;
   border: 2px solid rgba(0,59,92,.15);
-  border-left: 6px solid #00b5e2;
+  border-left: 6px solid #005F7A;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,.06);
   padding: 2rem 1.75rem;
@@ -1786,7 +1786,7 @@ Horizontal Line
 .wt-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
-  border-left-color: #a89968;
+  border-left-color: #7A6A3F;
 }
 .wt-box h4 {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -1798,11 +1798,11 @@ Horizontal Line
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: 1.25rem; line-height: 1.7; color: #4B7084; margin: 0;
 }
-.wt-box a { color: #00b5e2; text-decoration: none; }
+.wt-box a { color: #005F7A; text-decoration: none; }
 .wt-box a:hover { color: #003b5c; text-decoration: underline; }
-.wt-icon { color: #00b5e2; font-size: 1.4rem; }
-.wt-icon-sm { color: #00b5e2; font-size: 1.1rem; margin-right: .4rem; }
-.wt-box:hover .wt-icon, .wt-box:hover .wt-icon-sm { color: #a89968; }
+.wt-icon { color: #005F7A; font-size: 1.4rem; }
+.wt-icon-sm { color: #005F7A; font-size: 1.1rem; margin-right: .4rem; }
+.wt-box:hover .wt-icon, .wt-box:hover .wt-icon-sm { color: #7A6A3F; }
 
 /* 3-column flex row for staff directory */
 .wt-three-col {
@@ -1896,7 +1896,7 @@ Horizontal Line
 /* Link */
 .wt-service-link {
   font-weight: 700;
-  color: #00b5e2;
+  color: #005F7A;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1979,7 +1979,7 @@ Horizontal Line
   top: 0.65rem;
   width: 0.6rem;
   height: 0.6rem;
-  background: #00b5e2;
+  background: #005F7A;
   border-radius: 50%;
 }
 
@@ -2071,7 +2071,7 @@ Horizontal Line
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #00b5e2;
+  color: #005F7A;
   border: 2px solid rgba(0,181,226,0.4);
   background: rgba(0,181,226,0.1);
   border-radius: 999px;
@@ -2084,7 +2084,7 @@ Horizontal Line
 .wt-pill:focus {
   color: #003b5c;
   background: rgba(0,181,226,0.18);
-  border-color: #a89968;  /* gold accent */
+  border-color: #7A6A3F;  /* gold accent */
   transform: translateY(-2px);
   outline: none;
 }
@@ -2129,7 +2129,7 @@ html { scroll-behavior: smooth; }
 .wt-pill--primary:hover,
 .wt-pill--primary:focus {
   background-color: #002c46;
-  border-color: #a89968;
+  border-color: #7A6A3F;
   color: #ffffff;
 }
 
@@ -2197,14 +2197,14 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Hover Styles (WT Gold border) ---------- */
 #s-lg-page-prevnext .page-link:hover {
-    border-color: #a89968;
+    border-color: #7A6A3F;
     background: #ffffff;
     color: #003b5c !important;
 }
 
 /* Make “Previous:” / “Next:” labels gold */
 #s-lg-page-prevnext strong {
-    color: #a89968 !important;
+    color: #7A6A3F !important;
     font-weight: 700;
 }
 
@@ -2284,7 +2284,7 @@ html { scroll-behavior: smooth; }
 
 /* Hover */
 #s-lg-page-prevnext .page-link:hover {
-    border-color: #a89968;
+    border-color: #7A6A3F;
     background: #ffffff;
     color: #003b5c !important;
 }
@@ -2310,7 +2310,7 @@ html { scroll-behavior: smooth; }
   display: inline-block;
   margin-top: 0.75rem;
   font-weight: 700;
-  color: #00b5e2;
+  color: #005F7A;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -2322,14 +2322,14 @@ html { scroll-behavior: smooth; }
 
 /* Larger icons in this section */
 .wt-box .wt-icon {
-  color: #00b5e2;
+  color: #005F7A;
   margin-right: 0.6rem;
   font-size: 1.4rem;
   vertical-align: middle;
 }
 
 .wt-box:hover .wt-icon {
-  color: #a89968; /* gold hover accent */
+  color: #7A6A3F; /* gold hover accent */
 }
 
 
@@ -2444,7 +2444,7 @@ html { scroll-behavior: smooth; }
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-top: 8px solid #00b5e2;
+  border-top: 8px solid #005F7A;
   color: #ffffff;
   padding: 4rem;
   min-height: 30rem;
@@ -2542,7 +2542,7 @@ html { scroll-behavior: smooth; }
 
 /* Button color variants used in the HTML */
 .reserve-button_media {
-  background-color: #00b5e2;
+  background-color: #005F7A;
   color: #ffffff;
 }
 .reserve-button_media:hover {
@@ -2550,7 +2550,7 @@ html { scroll-behavior: smooth; }
 }
 
 .reserve-equipment-button_media {
-  background-color: #a89968;
+  background-color: #7A6A3F;
   color: #ffffff;
 }
 .reserve-equipment-button_media:hover {
@@ -2806,8 +2806,8 @@ html { scroll-behavior: smooth; }
 .wt-equip-chevron{
   width: 11px;
   height: 11px;
-  border-right: 3px solid #00b5e2;
-  border-bottom: 3px solid #00b5e2;
+  border-right: 3px solid #005F7A;
+  border-bottom: 3px solid #005F7A;
   transform: rotate(45deg);
   transition: transform .2s ease;
   margin-left: .25rem;
@@ -2859,7 +2859,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-equip-callout{
-  border-left: 6px solid #a89968;
+  border-left: 6px solid #7A6A3F;
   background: #fbfaf6;
   padding: .75rem .85rem;
   font-size: 10px;
@@ -2888,14 +2888,14 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-equip-link:hover{
-  background: #00b5e2;
+  background: #005F7A;
   color: #003b5c !important;
 }
 
 /* ---------- Accessibility ---------- */
 
 .wt-equip-summary:focus-visible{
-  outline: 3px solid #00b5e2;
+  outline: 3px solid #005F7A;
   outline-offset: 3px;
 }
 
@@ -3088,7 +3088,7 @@ html { scroll-behavior: smooth; }
    (keep these if you still use wtr-btn--blue etc.)
 ------------------------------ */
 .wtr-btn--blue{
-  background: var(--wtr-bright, #00b5e2);
+  background: var(--wtr-bright, #005F7A);
   color: var(--wtr-dark, #003b5c);
 }
 
@@ -4073,7 +4073,7 @@ html { scroll-behavior: smooth; }
 }
 
 #lib-hero-hours-all .lib-hours-time{
-  color: #a89968; /* Wake Tech Gold */
+  color: #7A6A3F; /* Wake Tech Gold */
   font-weight: 700;
   white-space: nowrap;
 }
@@ -4101,7 +4101,7 @@ html { scroll-behavior: smooth; }
   font-weight: 700;
   text-decoration: none;
 
-  color: #00b5e2; /* Bright Blue */
+  color: #005F7A; /* Bright Blue */
   white-space: nowrap;
 
   transition: color .18s ease;
@@ -4240,7 +4240,7 @@ html { scroll-behavior: smooth; }
 /* Individual feedback card */
 .wt-testimonial{
   background: #ffffff;
-  border-left: 6px solid #00b5e2; /* Wake Tech bright */
+  border-left: 6px solid #005F7A; /* Wake Tech bright */
   padding: 2rem;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
@@ -4601,7 +4601,7 @@ html { scroll-behavior: smooth; }
 
 .s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):hover,
 .s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):focus{
-  background: var(--brand-bright, #00b5e2) !important;
+  background: var(--brand-bright, #005F7A) !important;
   color: #ffffff !important;
   position: relative !important;
 }
