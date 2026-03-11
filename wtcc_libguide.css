@@ -2481,7 +2481,7 @@ html { scroll-behavior: smooth; }
   background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/phsl_campus.jpg');
 }
 
-/* Gradient overlay for stronger text contrast while preserving image */
+/* Stronger overlay for better overall readability */
 .pattern-north::before,
 .pattern-south::before,
 .pattern-rtp::before,
@@ -2494,9 +2494,9 @@ html { scroll-behavior: smooth; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.62) 0%,
-    rgba(0, 0, 0, 0.44) 40%,
-    rgba(0, 0, 0, 0.32) 100%
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.56) 42%,
+    rgba(0, 0, 0, 0.42) 100%
   );
   z-index: 1;
 }
@@ -2513,6 +2513,15 @@ html { scroll-behavior: smooth; }
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Header block gets its own dark background for reliable contrast */
+.media-title {
+  display: inline-block;
+  background: rgba(0, 59, 92, 0.92);
+  padding: 0.85rem 1rem 0.95rem;
+  border-radius: 4px;
+  max-width: fit-content;
+}
+
 /* Header typography inside each card */
 .media-title h1,
 .media-title h2,
@@ -2525,7 +2534,7 @@ html { scroll-behavior: smooth; }
   font-weight: 700;
   line-height: 1.1;
   margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+  text-shadow: none;
 }
 
 .media-title h1,
@@ -2537,26 +2546,16 @@ html { scroll-behavior: smooth; }
 .media-title h6,
 .media-title h3,
 .media-title .campus-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   margin-top: 0.15rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   font-weight: 700;
   line-height: 1.2;
 }
 
-.media-title .campus-subtitle {
-  font-size: 1.5rem;
-  margin-top: 0.15rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
-}
-
-/* Optional label treatment if you want extra contrast behind header text */
+/* Optional label treatment if you want extra contrast elsewhere */
 .wt-label-dark {
-  background-color: rgba(0, 59, 92, 0.82);
+  background-color: rgba(0, 59, 92, 0.92);
   color: #ffffff;
   padding: 0.75rem 1rem;
   border-radius: 4px;
@@ -2593,35 +2592,35 @@ html { scroll-behavior: smooth; }
 
 /* Button color variants used in the HTML */
 .reserve-button_media {
-  background-color: #005f7a;
+  background-color: #004c73;
   color: #ffffff;
 }
 
 .reserve-button_media:hover,
 .reserve-button_media:focus {
-  background-color: #006ba6;
+  background-color: #005d8d;
   color: #ffffff;
 }
 
 .contact-button_media {
-  background-color: #004c73;
+  background-color: #003b5c;
   color: #ffffff;
 }
 
 .contact-button_media:hover,
 .contact-button_media:focus {
-  background-color: #005d8d;
+  background-color: #004c73;
   color: #ffffff;
 }
 
 .reserve-equipment-button_media {
-  background-color: #7a6a3f;
+  background-color: #6f6138;
   color: #ffffff;
 }
 
 .reserve-equipment-button_media:hover,
 .reserve-equipment-button_media:focus {
-  background-color: #8b7e55;
+  background-color: #827447;
   color: #ffffff;
 }
 
@@ -2656,7 +2655,7 @@ html { scroll-behavior: smooth; }
   .media-title h6,
   .media-title h3,
   .media-title .campus-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -2671,7 +2670,6 @@ html { scroll-behavior: smooth; }
     max-width: 100%;
   }
 }
-
 
 /* =========================================
    Vertical Campus Appointment List
