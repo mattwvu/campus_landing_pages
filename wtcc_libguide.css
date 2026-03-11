@@ -2544,6 +2544,16 @@ html { scroll-behavior: smooth; }
   line-height: 1.2;
 }
 
+.media-title .campus-subtitle {
+  font-size: 1.5rem;
+  margin-top: 0.15rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
 /* Optional label treatment if you want extra contrast behind header text */
 .wt-label-dark {
   background-color: rgba(0, 59, 92, 0.82);
