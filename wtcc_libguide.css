@@ -2449,7 +2449,7 @@ html { scroll-behavior: smooth; }
   border-top: 8px solid #00b5e2;
   color: #ffffff;
   padding: 4rem;
-  min-height: 30rem;
+  min-height: 34rem;
 }
 
 /* Background images per campus */
@@ -2513,13 +2513,13 @@ html { scroll-behavior: smooth; }
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Header block gets its own dark background for reliable contrast */
+/* Full-width dark header band for reliable contrast */
 .media-title {
-  display: inline-block;
-  background: rgba(0, 59, 92, 0.92);
-  padding: 0.85rem 1rem 0.95rem;
-  border-radius: 4px;
-  max-width: fit-content;
+  display: block;
+  width: calc(100% + 8rem);
+  margin: -4rem -4rem 0 -4rem;
+  background: rgba(0, 59, 92, 0.94);
+  padding: 1.25rem 4rem 1.15rem;
 }
 
 /* Header typography inside each card */
@@ -2590,15 +2590,15 @@ html { scroll-behavior: smooth; }
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Button color variants used in the HTML */
+/* Reverted button color variants */
 .reserve-button_media {
-  background-color: #004c73;
+  background-color: #5a8296;
   color: #ffffff;
 }
 
 .reserve-button_media:hover,
 .reserve-button_media:focus {
-  background-color: #005d8d;
+  background-color: #6d95a8;
   color: #ffffff;
 }
 
@@ -2609,18 +2609,18 @@ html { scroll-behavior: smooth; }
 
 .contact-button_media:hover,
 .contact-button_media:focus {
-  background-color: #004c73;
+  background-color: #00507c;
   color: #ffffff;
 }
 
 .reserve-equipment-button_media {
-  background-color: #6f6138;
+  background-color: #7a6a3f;
   color: #ffffff;
 }
 
 .reserve-equipment-button_media:hover,
 .reserve-equipment-button_media:focus {
-  background-color: #827447;
+  background-color: #8b7e55;
   color: #ffffff;
 }
 
@@ -2640,7 +2640,13 @@ html { scroll-behavior: smooth; }
   .pattern-psec,
   .pattern-phsl {
     padding: 2rem;
-    min-height: 24rem;
+    min-height: 27rem;
+  }
+
+  .media-title {
+    width: calc(100% + 4rem);
+    margin: -2rem -2rem 0 -2rem;
+    padding: 1rem 2rem 0.95rem;
   }
 
   .button_media-group {
