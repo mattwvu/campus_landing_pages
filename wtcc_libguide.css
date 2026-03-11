@@ -2,10 +2,10 @@
 /* CSS Document */
 
 :root{
-  --bluegrey:#5a8296;              /* your base */
+  --bluegrey:#4B7084;              /* your base */
   --bluegrey-soft: rgba(90,130,150,.25); /* faint */
   --brand-dark: #003b5c;
-  --brand-bright: #00b5e2;
+  --brand-bright: #005F7A;
   --light-grey:#f4f4f4;
   --white-transparent:rgba(255,255,255,0.9);
   --radius:14px;
@@ -13,7 +13,7 @@
   --shadow-hover:0 10px 30px rgba(0,0,0,.10);
   --icon-light:#8eaab9;
   --border-light:#dcdcdc; /* NEW light grey border tone */
-  --brand-gold:#a89968;                 /* Wake Tech gold */
+  --brand-gold:#7A6A3F;                 /* Wake Tech gold */
   /* Light tint helpers */
   --tint-blue-bg: rgba(0,181,226,.12);  /* light of bright blue */
   --tint-blue-br: rgba(0,181,226,.28);
@@ -26,8 +26,8 @@
   --wt-vibrant:#006ba6;
   --wt-dark:#003b5c;
   --wt-muted:#30607b;
-  --wt-bright:#00b5e2;   /* added */
-  --wt-gold:#a89968;     /* added */
+  --wt-bright:#005F7A;   /* added */
+  --wt-gold:#7A6A3F;     /* added */
   --wt-white:#ffffff;    /* added */
   --card-max:1100px;     /* added */
   --yes:#1e9e4a;
@@ -41,8 +41,8 @@
   --wt-space-5: 40px;
   --wt-space-6: 48px;
   --wtr-dark: var(--brand-dark, #003b5c);
-  --wtr-bright: var(--brand-bright, #00b5e2);
-  --wtr-bluegrey: var(--bluegrey, #5a8296);
+  --wtr-bright: var(--brand-bright, #005F7A);
+  --wtr-bluegrey: var(--bluegrey, #4B7084);
   --wtr-yellow: #FFD300;
   --wtr-yellow-hover: #e6bf00;
   --wtr-divider: rgba(0,59,92,.14);
@@ -50,37 +50,6 @@
   --wtr-shadow-hover: 0 10px 18px rgba(0,0,0,.12);
 }
 
-/* Base accessibility typography */
-html {
-  font-size: 100%;
-}
-
-body {
-  line-height: 1.7;
-}
-
-/* Paragraphs and list text */
-p,
-li {
-  font-size: 1.125rem;
-  line-height: 1.7;
-}
-
-/* Component-level overrides that were shrinking text */
-.wt-service-item p,
-.wt-box p,
-.box p,
-.cs-text,
-.atq-step p,
-.wt-subheader-text p,
-.atq-subheader-text p,
-.atq-header-banner p,
-.atq-header-transparent p,
-.atq-header-text p,
-.card-action p {
-  font-size: 1.125rem;
-  line-height: 1.7;
-}
 
 /* =========================================================
    Wake Tech Libraries — Header
@@ -213,7 +182,7 @@ html, body{
     margin: 0;             /* remove extra spacing */
     font-size: 0.45em;
     font-weight: 600;
-    color: #5a8296;
+    color: #4B7084;
     text-transform: none;
     position: relative;
 }
@@ -274,13 +243,13 @@ html, body{
 #lib-hero-hours:hover,
 #lib-hero-hours:focus {
     background: rgba(0,181,226,0.18);
-    border-color: #a89968; /* Wake Tech Gold */
+    border-color: #7A6A3F; /* Wake Tech Gold */
     transform: translateY(-2px);
 }
 
 /* Gold-colored Hours Text */
 #lib-today-hours {
-    color: #a89968; /* Wake Tech Gold */
+    color: #7A6A3F; /* Wake Tech Gold */
     font-weight: 700;
 }
 
@@ -294,7 +263,7 @@ html, body{
 /* See All Hours Link */
 .lib-hero-all-hours a {
     text-decoration: none;
-    color: #00b5e2; /* Bright Blue Accent */
+    color: #005F7A; /* Bright Blue Accent */
     font-weight: 600;
     transition: color 0.2s ease;
 }
@@ -442,9 +411,9 @@ Horizontal Line
   margin: 0 !important;
   padding: 0 !important;
   font-family: "Montserrat", system-ui, sans-serif !important;
-  font-size: 1.15rem !important;
+  font-size: 14px !important;
   line-height: 1.8 !important;
-  color: #5a8296 !important;
+  color: #4B7084 !important;
 }
 
 /* Each item row */
@@ -463,7 +432,7 @@ Horizontal Line
 /* Item title (clickable link) */
 .wt-event-item [id^="api_upc_cid"] li a {
   font-family: "Montserrat", system-ui, sans-serif !important;
-  font-size: 1.3rem !important;
+  font-size: 16px !important;
   font-weight: 800 !important;
   color: #003b5c !important;      /* navy */
   line-height: 1.6 !important;
@@ -474,7 +443,7 @@ Horizontal Line
 }
 
 .wt-event-item [id^="api_upc_cid"] li a:hover {
-  color: #00b5e2 !important;      /* bright blue hover */
+  color: #005F7A !important;      /* bright blue hover */
   text-decoration: underline !important;
 }
 
@@ -483,7 +452,7 @@ Horizontal Line
   display: block !important;
   font-size: 1.15rem !important;
   font-weight: 600 !important;
-  color: #5a8296 !important;
+  color: #4B7084 !important;
   margin-bottom: 0.35rem !important;
 }
 
@@ -496,7 +465,7 @@ Horizontal Line
 }
 
 #api_upc_cid19397_iid735 ul {
-  font-size: 1.15rem !important;
+  font-size: 14px !important;
   line-height: 1.8 !important;
 }
 
@@ -644,7 +613,7 @@ Horizontal Line
 }
 
 .box-link:focus-visible {
-  outline: 3px solid #00b5e2; /* Wake Tech blue */
+  outline: 3px solid #005F7A; /* Wake Tech blue */
   outline-offset: 4px;
 }
 
@@ -696,7 +665,7 @@ Horizontal Line
 /* Base box look for this variant */
 .multicolor-boxes .box{
   /* no background here so the tint classes can win */
-  border: 2px solid #5a8296 !important;
+  border: 2px solid #4B7084 !important;
 	box-shadow:var(--shadow); 
 }
 
@@ -734,7 +703,7 @@ Horizontal Line
   border-color:var(--tint-blue-br);
 }
 .box--blue:hover{
-  border-color:var(--brand-bright);          /* #00b5e2 */
+  border-color:var(--brand-bright);          /* #005F7A */
 }
 .box--blue .wt-link,
 .box--blue a{ color:var(--brand-bright); }
@@ -809,7 +778,7 @@ Horizontal Line
   font-family: "Montserrat", system-ui, sans-serif;
   font-size: 1.5rem;          /* ↑ bigger text */
   font-weight: 700;
-  color: #5a8296;
+  color: #4B7084;
 
   border: 1px solid transparent;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -819,14 +788,14 @@ Horizontal Line
 
 /* Icon inline */
 .wt-quick-link i {
-  font-size: 1.1rem;
-  color: #5a8296 !important;
+  font-size: 14px;
+  color: #4B7084 !important;
 }
 
 /* Hover */
 .wt-quick-link:hover {
   transform: translateY(-3px);
-  border-color: #a89968;
+  border-color: #7A6A3F;
   color: #003b5c;
 }
 
@@ -895,10 +864,10 @@ Horizontal Line
 
 .campus-slider {
   --dark: var(--wt-dark, #003b5c);
-  --bright: var(--wt-bright, #00b5e2);
-  --gold: var(--wt-gold, #a89968);
+  --bright: var(--wt-bright, #005F7A);
+  --gold: var(--wt-gold, #7A6A3F);
   --muted: var(--wt-muted, #30607b);
-  --bluegrey: #5a8296;
+  --bluegrey: #4B7084;
   --bluegrey-soft: rgba(90,130,150,.25);
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   position: relative;
@@ -961,7 +930,7 @@ Horizontal Line
   letter-spacing: 0.08em;
   color: var(--bright);
   margin-bottom: 0.4rem;
-  font-size: 0.95rem;
+  font-size: 12px;
 }
 
 .cs-title {
@@ -973,7 +942,7 @@ Horizontal Line
 
 .cs-text {
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 12px;
   line-height: 1.6;
   margin-bottom: 1.25rem;
 }
@@ -1040,7 +1009,7 @@ Horizontal Line
 
 .cs-meta {
   margin: 0.25rem 0;
-  font-size: 0.95rem;
+  font-size: 12px;
 }
 
 
@@ -1325,7 +1294,7 @@ Horizontal Line
 }
 .atq-prev-title{
   margin:.25rem 0 .5rem;
-  font-size:1.15rem;
+  font-size:14px;
   font-weight:800;
   line-height:1.25;
 }
@@ -1768,7 +1737,7 @@ Horizontal Line
 .wt-subheader-text p {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.1rem);
-  color: #5a8296; /* blue-grey accent text */
+  color: #4B7084; /* blue-grey accent text */
   margin: 0.25rem 0 0;
 }
 
@@ -1817,9 +1786,9 @@ Horizontal Line
 .wt-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
-  border-left-color: #a89968;
+  border-left-color: #7A6A3F;
 }
-.wt-box h4 {
+.wt-box h3 {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-size: 1.65rem; font-weight: 800; color: #003b5c;
   margin: 0 0 .75rem 0; text-transform: uppercase; letter-spacing: .5px;
@@ -1827,13 +1796,13 @@ Horizontal Line
 }
 .wt-box p {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.25rem; line-height: 1.7; color: #5a8296; margin: 0;
+  font-size: 1.25rem; line-height: 1.7; color: #4B7084; margin: 0;
 }
-.wt-box a { color: #00b5e2; text-decoration: none; }
+.wt-box a { color: #005F7A; text-decoration: none; }
 .wt-box a:hover { color: #003b5c; text-decoration: underline; }
-.wt-icon { color: #00b5e2; font-size: 1.4rem; }
-.wt-icon-sm { color: #00b5e2; font-size: 1.1rem; margin-right: .4rem; }
-.wt-box:hover .wt-icon, .wt-box:hover .wt-icon-sm { color: #a89968; }
+.wt-icon { color: #005F7A; font-size: 1.4rem; }
+.wt-icon-sm { color: #005F7A; font-size: 1.1rem; margin-right: .4rem; }
+.wt-box:hover .wt-icon, .wt-box:hover .wt-icon-sm { color: #7A6A3F; }
 
 /* 3-column flex row for staff directory */
 .wt-three-col {
@@ -1918,16 +1887,16 @@ Horizontal Line
 /* Description */
 .wt-service-item p {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.05rem;
+  font-size: 12px;
   line-height: 1.6;
-  color: #5a8296;
+  color: #4B7084;
   margin: 0 0 0.75rem;
 }
 
 /* Link */
 .wt-service-link {
   font-weight: 700;
-  color: #00b5e2;
+  color: #005F7A;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1997,7 +1966,7 @@ Horizontal Line
   position: relative;
   padding-left: 1.75rem;
   margin-bottom: 1rem;
-  font-size: 1.15rem;
+  font-size: 12px;
   line-height: 1.7;
   color: #003b5c;
 }
@@ -2010,7 +1979,7 @@ Horizontal Line
   top: 0.65rem;
   width: 0.6rem;
   height: 0.6rem;
-  background: #00b5e2;
+  background: #005F7A;
   border-radius: 50%;
 }
 
@@ -2023,7 +1992,7 @@ Horizontal Line
 
 .wt-service-item ol li {
   margin-bottom: 1rem;
-  font-size: 1.15rem;
+  font-size: 12px;
   line-height: 1.7;
   color: #003b5c;
 }
@@ -2099,10 +2068,10 @@ Horizontal Line
   display: inline-block;
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #00b5e2;
+  color: #005F7A;
   border: 2px solid rgba(0,181,226,0.4);
   background: rgba(0,181,226,0.1);
   border-radius: 999px;
@@ -2115,7 +2084,7 @@ Horizontal Line
 .wt-pill:focus {
   color: #003b5c;
   background: rgba(0,181,226,0.18);
-  border-color: #a89968;  /* gold accent */
+  border-color: #7A6A3F;  /* gold accent */
   transform: translateY(-2px);
   outline: none;
 }
@@ -2160,7 +2129,7 @@ html { scroll-behavior: smooth; }
 .wt-pill--primary:hover,
 .wt-pill--primary:focus {
   background-color: #002c46;
-  border-color: #a89968;
+  border-color: #7A6A3F;
   color: #ffffff;
 }
 
@@ -2228,14 +2197,14 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Hover Styles (WT Gold border) ---------- */
 #s-lg-page-prevnext .page-link:hover {
-    border-color: #a89968;
+    border-color: #7A6A3F;
     background: #ffffff;
     color: #003b5c !important;
 }
 
 /* Make “Previous:” / “Next:” labels gold */
 #s-lg-page-prevnext strong {
-    color: #a89968 !important;
+    color: #7A6A3F !important;
     font-weight: 700;
 }
 
@@ -2315,7 +2284,7 @@ html { scroll-behavior: smooth; }
 
 /* Hover */
 #s-lg-page-prevnext .page-link:hover {
-    border-color: #a89968;
+    border-color: #7A6A3F;
     background: #ffffff;
     color: #003b5c !important;
 }
@@ -2341,7 +2310,7 @@ html { scroll-behavior: smooth; }
   display: inline-block;
   margin-top: 0.75rem;
   font-weight: 700;
-  color: #00b5e2;
+  color: #005F7A;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -2353,14 +2322,14 @@ html { scroll-behavior: smooth; }
 
 /* Larger icons in this section */
 .wt-box .wt-icon {
-  color: #00b5e2;
+  color: #005F7A;
   margin-right: 0.6rem;
   font-size: 1.4rem;
   vertical-align: middle;
 }
 
 .wt-box:hover .wt-icon {
-  color: #a89968; /* gold hover accent */
+  color: #7A6A3F; /* gold hover accent */
 }
 
 
@@ -2380,7 +2349,7 @@ html { scroll-behavior: smooth; }
 .wt-video-wrapper {
     width: 100%;
     max-width: 100%;
-    border: 2px solid #5a8296 !important;
+    border: 2px solid #4B7084 !important;
     padding: 0;
     margin: 0 auto;
   }
@@ -2415,7 +2384,7 @@ html { scroll-behavior: smooth; }
 /* Responsive embed with border like your current wrapper */
 .wt-video-gallery .wt-video-embed{
   width: 100%;
-  border: 2px solid #5a8296;
+  border: 2px solid #4B7084;
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
@@ -2436,7 +2405,7 @@ html { scroll-behavior: smooth; }
 /* Title under video */
 .wt-video-gallery .wt-video-title{
   margin: .65rem 0 0 0;
-  font-size: 1.05rem;
+  font-size: 12px;
   line-height: 1.25;
   font-weight: 800;
   color: var(--brand-dark, #003b5c);
@@ -2573,7 +2542,7 @@ html { scroll-behavior: smooth; }
 
 /* Button color variants used in the HTML */
 .reserve-button_media {
-  background-color: #00b5e2;
+  background-color: #005F7A;
   color: #ffffff;
 }
 .reserve-button_media:hover {
@@ -2581,7 +2550,7 @@ html { scroll-behavior: smooth; }
 }
 
 .reserve-equipment-button_media {
-  background-color: #a89968;
+  background-color: #7A6A3F;
   color: #ffffff;
 }
 .reserve-equipment-button_media:hover {
@@ -2641,7 +2610,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 14px;
   color: var(--brand-dark);
 }
 
@@ -2683,7 +2652,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 14px;
   color: var(--brand-dark);
   text-decoration: none;
   display: block;          /* ensures clean stacking on mobile */
@@ -2821,13 +2790,13 @@ html { scroll-behavior: smooth; }
 
 .wt-equip-name{
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 12px;
   line-height: 1.25;
   color: #003b5c;
 }
 
 .wt-equip-meta{
-  font-size: 1.05rem;
+  font-size: 10px;
   line-height: 1.3;
   color: rgba(0,0,0,.75);
 }
@@ -2852,7 +2821,7 @@ html { scroll-behavior: smooth; }
 
 .wt-equip-panel{
   padding: 1rem 1.1rem 1.2rem; /* OPTIONAL spacing applied */
-  font-size: 1.05rem;
+  font-size: 10px;
   line-height: 1.6;
   background: #ffffff;
 }
@@ -2861,7 +2830,7 @@ html { scroll-behavior: smooth; }
 
 .wt-equip-h4{
   margin: .4rem 0 .5rem;
-  font-size: 1.05rem;
+  font-size: 10px;
   font-weight: 800;
   color: #003b5c;
   text-transform: uppercase;
@@ -2890,10 +2859,10 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-equip-callout{
-  border-left: 6px solid #a89968;
+  border-left: 6px solid #7A6A3F;
   background: #fbfaf6;
   padding: .75rem .85rem;
-  font-size: 1.05rem;
+  font-size: 10px;
 }
 
 /* ---------- Video / action links ---------- */
@@ -2914,19 +2883,19 @@ html { scroll-behavior: smooth; }
   background: #003b5c;
   color: #ffffff !important;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 12px;
   text-decoration: none !important;
 }
 
 .wt-equip-link:hover{
-  background: #00b5e2;
+  background: #005F7A;
   color: #003b5c !important;
 }
 
 /* ---------- Accessibility ---------- */
 
 .wt-equip-summary:focus-visible{
-  outline: 3px solid #00b5e2;
+  outline: 3px solid #005F7A;
   outline-offset: 3px;
 }
 
@@ -2936,7 +2905,7 @@ html { scroll-behavior: smooth; }
 
 .wt-status{
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.05rem;
+  font-size: 12px;
   line-height: 1.4;
   padding: 1rem 1.1rem;
   margin: 0.75rem 0 1rem;
@@ -3106,7 +3075,7 @@ html { scroll-behavior: smooth; }
 
 /* Larger CTA */
 .wtr-btn--large{
-  font-size: 1.15rem;          /* cleaned: was 1.5rem */
+  font-size: 14px;          /* cleaned: was 1.5rem */
   padding: 1.05rem 1.6rem;
 }
 
@@ -3119,8 +3088,8 @@ html { scroll-behavior: smooth; }
    (keep these if you still use wtr-btn--blue etc.)
 ------------------------------ */
 .wtr-btn--blue{
-  background: var(--wtr-bright, #00b5e2);
-  color: var(--wtr-dark, #003b5c);
+  background: var(--wtr-bright, #005F7A);
+  color: #ffffff;
 }
 
 .wtr-btn--dark{
@@ -3129,7 +3098,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wtr-btn--bluegray{
-  background: var(--wtr-bluegrey, #5a8296);
+  background: var(--wtr-bluegrey, #4B7084);
   color: #fff;
 }
 
@@ -3148,9 +3117,9 @@ html { scroll-behavior: smooth; }
 }
 
 .btn-bluegrey{
-  background-color: var(--wtr-bluegrey, #5a8296);
+  background-color: var(--wtr-bluegrey, #4B7084);
   color: #fff;
-  border-color: var(--wtr-bluegrey, #5a8296);
+  border-color: var(--wtr-bluegrey, #4B7084);
 }
 .btn-bluegrey:hover{
   background-color: #4e7284;
@@ -3351,7 +3320,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-search-alt-link a{
-  color: var(--bluegrey, #5a8296);
+  color: var(--bluegrey, #4B7084);
   text-decoration: underline;
   text-underline-offset: 1rem;
   transition: color .18s ease;
@@ -3437,7 +3406,7 @@ html { scroll-behavior: smooth; }
 
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 14px;
 
   padding: 1rem 1.25rem;
   background: #fff;
@@ -3536,7 +3505,7 @@ html { scroll-behavior: smooth; }
 
   /* Alt link: smaller + tighter underline */
   .wt-search-alt-link{
-    font-size: 1.05rem;
+    font-size: 12px;
     margin-bottom: var(--wt-space-4); /* 32px */
     padding-bottom: var(--wt-space-2); /* 16px */
   }
@@ -3611,7 +3580,7 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-fsc__left .wt-fsc__sub{
-  font-size: 1rem;
+  font-size: 12px;
   margin-bottom: 1.25rem;
   color: #2b2b2b;
   opacity: .85;
@@ -3732,13 +3701,13 @@ html { scroll-behavior: smooth; }
 
 .wt-fsc__booktitle{
   font-weight: 800;
-  font-size: .95rem;
+  font-size: 12px;
   color: var(--brand-dark);
   line-height: 1.15;
 }
 
 .wt-fsc__author{
-  font-size: .85rem;
+  font-size: 12px;
   color: rgba(0,0,0,.7);
   margin-top: .12rem;
 }
@@ -3971,7 +3940,7 @@ html { scroll-behavior: smooth; }
 
 .wt-info-phone{
   margin: 0 0 .75rem;
-  font-size: 1.05rem;
+  font-size: 12px;
 }
 
 .wt-link-external{
@@ -3993,7 +3962,7 @@ html { scroll-behavior: smooth; }
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 800;
   color: var(--brand-dark);
-  font-size: 1.05rem;
+  font-size: 12px;
 }
 
 .wt-campus-directory{
@@ -4104,7 +4073,7 @@ html { scroll-behavior: smooth; }
 }
 
 #lib-hero-hours-all .lib-hours-time{
-  color: #a89968; /* Wake Tech Gold */
+  color: #7A6A3F; /* Wake Tech Gold */
   font-weight: 700;
   white-space: nowrap;
 }
@@ -4132,7 +4101,7 @@ html { scroll-behavior: smooth; }
   font-weight: 700;
   text-decoration: none;
 
-  color: #00b5e2; /* Bright Blue */
+  color: #005F7A; /* Bright Blue */
   white-space: nowrap;
 
   transition: color .18s ease;
@@ -4281,7 +4250,7 @@ html { scroll-behavior: smooth; }
 .wt-testimonial blockquote{
   margin: 0;
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1.05rem;
+  font-size: 12px;
   line-height: 1.6;
   color: #003b5c; /* Wake Tech dark */
   position: relative;
@@ -4340,7 +4309,7 @@ html { scroll-behavior: smooth; }
 
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 14px;
 
   padding: 1rem 1.25rem;
   background: #fff;
@@ -4503,7 +4472,7 @@ html { scroll-behavior: smooth; }
 
 .wt-book-excerpt h3 {
   font-family: "Montserrat", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 14px;
   font-weight: 800;
   margin: 0 0 0.75rem;
   color: var(--brand-dark, #003b5c);
@@ -4632,7 +4601,7 @@ html { scroll-behavior: smooth; }
 
 .s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):hover,
 .s-lg-tabs-side #s-lg-guide-tabs ul.split-button-nav > li:not(.active) > a:not(#s-lg-admin-tab-anchor):focus{
-  background: var(--brand-bright, #00b5e2) !important;
+  background: var(--brand-bright, #005F7A) !important;
   color: #ffffff !important;
   position: relative !important;
 }
