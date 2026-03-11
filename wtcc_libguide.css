@@ -2592,14 +2592,13 @@ html { scroll-behavior: smooth; }
 
 /* Reverted button color variants */
 .reserve-button_media {
-  background-color: #5a8296;
+  background-color: var(--bluegrey, #4B7084);
   color: #ffffff;
 }
 
 .reserve-button_media:hover,
 .reserve-button_media:focus {
-  background-color: #6d95a8;
-  color: #ffffff;
+  background-color: color-mix(in srgb, var(--bluegrey) 85%, white);
 }
 
 .contact-button_media {
