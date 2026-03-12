@@ -406,13 +406,11 @@ h2 {
 /* Deduplicated: final shared .media-title typography block retained later in file. */
 
 /* Full-width header block variant for selected cards only */
-.media-title--full {
-  display: block;
-  width: 100%;
-  background: rgba(0, 59, 92, 0.92); /* or use your brand variable */
+.media-title.media-title--full {
+  width: calc(100% + 3rem);
+  margin: 0 -1.5rem 1.5rem -1.5rem;
   padding: 1.25rem 1.5rem;
-  margin: -3rem -3rem 1.5rem -3rem; /* expand to card edges */
-  border-bottom: none;
+  background: rgba(0, 59, 92, 0.92);
   box-sizing: border-box;
 }
 
