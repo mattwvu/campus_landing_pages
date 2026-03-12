@@ -557,6 +557,21 @@ h2 {
   color: #ffffff;
 }
 
+.media-title-block{
+  display:block;
+  width:100%;
+  background:#003b5c; /* Wake Tech navy */
+  color:#fff;
+  padding:0.9rem 1.2rem;
+  margin:-1.5rem -1.5rem 1rem -1.5rem; /* cancels column padding */
+  border:none;
+  font-weight:600;
+}
+
+.media-title-block + .campus-subtitle{
+  margin-top:.5rem;
+}
+
 /* Grid container for campus cards */
 .campus-card-grid {
   display: grid;
