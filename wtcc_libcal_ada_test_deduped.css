@@ -676,7 +676,18 @@ border-bottom: .25px solid #003b5c;
 .pattern-west::before,
 .pattern-psec::before,
 .pattern-phsl::before,
-/* Deduplicated: final .pattern-dark-alt::before gradient overlay retained later in file. */
+.pattern-dark-alt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.76) 0%,
+    rgba(0, 0, 0, 0.60) 45%,
+    rgba(0, 0, 0, 0.48) 100%
+  );
+  z-index: 1;
+}
 
 .makerspace-card {
   position: relative;
