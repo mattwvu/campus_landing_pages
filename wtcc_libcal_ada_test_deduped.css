@@ -1,0 +1,902 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+:root {
+  /* Wake Tech brand colors */
+  --dark-blue: #003b5c;
+  --light-blue: #00b5e2;
+  --mid-blue: #006ba6;
+  --gold: #a89968;
+  --charcoal: #3d3935;
+
+  /* Utility */
+  --white: #ffffff;
+}
+
+#s-lc-public-bc {
+    display: none !important; 
+}
+
+.wt-header {
+  background-color: #003b5c;
+  padding: 1rem 0;
+}
+
+.wt-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.wt-header-logo {
+  max-height: 12.5rem;
+}
+
+.wt-header-bar {
+  height: 1.5rem;
+  background-color: #00b5e2;
+}
+
+/* Footer */
+
+.custom-footer {
+  background-color: #003b5c; /* Dark Blue (primary brand color) */
+  height: 100px; /* Adjust as needed */
+  position: relative;
+  width: 100%;
+}
+
+.footer-bar {
+  background-color: #00b5e2; /* Bright Blue (accent) */
+  height: 20px; /* Adjust thickness of the bar */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Accordion */
+.accordion-wrapper {
+  font-family: "Arizona", sans-serif;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #003b5c;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.accordion-toggle:hover {
+  text-decoration: none;
+}
+
+.accordion-toggle .arrow {
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.accordion-toggle[aria-expanded="true"] .arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-content a {
+  text-decoration: none;
+  color: #003b5c;
+}
+
+.accordion-content a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Cards */
+.contact-container {
+  max-width: 100%;
+  padding: 20px;
+}
+
+h2 {
+  color: #00467f;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact-info li:last-child {
+  border-bottom: none;
+}
+
+.contact-info i {
+  color: #00467f;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.contact-info a {
+  color: #00467f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Study Room Title */
+.study-room-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #003b5c;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 3rem auto 0;
+  position: relative;
+  padding: 1rem 0;
+}
+
+
+.study-room-title::after {
+  content: "";
+  display: block;
+  width: clamp(200px, 80%, 85rem); /* ✅ Responsive width */
+  height: 1px;
+  background-color: #a89968;
+  margin: 1rem auto 0;
+  border-radius: 3px;
+}
+
+/* Study Room Description */
+.room-card {
+  border: 1px solid #dee2e6;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-image {
+  flex: 1 1 200px;
+  max-width: 300px;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-details {
+  flex: 2 1 300px;
+  padding: 1rem;
+}
+
+.room-details h5 {
+  color: #3a5a7a;
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.details-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.5rem;
+}
+
+.details-table td:first-child {
+  font-weight: bold;
+  width: 40%;
+}
+
+/* Patterns */
+
+.pattern-dark {
+  position: relative;
+  color: #ffffff;
+  padding: 4rem;
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Deduplicated: campus/media overlays are defined later with the final contrast-safe versions. */
+
+
+.pattern-light {
+  background: repeating-linear-gradient(-45deg, #c4dbe8, #c4dbe8 3px, #cce1ed 3px, #cce1ed 13px);
+  border-top: 8px solid #003b5c;
+  padding: 40px 15px;
+  color: #003b5c;
+}
+
+/* Campus Container & Cards */
+.campus-container {
+  border-top: 1.5rem solid #00b5e2;
+  border-bottom: 3rem solid #003b5c;
+  padding: 40px;
+  background-color: #f2f2f2;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.campus-card {
+  border: 3px solid #57524c;
+  background-color: #ffffff;
+  text-align: center;
+  max-width: 350px;
+  border-radius: 10px;
+  margin-top: 2%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.campus-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #00b5e2;
+}
+
+.campus-card h2 {
+  background-color: #003b5c;
+  color: #ffffff;
+  margin: 0;
+  padding: 15px 10px;
+  font-size: 1.75rem;
+  border-bottom: 3px solid #00b5e2;
+}
+
+/* Buttons */
+.reserve-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0 10px;
+  flex-wrap: wrap;
+}
+
+.reserve-button,
+.reserve-equipment-button,
+.waiver-button,
+.guidelines-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.reserve-button { background-color: #00b5e2; }
+.reserve-button:hover { background-color: #006ba6; }
+
+.reserve-equipment-button { background-color: #a89968; }
+.reserve-equipment-button:hover { background-color: #8b7e55; }
+
+.waiver-button { background-color: #58534d; }
+.waiver-button:hover { background-color: #3e3a35; }
+
+.guidelines-button { background-color: #135678; }
+.guidelines-button:hover { background-color: #0e3f5a; }
+
+/* Media Sections */
+.media-wrapper {
+  margin: auto;
+  padding: 0 15px;
+}
+
+.media-header-box {
+  background-color: #ffffff;
+  border: 3px solid #003b5c;
+  padding: 15px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #003b5c;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.media-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+}
+
+.media-description-box {
+  background-color: #ffffff;
+  border: 6px solid #00b5e2;
+  padding: 20px 25px;
+  color: #333;
+  line-height: 1.6;
+  margin: 30px 0 20px;
+}
+
+.media-description-box ul li {
+  margin-bottom: 1rem;
+}
+
+.media-description-box p {
+  margin-bottom: 1rem;
+}
+
+.note {
+  font-weight: bold;
+  margin-top: 1rem;
+  background-color: #ffffff;
+  color: #003b5c;
+  padding: 10px 15px;
+  border-left: 6px solid #00b5e2;
+  border-radius: 4px;
+}
+
+/* Media Card Image */
+
+.pattern-dark-alt {
+    position: relative;
+    background-color: #3d3935;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-top: 8px solid #00b5e2;
+    color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    padding: 6rem;
+    min-height: 40rem;
+}
+
+@media (max-width: 768px) {
+    .pattern-dark-alt {
+        padding: 2rem;
+    }
+}
+
+/* Deduplicated: final .pattern-dark-alt::before gradient overlay retained later in file. */
+
+/* Deduplicated: makerspace/button system consolidated later in file with final spacing, sizing, and state styles. */
+
+/* Responsive tweaks */
+/* Deduplicated: final responsive campus/media padding retained later in file. */
+
+/* Deduplicated: final mobile button sizing retained later in file. */
+
+/* Deduplicated: liability/guidelines button colors retained later in file with separate hover/focus states. */
+
+
+
+/* Deduplicated: final mobile button stack retained later in file. */
+
+
+/* Deduplicated: final makerspace heading/text alignment retained later in file. */
+
+.full-width-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Deduplicated: final shared .media-title typography block retained later in file. */
+
+/* Full-width header block variant for selected cards only */
+.media-title--full {
+  display: block;
+  width: 100%;
+  background: rgba(0, 59, 92, 0.92); /* or use your brand variable */
+  padding: 1.25rem 1.5rem;
+  margin: -3rem -3rem 1.5rem -3rem; /* expand to card edges */
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.media-title--full h3 {
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.media-title--full .campus-subtitle {
+  margin: 0.25rem 0 0 0;
+  color: #ffffff;
+}
+
+.media-title-block{
+  display:block;
+  width:100%;
+  background:#003b5c; /* Wake Tech navy */
+  color:#fff;
+  padding:0.9rem 1.2rem;
+  margin:-1.5rem -1.5rem 1rem -1.5rem; /* cancels column padding */
+  border:none;
+  font-weight:600;
+}
+
+.media-title-block + .campus-subtitle{
+  margin-top:.5rem;
+}
+
+/* Deduplicated: final campus grid, background imagery, and overlay rules retained later in file. */
+
+.top-nav {
+  background-color: #003b5c;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.top-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+  color: #00b5e2;
+}
+
+/* Deduplicated: final .makerspace-highlight block retained later in file. */
+
+/* Updated Styled Navigation Bar */
+.styled-nav {
+   background-color: #fff;  
+border-bottom: .25px solid #003b5c;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+ 
+  margin-bottom: -2rem;
+}
+
+.styled-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.styled-nav a {
+  color: #003b5c;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  border-left: 6px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.styled-nav a:hover {
+  border-left: 6px solid #00b5e2;
+  color: #00b5e2;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.top-nav {
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+.wtcc-header {
+  border-bottom: 8px solid #00b5e2;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 175px; /* makes the block taller */
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wtcc-header h1  {
+	color:  #003b5c;	
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.wtcc-header h6 {
+	color: #006ba6;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+
+/* Grid View */
+
+.grid-view-toggle {
+  margin-top: 30px;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.1rem 2.2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #003b5c;
+  color: #ffffff;
+}
+
+.view-btn:hover {
+  background-color: #025f92;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.grid-icon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+
+/* =========================================================
+   Accessibility and header hierarchy fixes for LibCal landing
+   ========================================================= */
+
+/* Keep section titles in a clear hierarchy */
+.study-room-title {
+  max-width: 1200px;
+  padding-inline: 1rem;
+}
+
+/* Campus card grid */
+.campus-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Base campus tile style */
+.pattern-north,
+.pattern-south,
+.pattern-rtp,
+.pattern-east,
+.pattern-west,
+.pattern-psec,
+.pattern-phsl {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top: 8px solid #00b5e2;
+  color: #ffffff;
+  padding: 4rem;
+  min-height: 34rem;
+}
+
+/* Campus imagery */
+.pattern-north { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/first_floor.jpg'); }
+.pattern-south { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/south_campus_2.jpg'); }
+.pattern-rtp   { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/rtp_campus.png'); }
+.pattern-east  { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/east_campus.png'); }
+.pattern-west  { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/west_campus_2.png'); }
+.pattern-psec  { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/psec.jpg'); }
+.pattern-phsl  { background-image: url('https://d2jv02qf7xgjwx.cloudfront.net/accounts/431140/images/phsl_campus.jpg'); }
+
+/* Stronger overlays for contrast */
+.pattern-north::before,
+.pattern-south::before,
+.pattern-rtp::before,
+.pattern-east::before,
+.pattern-west::before,
+.pattern-psec::before,
+.pattern-phsl::before,
+/* Deduplicated: final .pattern-dark-alt::before gradient overlay retained later in file. */
+
+.makerspace-card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Full-width color band behind the header text */
+.media-title {
+  display: block;
+  width: calc(100% + 8rem);
+  margin: 0 -4rem 0 -4rem;
+  padding: 1.35rem 1.5rem 1.2rem;
+  background-color: rgba(0, 59, 92, 0.92);
+  border-bottom: 4px solid #00b5e2;
+}
+
+/* Shared heading styles */
+.media-title h1,
+.media-title h2,
+.media-title h3,
+.media-title h4,
+.media-title h6,
+.media-title .campus-subtitle,
+.media-title p {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: left;
+  text-shadow: none;
+  margin: 0;
+}
+
+.media-title h1,
+.media-title h2,
+.media-title h3 {
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.media-title h1 {
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+}
+
+.media-title h2 {
+  font-size: clamp(2.5rem, 4.4vw, 4rem);
+}
+
+.media-title h3 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.media-title h4,
+.media-title h6,
+.media-title .campus-subtitle,
+.media-title p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 0.3rem;
+}
+
+/* Buttons */
+.button_media-group,
+.button_maker-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  align-items: flex-start;
+}
+
+.button_media-group {
+  margin-top: 5rem;
+  margin-bottom: 0;
+}
+
+.button_maker-group {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.button-base {
+  padding: 0.9rem 1.25rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  display: inline-block;
+  border: 3px solid #ffffff;
+  width: 100%;
+  max-width: 220px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.button-base:hover,
+.button-base:focus {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.reserve-button_media {
+  background-color: #4b7084;
+  color: #ffffff;
+}
+
+.reserve-button_media:hover,
+.reserve-button_media:focus {
+  background-color: #3d5d6e;
+}
+
+.reserve-equipment-button_media {
+  background-color: #7a6a3f;
+  color: #ffffff;
+}
+
+.reserve-equipment-button_media:hover,
+.reserve-equipment-button_media:focus {
+  background-color: #665734;
+}
+
+.guidelines-button_media {
+  background-color: #003b5c;
+  color: #ffffff;
+}
+
+.guidelines-button_media:hover,
+.guidelines-button_media:focus {
+  background-color: #00507c;
+}
+
+.liability-button_media {
+  background-color: #57524c;
+  color: #ffffff;
+}
+
+.liability-button_media:hover,
+.liability-button_media:focus {
+  background-color: #3e3a35;
+}
+
+.button-base:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(0, 59, 92, 0.85);
+}
+
+.makerspace-highlight {
+  font-weight: 700;
+  color: #ffffff;
+  padding-left: 12px;
+  border-left: 6px solid rgba(255, 255, 255, 0.92);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.makerspace-card p,
+.makerspace-card h2,
+.makerspace-card h3,
+.makerspace-card h4 {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .pattern-north,
+  .pattern-south,
+  .pattern-rtp,
+  .pattern-east,
+  .pattern-west,
+  .pattern-psec,
+  .pattern-phsl,
+  .pattern-dark-alt {
+    padding: 2rem;
+    min-height: 27rem;
+  }
+
+  .media-title {
+    width: calc(100% + 4rem);
+    margin: -2rem -2rem 0 -2rem;
+    padding: 1rem 2rem 0.95rem;
+  }
+
+  .button_media-group {
+    margin-top: 3rem;
+  }
+
+  .media-title h1,
+  .media-title h2,
+  .media-title h3 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .media-title h4,
+  .media-title h6,
+  .media-title .campus-subtitle,
+  .media-title p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .campus-card-grid {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+
+  .button_media-group,
+  .button_maker-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-base {
+    width: 100%;
+    max-width: 100%;
+  }
+}
