@@ -411,34 +411,21 @@ h2 {
   margin: 0 -1.5rem 1.5rem -1.5rem;
   padding: 1.25rem 1.5rem;
   background: rgba(0, 59, 92, 0.92);
+  border-bottom: none;
   box-sizing: border-box;
 }
 
-.media-title--full h3 {
+.media-title.media-title--full h3 {
+  margin: 0 0 0.35rem 0;
   color: #ffffff;
 }
 
-.media-title--full .campus-subtitle {
-  margin: 0.25rem 0 0 0;
+.media-title.media-title--full .campus-subtitle {
+  margin: 0;
   color: #ffffff;
 }
 
-.media-title-block{
-  display:block;
-  width:100%;
-  background:#003b5c; /* Wake Tech navy */
-  color:#fff;
-  padding:0.9rem 1.2rem;
-  margin:-1.5rem -1.5rem 1rem -1.5rem; /* cancels column padding */
-  border:none;
-  font-weight:600;
-}
 
-.media-title-block + .campus-subtitle{
-  margin-top:.5rem;
-}
-
-/* Deduplicated: final campus grid, background imagery, and overlay rules retained later in file. */
 
 .top-nav {
   background-color: #003b5c;
