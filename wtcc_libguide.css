@@ -1140,6 +1140,18 @@ Horizontal Line
   .atq-steps{ grid-template-columns:repeat(3,1fr); }
 }
 
+.atq-step{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  border:2px solid #d9e4eb;
+  border-radius:16px;
+  background:#fff;
+  padding:2rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+  text-align:left;
+}
+
 .atq-step .atq-step-title{
   font-size:18px;
   font-weight:800;
