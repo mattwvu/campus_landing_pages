@@ -1136,8 +1136,11 @@ Horizontal Line
   margin-bottom:4rem;
   align-items:stretch;
 }
+
 @media (min-width:700px){
-  .atq-steps{ grid-template-columns:repeat(3,1fr); }
+  .atq-steps{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
 }
 
 .atq-step{
@@ -1150,16 +1153,26 @@ Horizontal Line
   padding:2rem;
   box-shadow:0 4px 10px rgba(0,0,0,.05);
   text-align:left;
+  min-width:0;
 }
 
 .atq-step .atq-step-title{
   font-size:18px;
   font-weight:800;
+  line-height:1.3;
   margin:0 0 1.5rem;
   color:var(--wt-dark);
   min-height:3.5rem;
   display:flex;
   align-items:center;
+}
+
+.atq-step > p{
+  font-size:12px;
+  line-height:1.9;
+  color:var(--wt-muted);
+  margin:0;
+  flex-grow:1;
 }
 
 
