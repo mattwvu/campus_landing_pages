@@ -1117,12 +1117,12 @@ Horizontal Line
   margin:3rem auto;
   font-family:"Montserrat",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--wt-dark);
-  font-size:1.5rem;
+  font-size:14px;
   line-height:1.8;
 }
 
 .atq-callout{
-  font-size:1.7rem;
+  font-size:14px;
   line-height:1.9;
   margin-bottom:4rem;
   color:var(--wt-muted);
@@ -1152,7 +1152,7 @@ Horizontal Line
   text-align:left;
 }
 .atq-step h4{
-  font-size:2rem;
+  font-size:18px;
   font-weight:800;
   margin:0 0 1.5rem;
   color:var(--wt-dark);
@@ -1161,7 +1161,7 @@ Horizontal Line
   align-items:center;
 }
 .atq-step p{
-  font-size:1.5rem;
+  font-size:12px;
   line-height:1.9;
   color:var(--wt-muted);
   margin:0;
@@ -1190,7 +1190,7 @@ Horizontal Line
 .atq-q-head{ display:grid; gap:.9rem; margin-bottom:clamp(1.5rem,3vw,2rem); }
 .atq-q-badge{
   display:inline-block;
-  font-size:.95rem;
+  font-size:12px;
   letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--wt-bright);
@@ -1237,7 +1237,7 @@ Horizontal Line
 }
 .atq-caption{
   margin-top:.8rem;
-  font-size:clamp(1rem,1.6vw,1.1rem);
+  font-size:clamp(12px,1.6vw,1.1rem);
   color:var(--wt-muted);
 }
 .atq-caption::before{
@@ -1353,7 +1353,7 @@ Horizontal Line
 }
 .atq-header-banner .atq-header-badge{
   display:inline-block;
-  font-size:.95rem;
+  font-size:12px;
   letter-spacing:.08em;
   text-transform:uppercase;
   font-weight:700;
@@ -1364,14 +1364,14 @@ Horizontal Line
   margin-bottom:1rem;
 }
 .atq-header-banner h1{
-  font-size:clamp(2rem,4.5vw,2.8rem);
+  font-size:clamp(24px,4.5vw,2.8rem);
   font-weight:800;
   letter-spacing:.02em;
   margin:0 0 .5rem;
   color:#fff;
 }
 .atq-header-banner p{
-  font-size:clamp(1.1rem,2vw,1.3rem);
+  font-size:clamp(12px,2vw,1.3rem);
   font-weight:500;
   color:#e2ebf1;
   margin:0;
@@ -1387,13 +1387,13 @@ Horizontal Line
   padding:2rem 1rem 1rem;
 }
 .atq-header-transparent h1{
-  font-size:clamp(2.8rem,6vw,4rem);
+  font-size:clamp(28px,6vw,4rem);
   font-weight:900;
   color:var(--wt-dark);
   margin-bottom:.5rem;
 }
 .atq-header-transparent p{
-  font-size:clamp(1.2rem,2vw,1.4rem);
+  font-size:clamp(12px,2vw,1.4rem);
   color:var(--wt-muted);
   max-width:700px;
   margin:0 auto;
@@ -1435,14 +1435,14 @@ Horizontal Line
   color:var(--wt-dark);
 }
 .atq-header-text p{
-  font-size:clamp(1.25rem,1.8vw,1.45rem);
+  font-size:clamp(12px,1.8vw,1.45rem);
   color:var(--wt-muted);
   max-width:650px;
   margin-top:.5rem;
 }
 .atq-header-badge--light{
   display:inline-block;
-  font-size:1rem;
+  font-size:12px;
   text-transform:uppercase;
   background:#e9f0f3;
   color:var(--wt-dark);
@@ -1488,7 +1488,7 @@ Horizontal Line
 .atq-subheader-text h2{
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 800;
-  font-size: clamp(1.6rem, 3.6vw, 2.2rem);     /* smaller than h1 */
+  font-size: clamp(16px, 3.6vw, 2.2rem);     /* smaller than h1 */
   line-height: 1.15;
   color: var(--wt-dark);
   margin: 0;
@@ -1509,7 +1509,7 @@ Horizontal Line
 /* Supporting line */
 .atq-subheader-text p{
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-size: clamp(12px, 1.7vw, 1.15rem);
   color: var(--wt-muted);
   margin: 0 0 0 .25rem;
   flex: 1 1 auto;
@@ -1522,7 +1522,7 @@ Horizontal Line
   box-shadow: 0 2px 10px rgba(0,0,0,.06);
 }
 .atq-subheader--condensed .atq-subheader-text h2{
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-size: clamp(14px, 3vw, 1.9rem);
 }
 .atq-subheader--condensed .atq-subheader-text h2::after{
   width: 56px; height: 3px;
@@ -1667,7 +1667,7 @@ Horizontal Line
 }
 
 .atq-prev-title {
-  font-size: 1.3rem;
+  font-size: 14px;
   font-weight: 800;
   line-height: 1.3;
   color: var(--wt-dark);
@@ -1703,7 +1703,7 @@ Horizontal Line
 .atq-tally {
   display: flex;
   justify-content: space-between;
-  font-size: 0.95rem;
+  font-size: 12px;
   font-weight: 700;
   color: var(--wt-dark);
 }
