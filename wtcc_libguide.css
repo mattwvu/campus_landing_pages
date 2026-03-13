@@ -1140,18 +1140,7 @@ Horizontal Line
   .atq-steps{ grid-template-columns:repeat(3,1fr); }
 }
 
-.atq-step{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  border:2px solid #d9e4eb;
-  border-radius:16px;
-  background:#fff;
-  padding:2rem;
-  box-shadow:0 4px 10px rgba(0,0,0,.05);
-  text-align:left;
-}
-.atq-step h4{
+.atq-step .atq-step-title{
   font-size:18px;
   font-weight:800;
   margin:0 0 1.5rem;
@@ -1160,13 +1149,7 @@ Horizontal Line
   display:flex;
   align-items:center;
 }
-.atq-step p{
-  font-size:12px;
-  line-height:1.9;
-  color:var(--wt-muted);
-  margin:0;
-  flex-grow:1;
-}
+
 
 /* Legend */
 .atq-legend{ display:flex; gap:3rem; flex-wrap:wrap; font-size:1.6rem; font-weight:700; }
@@ -1211,7 +1194,7 @@ Horizontal Line
 .atq-chip{
   display:inline-flex; align-items:center; gap:.5rem;
   font-weight:700;
-  font-size:clamp(1rem,1.8vw,1.1rem);
+  font-size:clamp(12px,1.8vw,1.1rem);
   padding:.45rem .75rem;
   border-radius:999px;
   border:1px solid #d9e4eb;
