@@ -989,81 +989,117 @@ border-bottom: .25px solid #003b5c;
   border: 0;
 }
 
-/* Board Game Listings */
+/* ==================================================
+   BOARD GAMES
+   ================================================== */
 
-.wt-boardgame-card {
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid #dee2e6;
-    border-left: 8px solid #00b5e2;
-    background-color: #ffffff;
-    margin-bottom: 2rem;
+.wt-boardgame {
     overflow: hidden;
+    margin-bottom: var(--wt-space-4);
+    padding-bottom: var(--wt-space-3);
+    border-bottom: 1px solid var(--border-light);
 }
 
+/* Cover Image */
+
 .wt-boardgame-image {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 280px;
-    overflow: hidden;
-    background-color: #f2f2f2;
+    float: left;
+    width: 100px;
+    margin-right: var(--wt-space-3);
+    margin-bottom: var(--wt-space-2);
 }
 
 .wt-boardgame-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100px;
+    height: 140px;
     display: block;
+    object-fit: cover;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    background: var(--wt-white);
 }
 
-.wt-boardgame-details {
-    flex: 1;
-    padding: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
+/* Content */
+
+.wt-boardgame-info {
+    overflow: hidden;
 }
 
-.wt-boardgame-details h3 {
-    color: #003b5c;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: .75rem;
+/* Title */
+
+.wt-boardgame-info h3 {
+    margin: 0 0 0.5rem;
+    color: var(--wt-dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
+
+/* Metadata Line */
 
 .wt-boardgame-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-    color: #58534d;
-    font-size: .95rem;
+    margin: 0 0 0.75rem;
+    color: var(--wt-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-.wt-boardgame-details p {
-    margin-bottom: 1rem;
-    color: #3d3935;
+/* Description */
+
+.wt-boardgame-description {
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
+/* Links */
+
 .wt-boardgame-link {
-    color: #003b5c;
-    font-weight: 700;
+    color: var(--wt-vibrant);
+    font-weight: 600;
     text-decoration: none;
+    transition: color .2s ease;
 }
 
-.wt-boardgame-link:hover {
-    color: #00b5e2;
+.wt-boardgame-link:hover,
+.wt-boardgame-link:focus {
+    color: var(--wt-bright);
     text-decoration: underline;
 }
 
+/* Optional Status Badge */
+
+.wt-boardgame-status {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--tint-blue-bg);
+    color: var(--wt-dark);
+}
+
+/* Mobile */
+
 @media (max-width: 768px) {
 
-    .wt-boardgame-card {
-        flex-direction: column;
+    .wt-boardgame-image {
+        float: none;
+        width: 100px;
+        margin: 0 auto var(--wt-space-2);
     }
 
-    .wt-boardgame-image {
-        width: 100%;
-        height: 300px;
-        flex: none;
+    .wt-boardgame-info {
+        overflow: visible;
+    }
+
+    .wt-boardgame-info h3 {
+        text-align: center;
+    }
+
+    .wt-boardgame-meta {
+        text-align: center;
     }
 }
