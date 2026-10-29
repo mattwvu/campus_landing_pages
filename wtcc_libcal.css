@@ -877,6 +877,118 @@ border-bottom: .25px solid #003b5c;
   }
 }
 
+/* =========================================================
+   Sidebar campus library services list
+   Scoped so it does not alter existing wtr rules elsewhere
+   ========================================================= */
+
+.wtr-wrap--sidebar {
+  margin-top: 0.5rem;
+}
+
+.wtr-wrap--sidebar .wtr-row {
+  border: 1px solid #d9dee3;
+  background: #ffffff;
+  padding: 0.875rem;
+  margin-bottom: 0.875rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wtr-wrap--sidebar .wtr-name {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #003b5c;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+}
+
+.wtr-wrap--sidebar .wtr-name:hover,
+.wtr-wrap--sidebar .wtr-name:focus {
+  color: #00263a;
+  text-decoration: underline;
+}
+
+.wtr-wrap--sidebar .wtr-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.wtr-wrap--sidebar .wtr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 0.75rem;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.wtr-wrap--sidebar .wtr-btn--blue {
+  background: var(--wtr-bright, #005F7A);
+  color: #ffffff;
+}
+
+.wtr-wrap--sidebar .wtr-btn--blue:hover,
+.wtr-wrap--sidebar .wtr-btn--blue:focus {
+  background: #0098be;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.wtr-wrap--sidebar .wtr-btn--dark {
+  background: var(--wtr-dark, #003b5c);
+  color: #ffffff;
+}
+
+.wtr-wrap--sidebar .wtr-btn--dark:hover,
+.wtr-wrap--sidebar .wtr-btn--dark:focus {
+  background: #00263a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.wtr-wrap--sidebar .wtr-btn:focus {
+  outline: 3px solid #a89968;
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .wtr-wrap--sidebar .wtr-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Opens in new tab
+   ========================================================= */
+
+
+.wt-new-window-icon {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Board Game Listings */
 
 .wt-boardgame-card {
