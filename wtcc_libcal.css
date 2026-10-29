@@ -877,17 +877,19 @@ border-bottom: .25px solid #003b5c;
   }
 }
 
-/* Board Game Cards */
+/* Board Game Listings */
 
-.boardgame-card {
+.wt-boardgame-card {
     display: flex;
+    flex-wrap: wrap;
     border: 1px solid #dee2e6;
+    border-left: 8px solid #00b5e2;
+    background-color: #ffffff;
     margin-bottom: 2rem;
-    background: #ffffff;
     overflow: hidden;
 }
 
-.boardgame-image {
+.wt-boardgame-image {
     flex: 0 0 200px;
     width: 200px;
     height: 280px;
@@ -895,59 +897,59 @@ border-bottom: .25px solid #003b5c;
     background-color: #f2f2f2;
 }
 
-.boardgame-image img {
+.wt-boardgame-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.boardgame-details {
+.wt-boardgame-details {
     flex: 1;
     padding: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.boardgame-details h3 {
+.wt-boardgame-details h3 {
     color: #003b5c;
+    font-weight: 700;
     margin-top: 0;
     margin-bottom: .75rem;
 }
 
-.boardgame-meta {
+.wt-boardgame-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-bottom: 1rem;
     color: #58534d;
-    font-weight: 600;
+    font-size: .95rem;
 }
 
-.boardgame-button {
-    display: inline-block;
-    background-color: #003b5c;
-    color: #ffffff;
-    text-decoration: none;
-    padding: .75rem 1.25rem;
-    margin-top: .75rem;
-    border-radius: 4px;
+.wt-boardgame-details p {
+    margin-bottom: 1rem;
+    color: #3d3935;
+    line-height: 1.6;
+}
+
+.wt-boardgame-link {
+    color: #003b5c;
     font-weight: 700;
-}
-
-.boardgame-button:hover {
-    background-color: #006ba6;
-    color: #ffffff;
     text-decoration: none;
 }
 
-/* Mobile */
+.wt-boardgame-link:hover {
+    color: #00b5e2;
+    text-decoration: underline;
+}
 
 @media (max-width: 768px) {
 
-    .boardgame-card {
+    .wt-boardgame-card {
         flex-direction: column;
     }
 
-    .boardgame-image {
+    .wt-boardgame-image {
         width: 100%;
         height: 300px;
         flex: none;
