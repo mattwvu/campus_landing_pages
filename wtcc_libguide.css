@@ -4856,14 +4856,19 @@ html { scroll-behavior: smooth; }
 }
 
 .wt-boardgame-image {
-  flex: 0 0 150px;
+  flex: 0 0 160px;
+  width: 160px;
+  height: 200px;
 }
 
 .wt-boardgame-image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   border: 1px solid #e0e0e0;
+  background-color: #ffffff;
 }
 
 .wt-boardgame-content {
@@ -4873,11 +4878,12 @@ html { scroll-behavior: smooth; }
 
 .wt-boardgame-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.3;
   color: #003b5c;
   margin: 0 0 0.65rem;
+	text-transform:uppercase;
 }
 
 .wt-boardgame-meta {
@@ -4885,7 +4891,7 @@ html { scroll-behavior: smooth; }
   flex-wrap: wrap;
   gap: 0.5rem 1.25rem;
   margin-bottom: 1rem;
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #3d3935;
 }
@@ -4902,8 +4908,8 @@ html { scroll-behavior: smooth; }
 
 .wt-boardgame-description {
   color: #333333;
-  font-size: 0.98rem;
-  line-height: 1.65;
+  font-size: 1.15rem;
+  line-height: 1.7;
   margin: 0;
 }
 
@@ -4914,11 +4920,15 @@ html { scroll-behavior: smooth; }
   }
 
   .wt-boardgame-image {
-    flex-basis: 105px;
+    flex: 0 0 110px;
+    width: 110px;
+    height: 145px;
   }
+}
 
   .wt-boardgame-title {
     font-size: 1.3rem;
+	text-transform: uppercase;
   }
 
   .wt-boardgame-meta {
@@ -4932,9 +4942,10 @@ html { scroll-behavior: smooth; }
     flex-direction: column;
   }
 
-  .wt-boardgame-image {
+    .wt-boardgame-image {
+    flex: 0 0 auto;
     width: 140px;
-    flex-basis: auto;
+    height: 180px;
   }
 }
 
