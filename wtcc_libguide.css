@@ -4719,6 +4719,224 @@ html { scroll-behavior: smooth; }
   margin-top: 3.5rem;
 }
 
+/* =========================================================
+   Sidebar campus library services list
+   Scoped so it does not alter existing wtr rules elsewhere
+   ========================================================= */
+
+.wtr-wrap--sidebar {
+  margin-top: 0.5rem;
+}
+
+.wtr-wrap--sidebar .wtr-row {
+  border: 1px solid #d9dee3;
+  background: #ffffff;
+  padding: 0.875rem;
+  margin-bottom: 0.875rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wtr-wrap--sidebar .wtr-name {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #003b5c;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+}
+
+.wtr-wrap--sidebar .wtr-name:hover,
+.wtr-wrap--sidebar .wtr-name:focus {
+  color: #00263a;
+  text-decoration: underline;
+}
+
+.wtr-wrap--sidebar .wtr-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.wtr-wrap--sidebar .wtr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.65rem 0.75rem;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.wtr-wrap--sidebar .wtr-btn--blue {
+  background: var(--wtr-bright, #005F7A);
+  color: #ffffff;
+}
+
+.wtr-wrap--sidebar .wtr-btn--blue:hover,
+.wtr-wrap--sidebar .wtr-btn--blue:focus {
+  background: #0098be;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.wtr-wrap--sidebar .wtr-btn--dark {
+  background: var(--wtr-dark, #003b5c);
+  color: #ffffff;
+}
+
+.wtr-wrap--sidebar .wtr-btn--dark:hover,
+.wtr-wrap--sidebar .wtr-btn--dark:focus {
+  background: #00263a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.wtr-wrap--sidebar .wtr-btn:focus {
+  outline: 3px solid #a89968;
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .wtr-wrap--sidebar .wtr-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Opens in new tab
+   ========================================================= */
+
+
+.wt-new-window-icon {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* ==========================================
+   BOARD GAME LIST
+   Independent modular component
+   ========================================== */
+
+.wt-boardgame-list {
+  width: 100%;
+  margin: 1.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wt-boardgame-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #d9e0e5;
+}
+
+.wt-boardgame-item:first-child {
+  border-top: 4px solid #00b5e2;
+}
+
+.wt-boardgame-image {
+  flex: 0 0 150px;
+}
+
+.wt-boardgame-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0;
+}
+
+.wt-boardgame-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.wt-boardgame-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #003b5c;
+  margin: 0 0 0.65rem;
+}
+
+.wt-boardgame-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #3d3935;
+}
+
+.wt-boardgame-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wt-boardgame-meta i {
+  color: #006ba6;
+}
+
+.wt-boardgame-description {
+  color: #333333;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .wt-boardgame-item {
+    gap: 1rem;
+  }
+
+  .wt-boardgame-image {
+    flex-basis: 105px;
+  }
+
+  .wt-boardgame-title {
+    font-size: 1.3rem;
+  }
+
+  .wt-boardgame-meta {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .wt-boardgame-item {
+    flex-direction: column;
+  }
+
+  .wt-boardgame-image {
+    width: 140px;
+    flex-basis: auto;
+  }
+}
 
 
 
